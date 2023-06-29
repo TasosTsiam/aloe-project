@@ -4,7 +4,7 @@ html, #root {
 
 body {
   height: 100%;
-  background-color: rgb(92, 161, 23);
+  background: linear-gradient(20deg, #06420b, #100020 60%);
 }
 
 @media (max-width: 991px) {
@@ -25,32 +25,63 @@ body {
   justify-content: center;
 }
 .navbar .container-fluid .navbar-collapse .navbar-nav .nav-link {
-  color: #ffffff;
-  font-size: 1rem;
+  color: white;
+  font-size: 1.2rem;
   padding: 1rem 1.5rem;
   border-radius: 0px;
   transition: 0.2s ease-in-out;
+  position: relative;
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #14f4a9;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.2s ease-in-out;
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #14f4a9;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s ease-in-out;
 }
 .navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover {
-  color: rgb(255, 255, 255);
-  font-size: 1.2rem;
-  box-shadow: inset 2px 2px 4px #ffffff;
+  color: #14f4a9;
+  box-shadow: inset 0px 0px 6px 0px #14f4a9;
+  text-shadow: 0px 0px 15px white;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 1px;
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover::before {
+  transform: scaleY(1);
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
 }
 @media (max-width: 991px) {
   .navbar .container-fluid .navbar-collapse .navbar-nav {
-    background-color: #333333;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   .navbar .container-fluid .navbar-collapse .navbar-nav .nav-link {
-    color: #F4CE14;
+    color: white;
   }
   .navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover {
-    text-shadow: 1px 1px 4px #F4CE14;
-    border-bottom: 1px solid #F4CE14;
-    box-shadow: 1px 1px 4px #F4CE14;
+    color: #14f4a9;
+    text-shadow: 0px 0px 15px white;
+    border-bottom: 1px solid #14f4a9;
+    box-shadow: inset 0px 0px 6px 0px #14f4a9;
   }
 }/*# sourceMappingURL=style.css.map */
