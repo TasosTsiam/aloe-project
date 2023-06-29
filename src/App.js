@@ -13,13 +13,13 @@ function App() {
                     <div className="col-12">
                         <Nav />
                     </div>
-                    <div className="row flex-grow-1">
-                        <div className="col-12 align-self-center">
-                            <Main />
-                        </div>
-                        <div className="col-12 align-self-end">
-                            <Footer/>
-                        </div>
+                </div>
+                <div className="row flex-grow-1">
+                    <div className="col-12 align-self-center">
+                        <Main />
+                    </div>
+                    <div className="col-12 align-self-end">
+                        <Footer/>
                     </div>
                 </div>
             </div>

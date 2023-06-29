@@ -1,1 +1,56 @@
-/*# sourceMappingURL=style.css.map */
+html, #root {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: rgb(92, 161, 23);
+}
+
+@media (max-width: 991px) {
+  .navbar .container-fluid {
+    justify-content: space-between !important;
+  }
+}
+.navbar .container-fluid a.navbar-brand {
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 991px) {
+  .navbar .container-fluid a.navbar-brand {
+    justify-content: start !important;
+  }
+}
+.navbar .container-fluid .navbar-collapse {
+  justify-content: center;
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0px;
+  transition: 0.2s ease-in-out;
+}
+.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  box-shadow: inset 2px 2px 4px #ffffff;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+@media (max-width: 991px) {
+  .navbar .container-fluid .navbar-collapse .navbar-nav {
+    background-color: #333333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar .container-fluid .navbar-collapse .navbar-nav .nav-link {
+    color: #F4CE14;
+  }
+  .navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover {
+    text-shadow: 1px 1px 4px #F4CE14;
+    border-bottom: 1px solid #F4CE14;
+    box-shadow: 1px 1px 4px #F4CE14;
+  }
+}/*# sourceMappingURL=style.css.map */
