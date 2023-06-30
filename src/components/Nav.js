@@ -5,8 +5,8 @@ import AloeLogo from '../logo.svg';
 function Nav() {
     return (
         <nav className="navbar navbar-expand-lg">
-            <div className="container-fluid d-flex justify-content-between">
-                <Link className="navbar-brand col-6 col-lg-2" to="/homepage">
+            <div className="nav-parent-div container-fluid d-flex justify-content-between">
+                <Link className="navbar-brand justify-content-start col-6 col-lg-2" to="/homepage">
                     <img src={AloeLogo} alt="Aloe Logo"/>
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

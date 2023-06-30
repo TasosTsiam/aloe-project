@@ -8,9 +8,9 @@ import { BrowserRouter as Router} from 'react-router-dom';
 function App() {
     return (
         <Router>
-            <div className="container-fluid d-flex flex-column h-100">
-                <div className="row justify-content-between">
-                    <div className="col-6">
+            <div className="parent-container container-fluid d-flex flex-column h-100">
+                <div className="row">
+                    <div className="col-12 col-lg-6 col-xl-6 col-xxl-6">
                         <Nav />
                     </div>
                 </div>

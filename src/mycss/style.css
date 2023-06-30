@@ -5,26 +5,37 @@ html, #root {
 body {
   height: 100%;
   background: linear-gradient(20deg, #06420b, #100020 60%);
+  color: white;
+}
+
+.parent-container {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .parent-container {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .parent-container {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
 }
 
 @media (max-width: 991px) {
-  .navbar .container-fluid {
+  .navbar .nav-parent-div {
     justify-content: space-between !important;
   }
 }
-.navbar .container-fluid a.navbar-brand {
-  display: flex;
+.navbar .nav-parent-div .navbar-collapse {
   justify-content: center;
 }
-@media (max-width: 991px) {
-  .navbar .container-fluid a.navbar-brand {
-    justify-content: start !important;
-  }
-}
-.navbar .container-fluid .navbar-collapse {
-  justify-content: center;
-}
-.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link {
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
   color: white;
   font-size: 1.2rem;
   padding: 1rem 1.5rem;
@@ -32,56 +43,104 @@ body {
   transition: 0.2s ease-in-out;
   position: relative;
 }
-.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link::before {
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 1rem 1rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+}
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 1px;
-  height: 100%;
+  height: 20%;
   background-color: #14f4a9;
   transform: scaleY(0);
   transform-origin: top center;
   transition: transform 0.2s ease-in-out;
 }
-.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link::after {
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 20%;
   height: 1px;
   background-color: #14f4a9;
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.2s ease-in-out;
 }
-.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover {
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover {
   color: #14f4a9;
   box-shadow: inset 0px 0px 6px 0px #14f4a9;
   text-shadow: 0px 0px 15px white;
   box-sizing: border-box;
   border-radius: 1px;
 }
-.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover::before {
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover::before {
   transform: scaleY(1);
 }
-.navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover::after {
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover::after {
   transform: scaleX(1);
 }
 @media (max-width: 991px) {
-  .navbar .container-fluid .navbar-collapse .navbar-nav {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .navbar .container-fluid .navbar-collapse .navbar-nav .nav-link {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
     color: white;
   }
-  .navbar .container-fluid .navbar-collapse .navbar-nav .nav-link:hover {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover {
     color: #14f4a9;
     text-shadow: 0px 0px 15px white;
     border-bottom: 1px solid #14f4a9;
     box-shadow: inset 0px 0px 6px 0px #14f4a9;
   }
+}
+
+.homepage-s1 h4 {
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  font-weight: 400;
+}
+.homepage-s1 h1 {
+  padding-top: 1rem;
+  font-size: 5rem;
+  background-image: linear-gradient(35deg, gold, rgb(255, 255, 255) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.87);
+}
+.homepage-s1 h1 span {
+  font-style: italic;
+  background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
+}
+.homepage-s1 p {
+  padding-top: 2rem;
+  font-size: 0.9rem;
 }/*# sourceMappingURL=style.css.map */
