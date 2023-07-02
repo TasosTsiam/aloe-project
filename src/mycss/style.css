@@ -73,30 +73,30 @@ body {
   top: 0;
   left: 0;
   width: 1px;
-  height: 20%;
+  height: 30%;
   background-color: #14f4a9;
   transform: scaleY(0);
   transform-origin: top center;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 20%;
+  width: 30%;
   height: 1px;
   background-color: #14f4a9;
   transform: scaleX(0);
   transform-origin: left center;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover {
   color: #14f4a9;
-  box-shadow: inset 0px 0px 6px 0px #14f4a9;
+  box-shadow: inset 0px 0px 2px 0px #14f4a9;
   text-shadow: 0px 0px 15px white;
   box-sizing: border-box;
-  border-radius: 1px;
+  border-radius: 6px;
 }
 .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover::before {
   transform: scaleY(1);
@@ -116,8 +116,7 @@ body {
   .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover {
     color: #14f4a9;
     text-shadow: 0px 0px 15px white;
-    border-bottom: 1px solid #14f4a9;
-    box-shadow: inset 0px 0px 6px 0px #14f4a9;
+    box-shadow: inset 0px 0px 2px 0px #14f4a9;
   }
 }
 
