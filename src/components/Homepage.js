@@ -6,7 +6,7 @@ function Homepage() {
             <section className="homepage-s1">
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-between">
-                        <div className="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div className="s1-left-div col-lg-6 col-md-6 col-sm-6 col-12">
                             <h4>Authentic, pure, ours.</h4>
                             <h1 className="text-wrap" style={{width: "35rem"}}>
                                 Welcome to
@@ -18,8 +18,13 @@ function Homepage() {
                                 beneficial products, that can enhance our day-to-day life and health.
                             </p>
                         </div>
-                        <div className="col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div className="s1-right-div col-lg-6 col-md-6 col-sm-6 col-12">
                             Right col
+                            <div className="bg-img-container">
+                                <div className="background-image"></div>
+                                <div className="background-image"></div>
+                                <div className="background-image"></div>
+                            </div>
                         </div>
 
                     </div>
