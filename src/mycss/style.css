@@ -150,6 +150,6 @@ body {
 .homepage-s1 .s1-right-div .bg-img-container .background-image {
   width: 100px;
   height: 100px;
-  background-image: radial-gradient(circle, rgb(0, 255, 128), rgb(102, 0, 128), transparent 60%);
+  background-image: radial-gradient(circle, rgb(0, 255, 128), rgb(102, 0, 128) 55%, transparent 60%);
   background-size: cover;
 }/*# sourceMappingURL=style.css.map */
