@@ -70,7 +70,7 @@ body {
                         left: 0;
                         width: 1px;
                         height: 30%;
-                        background-color: #14f4a9;
+                        background-color: rgb(0, 247, 255);
                         transform: scaleY(0);
                         transform-origin: top center;
                         transition: transform 0.3s ease-in-out;
@@ -83,15 +83,15 @@ body {
                         left: 0;
                         width: 30%;
                         height: 1px;
-                        background-color: #14f4a9;
+                        background-color: rgb(0, 247, 255);
                         transform: scaleX(0);
                         transform-origin: left center;
                         transition: transform 0.3s ease-in-out;
                     }
 
                       &:hover {
-                        color: #14f4a9;
-                        box-shadow: inset 0px 0px 2px 0px #14f4a9;
+                        color: rgb(0, 247, 255);
+                        box-shadow: inset 0px 0px 2px 0px rgb(0, 247, 255);
                         text-shadow: 0px 0px 15px white;
                         box-sizing: border-box;
                         border-radius: 6px;
@@ -116,9 +116,9 @@ body {
                     }
 
                     .nav-link:hover {
-                        color: #14f4a9;
+                        color: rgb(0, 247, 255);
                         text-shadow: 0px 0px 15px white;
-                        box-shadow: inset 0px 0px 2px 0px #14f4a9;
+                        box-shadow: inset 0px 0px 2px 0px rgb(0, 247, 255);
                     }
                 }
             }
@@ -159,16 +159,66 @@ body {
 
     .s1-right-div {
 
-        .bg-img-container {
+        .gradient-img-container {
             display: flex;
             justify-content: space-between;
+            background-image: url(../images/aloe-3.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 35rem;
+            width: 35rem;
+            border-radius: 50%;
+            box-sizing: border-box;
+            box-shadow: 50px 50px 150px 30px white;
 
-            .background-image {
+            .gradient-image-1 {
+                width: 230px;
+                height: 230px;
+                background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
+                background-size: cover;
+                display: block;
+                position: relative;
+                top: -10%;
+                left: -30%;
+                transform: rotate(-25deg);
+
+                svg {
+                    height: 4.5rem;
+                }
+            }
+
+            .gradient-image-2 {
                 width: 100px;
                 height: 100px;
-                background-image: radial-gradient(circle, rgb(0, 255, 128), rgb(102, 0, 128)55%, transparent 60%);
+                background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
                 background-size: cover;
-              }
+                display: block;
+                position: relative;
+                top: -17%;
+                left: -51%;
+                transform: rotate(5deg);
+
+                svg {
+                    height: 2rem;
+                }
+            }
+
+            .gradient-image-3 {
+                width: 150px;
+                height: 150px;
+                background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
+                background-size: cover;
+                display: block;
+                position: relative;
+                top: -12%;
+                left: -61%;
+                transform: rotate(45deg);
+
+                svg {
+                    height: 3rem;
+                }
+            }
         }
     }
 }
