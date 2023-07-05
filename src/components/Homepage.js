@@ -1,6 +1,12 @@
 import React from 'react';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Fade from 'react-bootstrap/Fade';
 
 function Homepage() {
+
+    const [open, setOpen] = useState(false);
+
     return (
         <div>
             <section className="homepage-s1">
@@ -17,6 +23,21 @@ function Homepage() {
                                 on innovative farming, we try our best to maintain and produce pure, authentic,
                                 beneficial products, that can enhance our day-to-day life and health.
                             </p>
+                            <div className="button-container d-flex">
+                                <Button
+                                    onClick={() => setOpen(!open)}
+                                    aria-controls="fade-buttons"
+                                    aria-expanded={open}
+                                >
+                                    Click me
+                                </Button>
+                                <Fade in={open}>
+                                    <div id="fade-buttons">
+                                        <Button>Products</Button>
+                                        <Button>Recipes</Button>
+                                    </div>
+                                </Fade>
+                            </div>
                         </div>
                         <div className="s1-right-div d-flex justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
                             <div className="d-flex justify-content-center gradient-img-container">

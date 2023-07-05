@@ -143,6 +143,23 @@ body {
   padding-top: 2rem;
   font-size: 0.9rem;
 }
+.homepage-s1 .s1-left-div .button-container {
+  padding-top: 1rem;
+}
+.homepage-s1 .s1-left-div .button-container button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: linear-gradient(20deg, #00ff15, #6f00ff);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+}
+.homepage-s1 .s1-left-div .button-container button:hover {
+  background: linear-gradient(20deg, #00ff15, #00fff2);
+}
 .homepage-s1 .s1-right-div .gradient-img-container {
   display: flex;
   justify-content: space-between;
