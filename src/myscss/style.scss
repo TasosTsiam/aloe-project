@@ -169,11 +169,10 @@ body {
                 margin-right: 5rem;
                 border-radius: 10px;
                 border: 0px solid;
-            }
 
-            button:hover {
-                background: linear-gradient(20deg, #00ff15, #00fff2);
-
+                &:hover {
+                    background: linear-gradient(20deg, #00ff15, #00fff2);
+                }
             }
         }
     }
@@ -191,7 +190,12 @@ body {
             width: 35rem;
             border-radius: 50%;
             box-sizing: border-box;
-            box-shadow: 50px 50px 150px 30px white;
+            box-shadow: 50px 60px 120px 20px rgb(255, 255, 255);
+
+            &.hover {
+                background-image: url(../images/aloe-2.jpg);
+                // Add any other styles you want to apply on hover
+            }
 
             .gradient-image-1 {
                 width: 230px;

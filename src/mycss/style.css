@@ -171,7 +171,10 @@ body {
   width: 35rem;
   border-radius: 50%;
   box-sizing: border-box;
-  box-shadow: 50px 50px 150px 30px white;
+  box-shadow: 50px 60px 120px 20px rgb(255, 255, 255);
+}
+.homepage-s1 .s1-right-div .gradient-img-container.hover {
+  background-image: url(../images/aloe-2.jpg);
 }
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-1 {
   width: 230px;

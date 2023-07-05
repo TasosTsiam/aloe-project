@@ -33,8 +33,8 @@ function Homepage() {
                                 </Button>
                                 <Fade in={open}>
                                     <div id="fade-buttons">
-                                        <Button>Products</Button>
-                                        <Button>Recipes</Button>
+                                        <Button className="button-2">Products</Button>
+                                        <Button className="button-3">Recipes</Button>
                                     </div>
                                 </Fade>
                             </div>
