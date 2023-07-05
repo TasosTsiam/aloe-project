@@ -8,7 +8,7 @@ function Homepage() {
     const [open, setOpen] = useState(false);
 
     return (
-        <div>
+        <>
             <section className="homepage-s1">
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-between">
@@ -56,7 +56,7 @@ function Homepage() {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
 
     )
 }

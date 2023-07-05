@@ -160,6 +160,9 @@ body {
 .homepage-s1 .s1-left-div .button-container button:hover {
   background: linear-gradient(20deg, #00ff15, #00fff2);
 }
+.homepage-s1 .s1-left-div .button-container .button-2:hover .s1-right-div .gradient-img-container {
+  background-image: url(../images/aloe-2.jpg);
+}
 .homepage-s1 .s1-right-div .gradient-img-container {
   display: flex;
   justify-content: space-between;
