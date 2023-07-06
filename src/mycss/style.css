@@ -188,44 +188,32 @@ body {
   transition: 0.5s ease-in-out;
 }
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-1 {
-  width: 230px;
-  height: 230px;
   background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
   background-size: cover;
   display: block;
   position: relative;
-  top: -10%;
-  left: -30%;
-  transform: rotate(-25deg);
+  transition: 0.5s ease-in-out;
 }
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-1 svg {
-  height: 4.5rem;
+  transition: 0.5s ease-in-out;
 }
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-2 {
-  width: 100px;
-  height: 100px;
   background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
   background-size: cover;
   display: block;
   position: relative;
-  top: -17%;
-  left: -51%;
-  transform: rotate(5deg);
+  transition: 0.5s ease-in-out;
 }
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-2 svg {
-  height: 2rem;
+  transition: 0.5s ease-in-out;
 }
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-3 {
-  width: 150px;
-  height: 150px;
   background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
   background-size: cover;
   display: block;
   position: relative;
-  top: -12%;
-  left: -61%;
-  transform: rotate(45deg);
+  transition: 0.5s ease-in-out;
 }
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-3 svg {
-  height: 3rem;
+  transition: 0.5s ease-in-out;
 }/*# sourceMappingURL=style.css.map */
