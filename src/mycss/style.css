@@ -171,6 +171,7 @@ body {
   border-radius: 50%;
   box-sizing: border-box;
   box-shadow: 50px 60px 120px 20px rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
 }
 .homepage-s1 .s1-right-div .gradient-img-container.hover {
   background-image: url(../images/aloe-2.jpg);

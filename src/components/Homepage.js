@@ -5,9 +5,6 @@ import Fade from 'react-bootstrap/Fade';
 import aloe1 from '../images/aloe-1.jpg';
 import aloe2 from '../images/aloe-2.jpg';
 import aloe3 from '../images/aloe-3.jpg';
-import aloe5 from '../images/aloe-5.jpg';
-import aloe6 from '../images/aloe-6.jpg';
-import aloe7 from '../images/aloe-7.jpg';
 
 
 function Homepage() {

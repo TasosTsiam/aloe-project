@@ -174,16 +174,6 @@ body {
                     background: linear-gradient(20deg, #00ff15, #00fff2);
                 }
             }
-
-            .button-2:hover {
-
-                .s1-right-div {
-
-                    .gradient-img-container {
-                        
-                    }
-                }
-            }
         }
     }
 
@@ -192,7 +182,6 @@ body {
         .gradient-img-container {
             display: flex;
             justify-content: space-between;
-            
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -201,6 +190,7 @@ body {
             border-radius: 50%;
             box-sizing: border-box;
             box-shadow: 50px 60px 120px 20px rgb(255, 255, 255);
+            transition: 0.5s ease-in-out;
 
             &.hover {
                 background-image: url(../images/aloe-2.jpg);
