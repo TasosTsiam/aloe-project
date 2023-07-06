@@ -160,6 +160,20 @@ body {
 .homepage-s1 .s1-left-div .button-container button:hover {
   background: linear-gradient(20deg, #00ff15, #00fff2);
 }
+.homepage-s1 .s1-left-div .fade-enter {
+  opacity: 0;
+}
+.homepage-s1 .s1-left-div .fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.homepage-s1 .s1-left-div .fade-exit {
+  opacity: 1;
+}
+.homepage-s1 .s1-left-div .fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
 .homepage-s1 .s1-right-div .gradient-img-container {
   display: flex;
   justify-content: space-between;

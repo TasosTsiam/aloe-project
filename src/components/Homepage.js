@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Fade from 'react-bootstrap/Fade';
 import aloe1 from '../images/aloe-1.jpg';
 import aloe2 from '../images/aloe-2.jpg';
 import aloe3 from '../images/aloe-3.jpg';
+import { CSSTransition } from 'react-transition-group';
 
 
 function Homepage() {
@@ -47,18 +47,21 @@ function Homepage() {
                                 >
                                     Click me
                                 </Button>
-                                {open && (
-                                    <Fade in={open}>
+                                <CSSTransition
+                                        in={open}
+                                        timeout={300} // Adjust the duration of the fade animation
+                                        classNames="fade"
+                                        unmountOnExit
+                                    >
                                         <div id="fade-buttons">
-                                        <Button className="button-2" onMouseOver={hover2}>
-                                            Products
-                                        </Button>
-                                        <Button className="button-3" onMouseOver={hover3}>
-                                            Recipes
-                                        </Button>
+                                            <Button className="button-2" onMouseOver={hover2}>
+                                                Products
+                                            </Button>
+                                            <Button className="button-3" onMouseOver={hover3}>
+                                                Recipes
+                                            </Button>
                                         </div>
-                                    </Fade>
-                                )}
+                                  </CSSTransition>
                             </div>
                         </div>
                         <div className="s1-right-div d-flex justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
