@@ -47,12 +47,18 @@ function Homepage() {
                                 >
                                     Click me
                                 </Button>
-                                <Fade in={open}>
-                                    <div id="fade-buttons">
-                                        <Button className="button-2" onMouseOver={hover2}>Products</Button>
-                                        <Button className="button-3" onMouseOver={hover3}>Recipes</Button>
-                                    </div>
-                                </Fade>
+                                {open && (
+                                    <Fade in={open}>
+                                        <div id="fade-buttons">
+                                        <Button className="button-2" onMouseOver={hover2}>
+                                            Products
+                                        </Button>
+                                        <Button className="button-3" onMouseOver={hover3}>
+                                            Recipes
+                                        </Button>
+                                        </div>
+                                    </Fade>
+                                )}
                             </div>
                         </div>
                         <div className="s1-right-div d-flex justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
