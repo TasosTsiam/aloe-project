@@ -219,6 +219,10 @@ body {
 
                 svg {
                     transition: 0.5s ease-in-out;
+
+                    &:hover {
+                        transform: scale(0.8);
+                    }
                 }
             }
 
@@ -231,6 +235,10 @@ body {
 
                 svg {
                     transition: 0.5s ease-in-out;
+
+                    &:hover {
+                        transform: scale(0.8);
+                    }
                 }
             }
 
@@ -243,6 +251,10 @@ body {
 
                 svg {
                     transition: 0.5s ease-in-out;
+
+                    &:hover {
+                        transform: scale(0.8);
+                    }
                 }
             }
         }
