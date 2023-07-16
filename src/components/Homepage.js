@@ -41,8 +41,8 @@ function Homepage() {
                             </h1>
                             <p className="text-wrap" style={{width: "35rem"}}>
                                 All the way from a western town in Thessaloniki, as a family that focuses
-                                on innovative farming, we try our best to maintain and produce pure, authentic,
-                                beneficial products, that can enhance our day-to-day life and health.
+                                on innovative farming, we try our best to maintain and produce authentic,
+                                beneficial products that can enhance our day-to-day life and health.
                             </p>
                             <div className="button-container d-flex">
                                 <Button
@@ -209,7 +209,6 @@ function Homepage() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
