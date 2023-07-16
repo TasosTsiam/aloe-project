@@ -1,11 +1,16 @@
 html, #root {
-  height: 100%;
+  height: 200%;
 }
 
 body {
-  height: 100%;
-  background: linear-gradient(20deg, #06420b, #100020 60%);
+  background: linear-gradient(20deg, rgba(6, 66, 11, 0.8), #100020 70%);
   color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
 }
 
 .parent-container {
@@ -108,6 +113,9 @@ body {
   }
 }
 
+.homepage-s1 {
+  margin-top: 5rem;
+}
 .homepage-s1 .s1-left-div h4 {
   text-shadow: 1px 1px 3px rgb(0, 0, 0);
   font-weight: 400;
@@ -213,4 +221,37 @@ body {
 }
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-3 svg:hover {
   transform: scale(0.8);
+}
+.homepage-s1 .products-container .row .carousel .carousel-indicators button {
+  background-color: rgb(0, 247, 255);
+}
+.homepage-s1 .products-container .row .carousel .carousel-inner {
+  box-shadow: 0px 0px 15px 1px rgb(0, 247, 255), inset 0px 0px 15px 1px rgb(0, 247, 255);
+  box-sizing: border-box;
+  border: 1px solid rgb(0, 247, 255);
+  border-radius: 12px;
+  background: linear-gradient(20deg, rgba(6, 66, 11, 0.8), #100020 70%);
+}
+.homepage-s1 .card-container-row {
+  padding: 0.5rem;
+}
+.homepage-s1 .card-container {
+  padding: 40px;
+}
+.homepage-s1 .card {
+  background: linear-gradient(20deg, #d6ffd9, #b163ff 70%);
+  margin: 0 !important;
+}
+.homepage-s1 .card .card-body {
+  padding: 5px 5px !important;
+}
+.homepage-s1 .card .card-body button {
+  color: white;
+  font-weight: 600;
+  box-sizing: border-box;
+  border: 0;
+  background: linear-gradient(20deg, rgba(0, 255, 21, 0.6862745098), rgba(111, 0, 255, 0.6784313725));
+}
+.homepage-s1 .card .card-body button:hover {
+  background: linear-gradient(20deg, #00ff15, rgba(111, 0, 255, 0.6784313725));
 }/*# sourceMappingURL=style.css.map */

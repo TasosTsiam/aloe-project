@@ -5,6 +5,7 @@ import aloe1 from '../images/aloe-1.jpg';
 import aloe2 from '../images/aloe-2.jpg';
 import aloe3 from '../images/aloe-3.jpg';
 import { CSSTransition } from 'react-transition-group';
+import Products from './Products.js';
 
 
 function Homepage() {
@@ -209,6 +210,7 @@ function Homepage() {
                                 </div>
                             </div>
                         </div>
+                        <Products />
                     </div>
                 </div>
             </section>
