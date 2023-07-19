@@ -3,7 +3,7 @@ html, #root {
 }
 
 body {
-  background: linear-gradient(20deg, rgba(6, 66, 11, 0.8), #100020 70%);
+  background: linear-gradient(20deg, rgba(16, 0, 32, 0.5254901961), #100020 70%);
   color: white;
 }
 
@@ -222,36 +222,85 @@ body {
 .homepage-s1 .s1-right-div .gradient-img-container .gradient-image-3 svg:hover {
   transform: scale(0.8);
 }
-.homepage-s1 .products-container .row .carousel .carousel-indicators button {
+.homepage-s1 .products-container {
+  position: relative; /* Making the pseudo element apply the effect on this container */
+}
+.homepage-s1 .products-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 10%;
   background-color: rgb(0, 247, 255);
+  transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
 }
-.homepage-s1 .products-container .row .carousel .carousel-inner {
-  box-shadow: 0px 0px 15px 1px rgb(0, 247, 255), inset 0px 0px 15px 1px rgb(0, 247, 255);
-  box-sizing: border-box;
-  border: 1px solid rgb(0, 247, 255);
-  border-radius: 12px;
-  background: linear-gradient(20deg, rgba(6, 66, 11, 0.8), #100020 70%);
+.homepage-s1 .products-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 1px;
+  background-color: rgb(0, 247, 255);
+  transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
 }
-.homepage-s1 .card-container-row {
-  padding: 0.5rem;
+.homepage-s1 .products-container .line-effect-wrapper {
+  position: relative; /* Add this to make sure pseudo-elements are relative to this container */
 }
-.homepage-s1 .card-container {
-  padding: 40px;
+.homepage-s1 .products-container .line-effect-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 5%;
+  background-color: rgb(0, 247, 255);
+  transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
 }
-.homepage-s1 .card {
-  background: linear-gradient(20deg, #d6ffd9, #b163ff 70%);
+.homepage-s1 .products-container .line-effect-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5%;
+  height: 1px;
+  background-color: rgb(0, 247, 255);
+  transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
+}
+.homepage-s1 .products-container .line-effect-wrapper .row .card {
+  color: white;
+  background: linear-gradient(90deg, rgb(139, 194, 197), rgb(173, 157, 201));
   margin: 0 !important;
+  padding: 0 !important;
+  border: 0;
+  box-shadow: 2px 2px 16px 1px rgba(89, 0, 255, 0.5);
 }
-.homepage-s1 .card .card-body {
-  padding: 5px 5px !important;
+.homepage-s1 .products-container .line-effect-wrapper .row .card .image-container {
+  padding: 5px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(89, 0, 255);
+  box-shadow: 1px 1px 6px 1px rgba(89, 0, 255, 0.5);
+  border-radius: 6px;
 }
-.homepage-s1 .card .card-body button {
+.homepage-s1 .products-container .line-effect-wrapper .row .card .card-body {
+  padding: 15px 5px !important;
+}
+.homepage-s1 .products-container .line-effect-wrapper .row .card .card-body button {
   color: white;
   font-weight: 600;
   box-sizing: border-box;
   border: 0;
-  background: linear-gradient(20deg, rgba(0, 255, 21, 0.6862745098), rgba(111, 0, 255, 0.6784313725));
+  background: linear-gradient(20deg, rgba(111, 0, 255, 0.6784313725), rgba(0, 255, 21, 0.6862745098));
 }
-.homepage-s1 .card .card-body button:hover {
-  background: linear-gradient(20deg, #00ff15, rgba(111, 0, 255, 0.6784313725));
+.homepage-s1 .products-container .line-effect-wrapper .row .card .card-body button:hover {
+  background: linear-gradient(20deg, #6f00ff, #00ff15);
 }/*# sourceMappingURL=style.css.map */
