@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { Link as ScrollLink } from 'react-scroll';
 import Button from 'react-bootstrap/Button';
 import aloe1 from '../images/aloe-1.jpg';
 import aloe2 from '../images/aloe-2.jpg';
@@ -61,9 +62,15 @@ function Homepage() {
                                         unmountOnExit
                                     >
                                         <div id="fade-buttons">
-                                            <Button className="button-2" onMouseOver={hover2}>
+                                            <ScrollLink
+                                                to="products-section" // ID of the target element to scroll to
+                                                 // Add smooth scrolling effect
+                                                duration={300} // Duration of the scroll animation in milliseconds
+                                            >
+                                                <Button className="button-2" onMouseOver={hover2}>
                                                 Products
-                                            </Button>
+                                                </Button>
+                                            </ScrollLink>
                                             <Button className="button-3" onMouseOver={hover3}>
                                                 Recipes
                                             </Button>
