@@ -10,7 +10,7 @@ function S1LeftDiv({ hover1, hover2, hover3 }) {
     const [open, setOpen] = useState(false);
 
     return (
-        <div className="s1-left-div d-flex flex-column justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
+        <div className="s1-left-div">
             <h4>Authentic, pure, ours.</h4>
             <h1 className="text-wrap" style={{width: "35rem"}}>
                 Welcome to
@@ -38,7 +38,7 @@ function S1LeftDiv({ hover1, hover2, hover3 }) {
                     >
                         <div id="fade-buttons">
                             <ScrollLink
-                                to="products-section" // ID of the target element to scroll to
+                                to="section-2" // ID of the target element to scroll to
                                 // Add smooth scrolling effect
                                 duration={300} // Duration of the scroll animation in milliseconds
                             >

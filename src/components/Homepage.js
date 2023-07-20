@@ -29,11 +29,21 @@ function Homepage() {
 
     return (
         <>
-            <section className="homepage-s1">
+            <section id="section-1" className="homepage">
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-between">
-                        <S1LeftDiv hover1={hover1} hover2={hover2} hover3={hover3} />
-                        <S1RightDiv backgroundImage={backgroundImage} boxShadow={boxShadow} />
+                        <div className="d-flex flex-column justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
+                            <S1LeftDiv hover1={hover1} hover2={hover2} hover3={hover3} />
+                        </div>
+                        <div className="d-flex justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
+                            <S1RightDiv backgroundImage={backgroundImage} boxShadow={boxShadow} />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="section-2" className="homepage" style={{ margin: "20rem 0", padding: "7rem 0" }}>
+                <div className="container-fluid">
+                    <div className="row d-flex justify-content-between col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                         <Products />
                     </div>
                 </div>

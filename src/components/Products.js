@@ -5,7 +5,7 @@ import aloeBottle from '../images/aloe-bottle.jpg';
 function Products () {
 
     return (
-        <div id="products-section" className="container py-3 px-3 products-container col-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6" style={{ margin: "20rem 0" }}>
+        <div id="products-section" className="container py-3 px-3 products-container">
             <div className="line-effect-wrapper py-5 px-5">
                 <div className="row">
                     <div className="col-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4">

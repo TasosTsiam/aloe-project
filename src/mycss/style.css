@@ -113,14 +113,14 @@ body {
   }
 }
 
-.homepage-s1 {
+.homepage {
   margin-top: 5rem;
 }
-.homepage-s1 .s1-left-div h4 {
+.homepage .s1-left-div h4 {
   text-shadow: 1px 1px 3px rgb(0, 0, 0);
   font-weight: 400;
 }
-.homepage-s1 .s1-left-div h1 {
+.homepage .s1-left-div h1 {
   padding-top: 1rem;
   font-size: 5rem;
   background-image: linear-gradient(35deg, gold, rgb(255, 255, 255) 45%);
@@ -128,21 +128,21 @@ body {
   color: transparent;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.87);
 }
-.homepage-s1 .s1-left-div h1 span {
+.homepage .s1-left-div h1 span {
   font-style: italic;
   background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
   background-clip: text;
   color: transparent;
   text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
 }
-.homepage-s1 .s1-left-div p {
+.homepage .s1-left-div p {
   padding-top: 2rem;
   font-size: 1rem;
 }
-.homepage-s1 .s1-left-div .button-container {
+.homepage .s1-left-div .button-container {
   padding-top: 1rem;
 }
-.homepage-s1 .s1-left-div .button-container button {
+.homepage .s1-left-div .button-container button {
   box-sizing: border-box;
   color: white;
   font-size: 1.2rem;
@@ -153,24 +153,24 @@ body {
   border-radius: 10px;
   border: 0px solid;
 }
-.homepage-s1 .s1-left-div .button-container button:hover {
+.homepage .s1-left-div .button-container button:hover {
   background: linear-gradient(20deg, #00ff15, #00fff2);
 }
-.homepage-s1 .s1-left-div .fade-enter {
+.homepage .s1-left-div .fade-enter {
   opacity: 0;
 }
-.homepage-s1 .s1-left-div .fade-enter-active {
+.homepage .s1-left-div .fade-enter-active {
   opacity: 1;
   transition: opacity 300ms;
 }
-.homepage-s1 .s1-left-div .fade-exit {
+.homepage .s1-left-div .fade-exit {
   opacity: 1;
 }
-.homepage-s1 .s1-left-div .fade-exit-active {
+.homepage .s1-left-div .fade-exit-active {
   opacity: 0;
   transition: opacity 300ms;
 }
-.homepage-s1 .s1-right-div .gradient-img-container {
+.homepage .s1-right-div .gradient-img-container {
   display: flex;
   justify-content: space-between;
   background-size: cover;
@@ -183,49 +183,49 @@ body {
   box-shadow: 50px 60px 120px 20px rgb(255, 255, 255);
   transition: 0.5s ease-in-out;
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-1 {
+.homepage .s1-right-div .gradient-img-container .gradient-image-1 {
   background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
   background-size: cover;
   display: block;
   position: relative;
   transition: 0.5s ease-in-out;
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-1 svg {
+.homepage .s1-right-div .gradient-img-container .gradient-image-1 svg {
   transition: 0.5s ease-in-out;
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-1 svg:hover {
+.homepage .s1-right-div .gradient-img-container .gradient-image-1 svg:hover {
   transform: scale(0.8);
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-2 {
+.homepage .s1-right-div .gradient-img-container .gradient-image-2 {
   background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
   background-size: cover;
   display: block;
   position: relative;
   transition: 0.5s ease-in-out;
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-2 svg {
+.homepage .s1-right-div .gradient-img-container .gradient-image-2 svg {
   transition: 0.5s ease-in-out;
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-2 svg:hover {
+.homepage .s1-right-div .gradient-img-container .gradient-image-2 svg:hover {
   transform: scale(0.8);
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-3 {
+.homepage .s1-right-div .gradient-img-container .gradient-image-3 {
   background-image: radial-gradient(circle, transparent, rgb(0, 247, 255), transparent 50%);
   background-size: cover;
   display: block;
   position: relative;
   transition: 0.5s ease-in-out;
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-3 svg {
+.homepage .s1-right-div .gradient-img-container .gradient-image-3 svg {
   transition: 0.5s ease-in-out;
 }
-.homepage-s1 .s1-right-div .gradient-img-container .gradient-image-3 svg:hover {
+.homepage .s1-right-div .gradient-img-container .gradient-image-3 svg:hover {
   transform: scale(0.8);
 }
-.homepage-s1 .products-container {
+.homepage .products-container {
   position: relative; /* Making the pseudo element apply the effect on this container */
 }
-.homepage-s1 .products-container::before {
+.homepage .products-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -237,7 +237,7 @@ body {
   transform-origin: top center;
   box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
 }
-.homepage-s1 .products-container::after {
+.homepage .products-container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -249,10 +249,10 @@ body {
   transform-origin: left center;
   box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
 }
-.homepage-s1 .products-container .line-effect-wrapper {
+.homepage .products-container .line-effect-wrapper {
   position: relative; /* Add this to make sure pseudo-elements are relative to this container */
 }
-.homepage-s1 .products-container .line-effect-wrapper::before {
+.homepage .products-container .line-effect-wrapper::before {
   content: "";
   position: absolute;
   top: 0;
@@ -264,7 +264,7 @@ body {
   transform-origin: top center;
   box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
 }
-.homepage-s1 .products-container .line-effect-wrapper::after {
+.homepage .products-container .line-effect-wrapper::after {
   content: "";
   position: absolute;
   top: 0;
@@ -276,7 +276,7 @@ body {
   transform-origin: left center;
   box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
 }
-.homepage-s1 .products-container .line-effect-wrapper .row .card {
+.homepage .products-container .line-effect-wrapper .row .card {
   color: white;
   background: linear-gradient(90deg, rgb(139, 194, 197), rgb(173, 157, 201));
   margin: 0 !important;
@@ -284,23 +284,23 @@ body {
   border: 0;
   box-shadow: 2px 2px 16px 1px rgba(89, 0, 255, 0.5);
 }
-.homepage-s1 .products-container .line-effect-wrapper .row .card .image-container {
+.homepage .products-container .line-effect-wrapper .row .card .image-container {
   padding: 5px;
   box-sizing: border-box;
   border-bottom: 1px solid rgb(89, 0, 255);
   box-shadow: 1px 1px 6px 1px rgba(89, 0, 255, 0.5);
   border-radius: 6px;
 }
-.homepage-s1 .products-container .line-effect-wrapper .row .card .card-body {
+.homepage .products-container .line-effect-wrapper .row .card .card-body {
   padding: 15px 5px !important;
 }
-.homepage-s1 .products-container .line-effect-wrapper .row .card .card-body button {
+.homepage .products-container .line-effect-wrapper .row .card .card-body button {
   color: white;
   font-weight: 600;
   box-sizing: border-box;
   border: 0;
   background: linear-gradient(20deg, rgba(111, 0, 255, 0.6784313725), rgba(0, 255, 21, 0.6862745098));
 }
-.homepage-s1 .products-container .line-effect-wrapper .row .card .card-body button:hover {
+.homepage .products-container .line-effect-wrapper .row .card .card-body button:hover {
   background: linear-gradient(20deg, #6f00ff, #00ff15);
 }/*# sourceMappingURL=style.css.map */

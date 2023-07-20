@@ -7,7 +7,7 @@ import aloe3 from '../images/aloe-3.jpg';
 function S1RightDiv({ backgroundImage, boxShadow}) {
 
     return (
-        <div className="s1-right-div d-flex justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
+        <div className="s1-right-div">
             <div className="d-flex justify-content-center gradient-img-container"
                 style={
                     {"background-image": `url(${backgroundImage})`,
