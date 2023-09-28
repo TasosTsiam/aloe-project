@@ -4,7 +4,7 @@ import aloe2 from '../images/aloe-2.jpg';
 import aloe3 from '../images/aloe-3.jpg';
 
 
-function S1RightDiv({ backgroundImage, boxShadow}) {
+function S1RightDiv({ backgroundImage, boxShadow }) {
 
     return (
         <div className="s1-right-div">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import aloe1 from '../images/aloe-1.jpg';
 import aloe2 from '../images/aloe-2.jpg';
 import aloe3 from '../images/aloe-3.jpg';
