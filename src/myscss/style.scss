@@ -315,17 +315,16 @@ body {
 
                 .card {
                     color: white;
-                    background: linear-gradient(90deg, rgb(139, 194, 197), rgb(173, 157, 201));
+                    background: linear-gradient(90deg, rgba(72, 90, 97, 0.568), rgba(104, 115, 119, 0.575));
                     margin: 0 !important;
                     padding: 0 !important;
                     border: 0;
-                    box-shadow: 2px 2px 16px 1px rgba(89, 0, 255, 0.5);
+                    box-shadow: 2px 2px 16px 1px rgb(170, 212, 229);
 
                     .image-container {
                         padding: 5px;
                         box-sizing: border-box;
-                        border-bottom: 1px solid rgb(89, 0, 255);
-                        box-shadow: 1px 1px 6px 1px rgba(89, 0, 255, 0.5);
+                        border-bottom: 1px solid rgb(170, 212, 229);
                         border-radius: 6px;
                     }
 
@@ -337,10 +336,11 @@ body {
                             font-weight: 600;
                             box-sizing: border-box;
                             border: 0;
-                            background: linear-gradient(20deg, #6f00ffad, #00ff15af);
+                            background: linear-gradient(20deg, rgba(170, 212, 229, 0.329), rgba(170, 212, 229, 0.61));
+                            transition: 0.3s ease-in-out;
 
                             &:hover {
-                                background: linear-gradient(20deg, #6f00ff, #00ff15);
+                                transform: scale(0.8);
                             }
                         }
                     }
