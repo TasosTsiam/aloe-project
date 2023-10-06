@@ -16,15 +16,15 @@ function Homepage() {
 
     function hover1() {
         setBackgroundImage(aloe1);
-        setBoxShadow('50px 60px 120px 20px white');
+        setBoxShadow('20px 20px 40px 2px white');
     }
     function hover2() {
         setBackgroundImage(aloe2);
-        setBoxShadow('-50px 50px 120px 20px #FFE000');
+        setBoxShadow('-30px 30px 40px 2px white');
     }
     function hover3() {
         setBackgroundImage(aloe3);
-        setBoxShadow('0px 0px 150px 30px #00FC91');
+        setBoxShadow('0px 0px 50px 4px white');
     }
 
     return (

@@ -49,9 +49,8 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                     >
                         <defs>
                             <linearGradient id="fillGradient1" x1="0" y1="1" x2="0" y2="0">
-                                <stop offset="0%" stop-color="transparent" />
-                                <stop offset="90%" stop-color="#DEFF5C" />
-                                <stop offset="91%" stop-color="white" />
+                                <stop offset="0%" stop-color="#DBF1FD" />
+                                <stop offset="100%" stop-color="#DBF1FD" stopOpacity={0.1}/>
                             </linearGradient>
                         </defs>
                         <path fill="url(#fillGradient1)" d="M96 0C82.7 0 72 10.7 72 24s10.7 24 24 24c4.4 0 8 3.6 8 8v64.9c0 12.2-7.2 23.1-17.2 30.1C53.7 174.1 32 212.5 32 256V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V256c0-43.5-21.7-81.9-54.8-105c-10-7-17.2-17.9-17.2-30.1V56c0-4.4 3.6-8 8-8c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0 0 0 0H104l0 0 0 0L96 0zm64 382c-26.5 0-48-20.1-48-45c0-16.8 22.1-48.1 36.3-66.4c6-7.8 17.5-7.8 23.5 0C185.9 288.9 208 320.2 208 337c0 24.9-21.5 45-48 45z"/>
@@ -92,9 +91,8 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                     >
                         <defs>
                             <linearGradient id="fillGradient2" x1="0" y1="1" x2="0" y2="0">
-                                <stop offset="0%" stop-color="transparent" />
-                                <stop offset="90%" stop-color="#990012" />
-                                <stop offset="91%" stop-color="white" />
+                                <stop offset="0%" stop-color="#DBF1FD" />
+                                <stop offset="100%" stop-color="#DBF1FD" stopOpacity={0.1}/>
                             </linearGradient>
                         </defs>
                         <path fill="url(#fillGradient2)" d="M96 0C82.7 0 72 10.7 72 24s10.7 24 24 24c4.4 0 8 3.6 8 8v64.9c0 12.2-7.2 23.1-17.2 30.1C53.7 174.1 32 212.5 32 256V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V256c0-43.5-21.7-81.9-54.8-105c-10-7-17.2-17.9-17.2-30.1V56c0-4.4 3.6-8 8-8c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0 0 0 0H104l0 0 0 0L96 0zm64 382c-26.5 0-48-20.1-48-45c0-16.8 22.1-48.1 36.3-66.4c6-7.8 17.5-7.8 23.5 0C185.9 288.9 208 320.2 208 337c0 24.9-21.5 45-48 45z"/>
@@ -135,9 +133,8 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                     >
                         <defs>
                             <linearGradient id="fillGradient3" x1="0" y1="1" x2="0" y2="0">
-                                <stop offset="0%" stop-color="transparent" />
-                                <stop offset="90%" stop-color="#EBA937" />
-                                <stop offset="91%" stop-color="white" />
+                                <stop offset="0%" stop-color="#DBF1FD" />
+                                <stop offset="100%" stop-color="#DBF1FD" stopOpacity={0.1}/>
                             </linearGradient>
                         </defs>
                         <path fill="url(#fillGradient3)" d="M96 0C82.7 0 72 10.7 72 24s10.7 24 24 24c4.4 0 8 3.6 8 8v64.9c0 12.2-7.2 23.1-17.2 30.1C53.7 174.1 32 212.5 32 256V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V256c0-43.5-21.7-81.9-54.8-105c-10-7-17.2-17.9-17.2-30.1V56c0-4.4 3.6-8 8-8c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0 0 0 0H104l0 0 0 0L96 0zm64 382c-26.5 0-48-20.1-48-45c0-16.8 22.1-48.1 36.3-66.4c6-7.8 17.5-7.8 23.5 0C185.9 288.9 208 320.2 208 337c0 24.9-21.5 45-48 45z"/>
