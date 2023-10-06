@@ -143,24 +143,26 @@ body {
         p {
             padding-top: 2rem;
             font-size: 1rem;
+            color: rgba(255, 255, 255, 0.699);
         }
 
         .button-container {
-            padding-top: 1rem;
+            padding-top: 3rem;
 
             button {
                 box-sizing: border-box;
                 color: white;
                 font-size: 1.2rem;
                 font-weight: 500;
-                background: linear-gradient(20deg, #00ff15, #6f00ff);
+                background: transparent;
+                box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
                 padding: 15px 30px;
                 margin-right: 5rem;
                 border-radius: 10px;
                 border: 0px solid;
 
                 &:hover {
-                    background: linear-gradient(20deg, #00ff15, #00fff2);
+                    box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
                 }
             }
         }
@@ -201,7 +203,7 @@ body {
             transition: 0.5s ease-in-out;
 
             .gradient-image-1 {
-                background-image: radial-gradient(circle, transparent, rgb(255, 255, 255), transparent 50%);
+                background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
                 background-size: cover;
                 display: block;
                 position: relative;
@@ -217,7 +219,7 @@ body {
             }
 
             .gradient-image-2 {
-                background-image: radial-gradient(circle, transparent, rgb(255, 255, 255), transparent 50%);
+                background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
                 background-size: cover;
                 display: block;
                 position: relative;
@@ -233,7 +235,7 @@ body {
             }
 
             .gradient-image-3 {
-                background-image: radial-gradient(circle, transparent, rgb(255, 255, 255), transparent 50%);
+                background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
                 background-size: cover;
                 display: block;
                 position: relative;
@@ -260,10 +262,10 @@ body {
             left: 0;
             width: 1px;
             height: 10%;
-            background-color: rgb(0, 247, 255);
+            background-color: white;
             transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
             transform-origin: top center;
-            box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
+            box-shadow: 0px 0px 25px 4px white;
         }
 
         &::after {
@@ -273,10 +275,10 @@ body {
             left: 0;
             width: 10%;
             height: 1px;
-            background-color: rgb(0, 247, 255);
+            background-color: white;
             transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
             transform-origin: left center;
-            box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
+            box-shadow: 0px 0px 25px 4px white;
         }
 
         .line-effect-wrapper {
@@ -290,10 +292,10 @@ body {
                 left: 0;
                 width: 1px;
                 height: 5%;
-                background-color: rgb(0, 247, 255);
+                background-color: white;
                 transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
                 transform-origin: top center;
-                box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
+                box-shadow: 0px 0px 25px 4px white;
             }
 
             &::after {
@@ -303,10 +305,10 @@ body {
                 left: 0;
                 width: 5%;
                 height: 1px;
-                background-color: rgb(0, 247, 255);
+                background-color: white;
                 transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
                 transform-origin: left center;
-                box-shadow: 0px 0px 25px 4px rgb(89, 0, 255);
+                box-shadow: 0px 0px 25px 4px white;
             }
 
             .row {
