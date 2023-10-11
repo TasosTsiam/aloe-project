@@ -1,5 +1,7 @@
 body {
-  background: linear-gradient(20deg, rgba(49, 49, 49, 0.5254901961), #1b1b1b 70%);
+  background: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
 }
 
@@ -168,9 +170,6 @@ body {
   opacity: 0;
   transition: opacity 300ms;
 }
-.homepage .s1-right-div {
-  position: relative;
-}
 .homepage .s1-right-div .gradient-img-container {
   display: flex;
   justify-content: space-between;
@@ -232,7 +231,7 @@ body {
   top: 0;
   left: 0;
   width: 1px;
-  height: 10%;
+  height: 175px;
   background-color: white;
   transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
   transform-origin: top center;
@@ -243,7 +242,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 10%;
+  width: 175px;
   height: 1px;
   background-color: white;
   transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
@@ -259,7 +258,7 @@ body {
   top: 0;
   left: 0;
   width: 1px;
-  height: 5%;
+  height: 140px;
   background-color: white;
   transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
   transform-origin: top center;
@@ -270,38 +269,76 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 5%;
+  width: 140px;
   height: 1px;
   background-color: white;
   transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
   transform-origin: left center;
   box-shadow: 0px 0px 25px 4px white;
 }
-.homepage .products-container .line-effect-wrapper .row .card {
-  color: white;
-  background: linear-gradient(90deg, rgba(72, 90, 97, 0.568), rgba(104, 115, 119, 0.575));
-  margin: 0 !important;
-  padding: 0 !important;
+.homepage .products-container .line-effect-wrapper .priceplans {
+  padding-bottom: 50px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-carditem {
+  background: transparent;
+  width: 400px;
+  height: 550px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 17px;
+  box-shadow: inset 0 0 10px 1px rgb(0, 0, 0), 0 0 10px 1px rgb(0, 0, 0);
+  padding: 2rem;
+  margin: 0 20px 20px 0;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title {
+  height: 30%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.733);
+  border-bottom-style: dashed;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title-h3-1 {
+  color: #ff8000 !important;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title-h3-2 {
+  color: springgreen !important;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title-h3-3 {
+  color: royalblue !important;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-features {
+  margin-top: 1.5rem;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-features div {
+  margin-top: 0.5rem;
+  gap: 10px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-features div p {
+  font-size: 13px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-features p {
+  color: rgb(255, 255, 255);
+}
+.homepage .products-container .line-effect-wrapper .priceplans-features svg {
+  min-height: 20px;
+  min-width: 20px;
+  color: springgreen;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-button button {
   border: 0;
-  box-shadow: 2px 2px 16px 1px rgb(170, 212, 229);
-}
-.homepage .products-container .line-effect-wrapper .row .card .image-container {
-  padding: 5px;
-  box-sizing: border-box;
-  border-bottom: 1px solid rgb(170, 212, 229);
-  border-radius: 6px;
-}
-.homepage .products-container .line-effect-wrapper .row .card .card-body {
-  padding: 15px 5px !important;
-}
-.homepage .products-container .line-effect-wrapper .row .card .card-body button {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 17px;
+  background: transparent;
   color: white;
-  font-weight: 600;
-  box-sizing: border-box;
-  border: 0;
-  background: linear-gradient(20deg, rgba(170, 212, 229, 0.329), rgba(170, 212, 229, 0.61));
-  transition: 0.3s ease-in-out;
+  box-shadow: 2px 2px 1px 1px rgb(0, 255, 136);
 }
-.homepage .products-container .line-effect-wrapper .row .card .card-body button:hover {
-  transform: scale(0.8);
+.homepage .products-container .line-effect-wrapper .priceplans-button button:hover {
+  color: rgb(0, 255, 136);
+}
+.homepage .products-container .line-effect-wrapper .priceplans .swiper-slide {
+  width: 328px;
+  height: 450px;
+  background: rgb(0, 0, 0);
+}
+.homepage .products-container .line-effect-wrapper .priceplans .swiper-wrapper {
+  padding-bottom: 50px;
+  padding-top: 10px;
 }/*# sourceMappingURL=style.css.map */
