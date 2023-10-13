@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 
-function Products () {
+function Products ({product1, product2, product3}) {
 
     return (
         <div id="products-section" className="container py-3 px-3 products-container">
