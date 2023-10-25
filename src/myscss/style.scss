@@ -264,11 +264,11 @@ body {
             top: 0;
             left: 0;
             width: 1px;
-            height: 55px;
+            height: 70px;
             background-color: white;
             transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
             transform-origin: top center;
-            box-shadow: 0px 0px 25px 4px white;
+            box-shadow: 0px 0px 25px 4px #dbf1fd;
         }
 
         &::after {
@@ -276,12 +276,40 @@ body {
             position: absolute;
             top: 0;
             left: 0;
-            width: 55px;
+            width: 70px;
             height: 1px;
             background-color: white;
             transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
             transform-origin: left center;
-            box-shadow: 0px 0px 25px 4px white;
+            box-shadow: 0px 0px 25px 4px #dbf1fd;
+        }
+
+        &-bottom-rightt {
+            &::before {
+                content: "";
+                    position: absolute;
+                    bottom: 0; /* Position at the bottom */
+                    right: 0;  /* Position at the right */
+                    width: 1px;
+                    height: 70px; /* Adjust the height to expand upwards */
+                    background-color: white;
+                    transform: scaleY(1);
+                    transform-origin: bottom center;
+                    box-shadow: 0px 0px 25px 4px #dbf1fd;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0; /* Adjust the position to bottom */
+                right: 0;  /* Adjust the position to right */
+                width: 70px;
+                height: 1px;
+                background-color: white;
+                transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+                transform-origin: right center; /* Adjust the transform origin for the right */
+                box-shadow: 0px 0px 25px 4px #dbf1fd;
+            }
         }
 
         .line-effect-wrapper {
@@ -294,11 +322,11 @@ body {
                 top: 0;
                 left: 0;
                 width: 1px;
-                height: 20px;
-                background-color: white;
+                height: 35px;
+                background-color: rgba(255, 255, 255, 0.8);
                 transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
                 transform-origin: top center;
-                box-shadow: 0px 0px 25px 4px white;
+                box-shadow: 0px 0px 55px 8px #dbf1fd;
             }
 
             &::after {
@@ -306,12 +334,40 @@ body {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 20px;
+                width: 35px;
                 height: 1px;
-                background-color: white;
+                background-color: rgba(255, 255, 255, 0.8);
                 transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
                 transform-origin: left center;
-                box-shadow: 0px 0px 25px 4px white;
+                box-shadow: 0px 0px 55px 8px #dbf1fd;
+            }
+
+            &-bottom-right {
+                &::before {
+                    content: "";
+                        position: absolute;
+                        bottom: 0; /* Position at the bottom */
+                        right: 0;  /* Position at the right */
+                        width: 1px;
+                        height: 35px; /* Adjust the height to expand upwards */
+                        background-color: rgba(255, 255, 255, 0.8);
+                        transform: scaleY(1);
+                        transform-origin: bottom center;
+                        box-shadow: 0px 0px 55px 8px #dbf1fd;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0; /* Adjust the position to bottom */
+                    right: 0;  /* Adjust the position to right */
+                    width: 35px;
+                    height: 1px;
+                    background-color: rgba(255, 255, 255, 0.8);
+                    transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+                    transform-origin: right center; /* Adjust the transform origin for the right */
+                    box-shadow: 0px 0px 55px 8px #dbf1fd;
+                }
             }
 
             .priceplans {
@@ -366,27 +422,44 @@ body {
                     background-position: center;
                 }
 
+                &-description-btn {
+
+                    button {
+                        border: 0;
+                        border-radius: 12px;
+                        color: transparent;
+                        background: linear-gradient(35deg, springgreen, #dbf1fd);
+                        background-clip: text;
+                        font-size: 12px;
+                        z-index: 1;
+                    }
+
+                    span {
+                        svg {
+                            min-height: 15px;
+                            min-width: 15px;
+                        }
+                    }
+                }
+
                 &-title {
                     padding-bottom: 1rem;
 
                     &-h3-1 {
                         color: transparent;
-                        background: linear-gradient(35deg, #ffb56a, #dbf1fd);
-                        color: transparent;
+                        background: linear-gradient(35deg, springgreen, #dbf1fd);
                         background-clip: text;
                     }
 
                     &-h3-2 {
                         color: transparent;
                         background: linear-gradient(35deg, springgreen, #dbf1fd);
-                        color: transparent;
                         background-clip: text;
                     }
 
                     &-h3-3 {
                         color: transparent;
-                        background: linear-gradient(35deg, royalblue, #dbf1fd);
-                        color: transparent;
+                        background: linear-gradient(35deg, springgreen, #dbf1fd);
                         background-clip: text;
                     }
 
@@ -395,7 +468,7 @@ body {
                     }
                 }
 
-                &-features {
+                &-content {
                     padding: 2rem;
                     padding-top: 0.5rem;
                     background: linear-gradient(90deg, #dbf1fd98, #dbf1fd3f);
@@ -414,7 +487,13 @@ body {
                     svg {
                         min-height: 20px;
                         min-width: 20px;
-                        color: rgb(255, 255, 255);
+                        color: springgreen;
+                    }
+
+                    #description {
+                        transition: 1s ease-in-out;
+                        opacity: 1;
+
                     }
                 }
 
@@ -428,11 +507,12 @@ body {
                         background: transparent;
                         color: rgb(255, 255, 255);
                         letter-spacing: 1px;
-                        box-shadow: 2px 2px 1px 1px rgba(255, 255, 255, 0.651);
+                        box-shadow: 2px 2px 1px 1px rgba(255, 255, 255);
+                        z-index: 1;
+                        transition: 0.3s ease-in-out;
 
                         &:hover {
-                            color: rgb(0, 255, 136);
-                            box-shadow: 2px 2px 10px 1px rgb(0, 0, 0);
+                            box-shadow: -3px -3px 2px 1px rgba(255, 255, 255);
                         }
                     }
                 }
@@ -458,63 +538,6 @@ body {
                 .swiper-pagination-bullet-active {
                     background: linear-gradient(90deg, #dbf1fd, #dbf1fd8a);
                 }
-            }
-
-
-
-
-            // .row {
-
-            //     .card {
-            //         color: white;
-            //         background: linear-gradient(90deg, rgba(72, 90, 97, 0.568), rgba(104, 115, 119, 0.575));
-            //         margin: 0 !important;
-            //         padding: 0 !important;
-            //         border: 0;
-            //         box-shadow: 2px 2px 16px 1px rgb(170, 212, 229);
-
-            //         .image-container {
-            //             padding: 5px;
-            //             box-sizing: border-box;
-            //             border-bottom: 1px solid rgb(170, 212, 229);
-            //             border-radius: 6px;
-            //         }
-
-            //         .card-body {
-            //             padding: 15px 5px !important;
-
-            //             button {
-            //                 color: white;
-            //                 font-weight: 600;
-            //                 box-sizing: border-box;
-            //                 border: 0;
-            //                 background: linear-gradient(20deg, rgba(170, 212, 229, 0.329), rgba(170, 212, 229, 0.61));
-            //                 transition: 0.3s ease-in-out;
-
-            //                 &:hover {
-            //                     transform: scale(0.8);
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
-        }
-    }
-
-    .description {
-        border-radius: 17px;
-        overflow: hidden;
-        box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
-        height: 35rem;
-        width: 35rem;
-
-        &-text {
-            width: 90%;
-            padding: 0 1rem;
-            p {
-                color: rgb(255, 255, 255);
-                font-size: 14px;
-                line-height: 30px;
             }
         }
     }

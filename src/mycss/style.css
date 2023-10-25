@@ -231,23 +231,47 @@ body {
   top: 0;
   left: 0;
   width: 1px;
-  height: 55px;
+  height: 70px;
   background-color: white;
   transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
   transform-origin: top center;
-  box-shadow: 0px 0px 25px 4px white;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
 }
 .homepage .products-container::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 55px;
+  width: 70px;
   height: 1px;
   background-color: white;
   transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
   transform-origin: left center;
-  box-shadow: 0px 0px 25px 4px white;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .products-container-bottom-rightt::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+  width: 1px;
+  height: 70px; /* Adjust the height to expand upwards */
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .products-container-bottom-rightt::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Adjust the position to bottom */
+  right: 0; /* Adjust the position to right */
+  width: 70px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+  transform-origin: right center; /* Adjust the transform origin for the right */
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
 }
 .homepage .products-container .line-effect-wrapper {
   position: relative; /* Add this to make sure pseudo-elements are relative to this container */
@@ -258,23 +282,47 @@ body {
   top: 0;
   left: 0;
   width: 1px;
-  height: 20px;
-  background-color: white;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.8);
   transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
   transform-origin: top center;
-  box-shadow: 0px 0px 25px 4px white;
+  box-shadow: 0px 0px 55px 8px #dbf1fd;
 }
 .homepage .products-container .line-effect-wrapper::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
+  width: 35px;
   height: 1px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.8);
   transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
   transform-origin: left center;
-  box-shadow: 0px 0px 25px 4px white;
+  box-shadow: 0px 0px 55px 8px #dbf1fd;
+}
+.homepage .products-container .line-effect-wrapper-bottom-right::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+  width: 1px;
+  height: 35px; /* Adjust the height to expand upwards */
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 55px 8px #dbf1fd;
+}
+.homepage .products-container .line-effect-wrapper-bottom-right::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Adjust the position to bottom */
+  right: 0; /* Adjust the position to right */
+  width: 35px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+  transform-origin: right center; /* Adjust the transform origin for the right */
+  box-shadow: 0px 0px 55px 8px #dbf1fd;
 }
 .homepage .products-container .line-effect-wrapper .priceplans {
   padding-bottom: 50px;
@@ -327,47 +375,61 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
+.homepage .products-container .line-effect-wrapper .priceplans-description-btn button {
+  border: 0;
+  border-radius: 12px;
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
+  background-clip: text;
+  font-size: 12px;
+  z-index: 1;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-description-btn span svg {
+  min-height: 15px;
+  min-width: 15px;
+}
 .homepage .products-container .line-effect-wrapper .priceplans-title {
   padding-bottom: 1rem;
 }
 .homepage .products-container .line-effect-wrapper .priceplans-title-h3-1 {
   color: transparent;
-  background: linear-gradient(35deg, #ffb56a, #dbf1fd);
-  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
   background-clip: text;
 }
 .homepage .products-container .line-effect-wrapper .priceplans-title-h3-2 {
   color: transparent;
   background: linear-gradient(35deg, springgreen, #dbf1fd);
-  color: transparent;
   background-clip: text;
 }
 .homepage .products-container .line-effect-wrapper .priceplans-title-h3-3 {
   color: transparent;
-  background: linear-gradient(35deg, royalblue, #dbf1fd);
-  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
   background-clip: text;
 }
 .homepage .products-container .line-effect-wrapper .priceplans-title h6 {
   letter-spacing: 1px;
 }
-.homepage .products-container .line-effect-wrapper .priceplans-features {
+.homepage .products-container .line-effect-wrapper .priceplans-content {
   padding: 2rem;
   padding-top: 0.5rem;
   background: linear-gradient(90deg, rgba(219, 241, 253, 0.5960784314), rgba(219, 241, 253, 0.2470588235));
   color: rgba(255, 255, 255, 0.836);
 }
-.homepage .products-container .line-effect-wrapper .priceplans-features div {
+.homepage .products-container .line-effect-wrapper .priceplans-content div {
   margin-top: 0.5rem;
   gap: 10px;
 }
-.homepage .products-container .line-effect-wrapper .priceplans-features div p {
+.homepage .products-container .line-effect-wrapper .priceplans-content div p {
   font-size: 13px;
 }
-.homepage .products-container .line-effect-wrapper .priceplans-features svg {
+.homepage .products-container .line-effect-wrapper .priceplans-content svg {
   min-height: 20px;
   min-width: 20px;
-  color: rgb(255, 255, 255);
+  color: springgreen;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-content #description {
+  transition: 1s ease-in-out;
+  opacity: 1;
 }
 .homepage .products-container .line-effect-wrapper .priceplans-button button {
   border: 0;
@@ -377,11 +439,12 @@ body {
   background: transparent;
   color: rgb(255, 255, 255);
   letter-spacing: 1px;
-  box-shadow: 2px 2px 1px 1px rgba(255, 255, 255, 0.651);
+  box-shadow: 2px 2px 1px 1px rgb(255, 255, 255);
+  z-index: 1;
+  transition: 0.3s ease-in-out;
 }
 .homepage .products-container .line-effect-wrapper .priceplans-button button:hover {
-  color: rgb(0, 255, 136);
-  box-shadow: 2px 2px 10px 1px rgb(0, 0, 0);
+  box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
 }
 .homepage .products-container .line-effect-wrapper .priceplans .swiper-slide {
   width: 328px;
@@ -399,20 +462,4 @@ body {
 }
 .homepage .products-container .line-effect-wrapper .priceplans .swiper-pagination-bullet-active {
   background: linear-gradient(90deg, #dbf1fd, rgba(219, 241, 253, 0.5411764706));
-}
-.homepage .description {
-  border-radius: 17px;
-  overflow: hidden;
-  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
-  height: 35rem;
-  width: 35rem;
-}
-.homepage .description-text {
-  width: 90%;
-  padding: 0 1rem;
-}
-.homepage .description-text p {
-  color: rgb(255, 255, 255);
-  font-size: 14px;
-  line-height: 30px;
 }/*# sourceMappingURL=style.css.map */
