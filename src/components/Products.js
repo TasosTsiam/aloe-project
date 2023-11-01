@@ -152,11 +152,11 @@ function Products () {
                                                     </div>
                                                     <div className="d-flex text-center align-items-center">
                                                         <p className="priceplans-description-text mb-0">
-                                                            Experience our premium Aloe Vera leaves,
-                                                            sourced from 5-year-old mature plants.
-                                                            We meticulously select leaves to preserve their full 100% gel capacity.
-                                                            Order today, and we harvest and deliver them
-                                                            with the utmost care for freshness and quality.
+                                                            Purely sourced and crafted, our bottles
+                                                            contain 100% fresh gel from mature Aloe plants.
+                                                            No chemical preservatives, just a touch of natural lemon juice
+                                                            to extend shelf life to 2-3 weeks.
+                                                            Available in uniquely small portions, ensuring freshness.
                                                         </p>
                                                     </div>
                                                 </div>
@@ -216,11 +216,11 @@ function Products () {
                                                     </div>
                                                     <div className="d-flex text-center align-items-center">
                                                         <p className="priceplans-description-text mb-0">
-                                                            Experience our premium Aloe Vera leaves,
-                                                            sourced from 5-year-old mature plants.
-                                                            We meticulously select leaves to preserve their full 100% gel capacity.
-                                                            Order today, and we harvest and deliver them
-                                                            with the utmost care for freshness and quality.
+                                                            We provide instructions for you to help them mature properly,
+                                                            as well as to make use of them!
+                                                            These indoor plants not only adorn your space
+                                                            but also cleanse the atmosphere and provide fresh oxygen,
+                                                            making them both beautiful and beneficial companions.
                                                         </p>
                                                     </div>
                                                 </div>
