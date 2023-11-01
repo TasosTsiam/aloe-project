@@ -36,7 +36,7 @@ function Products () {
     }
 
     return (
-        <div id="products-section" className="container py-3 px-3 products-container">
+        <div className="container py-3 px-3 products-container">
             <div className="products-container-bottom-rightt">
                 <div className="line-effect-wrapper py-1 px-5">
                     <div className="line-effect-wrapper-bottom-right">

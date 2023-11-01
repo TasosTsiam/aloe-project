@@ -6,6 +6,7 @@ import aloe3 from '../images/aloe-3.jpg';
 import S1LeftDiv from './Section-1-left-div.js';
 import S1RightDiv from './Section-1-right-div.js';
 import Products from './Products.js';
+import Recipes from './Recipes.js';
 
 
 
@@ -46,6 +47,13 @@ function Homepage() {
                 <div className="container-fluid d-flex align-items-center">
                     <div className="row d-flex justify-content-between col-12">
                         <Products />
+                    </div>
+                </div>
+            </section>
+            <section id="section-3" className="homepage" style={{ margin: "10rem 0", padding: "5rem 0"  }}>
+                <div className="container-fluid d-flex align-items-center">
+                    <div className="row d-flex justify-content-between col-12">
+                        <Recipes />
                     </div>
                 </div>
             </section>

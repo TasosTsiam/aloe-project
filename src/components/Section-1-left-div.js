@@ -46,9 +46,15 @@ function S1LeftDiv({ hover1, hover2, hover3 }) {
                                     Products
                                 </Button>
                             </ScrollLink>
-                            <Button className="button-3" onMouseOver={hover3}>
+                            <ScrollLink
+                                to="section-3" // ID of the target element to scroll to
+                                // Add smooth scrolling effect
+                                duration={300} // Duration of the scroll animation in milliseconds
+                            >
+                                <Button className="button-3" onMouseOver={hover3}>
                                 Recipes
-                            </Button>
+                                </Button>
+                            </ScrollLink>
                         </div>
                 </CSSTransition>
             </div>

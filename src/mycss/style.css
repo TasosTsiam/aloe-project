@@ -462,4 +462,74 @@ body {
 }
 .homepage .products-container .line-effect-wrapper .priceplans .swiper-pagination-bullet-active {
   background: linear-gradient(90deg, #dbf1fd, rgba(219, 241, 253, 0.5411764706));
+}
+.homepage .recipes-top-left {
+  position: relative; /* Making the pseudo element apply the effect on this container */
+  margin: 0rem 0;
+}
+.homepage .recipes-top-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 110px;
+  background-color: white;
+  transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 310px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left .bottom-right::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+  width: 1px;
+  height: 420px; /* Adjust the height to expand upwards */
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left .bottom-right::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Adjust the position to bottom */
+  right: 0; /* Adjust the position to right */
+  width: 470px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+  transform-origin: right center; /* Adjust the transform origin for the right */
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes .row {
+  border: 0;
+  padding: 1rem 3rem;
+}
+.homepage .recipes-title {
+  padding: 1rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homepage .recipes-instructions {
+  padding: 0 0 5rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homepage .recipes-text {
+  padding: 0 0 5rem 0;
+  font-size: 15px;
+  line-height: 25px;
+  opacity: 0.8;
 }/*# sourceMappingURL=style.css.map */
