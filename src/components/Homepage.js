@@ -43,16 +43,16 @@ function Homepage() {
                     </div>
                 </div>
             </section>
-            <section id="section-2" className="homepage" style={{ margin: "10rem 0", padding: "2rem 0" }}>
+            <section id="section-2" className="homepage" style={{ margin: "15rem 0 5rem 0", padding: "2rem 0" }}>
                 <div className="container-fluid d-flex align-items-center">
-                    <div className="row d-flex justify-content-between col-12">
+                    <div className="row d-flex col-12">
                         <Products />
                     </div>
                 </div>
             </section>
-            <section id="section-3" className="homepage" style={{ margin: "10rem 0", padding: "5rem 0"  }}>
+            <section id="section-3" className="homepage" style={{ marginBottom: "10rem", padding: "5rem 0" }}>
                 <div className="container-fluid d-flex align-items-center">
-                    <div className="row d-flex justify-content-between col-12">
+                    <div className="row d-flex col-12">
                         <Recipes />
                     </div>
                 </div>

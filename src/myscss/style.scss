@@ -227,9 +227,11 @@ body {
                 display: block;
                 position: relative;
                 transition: 0.5s ease-in-out;
+                transition-delay: 0.1s;
 
                 svg {
                     transition: 0.5s ease-in-out;
+                    transition-delay: 0.1s;
 
                     &:hover {
                         transform: scale(0.8);
@@ -243,9 +245,11 @@ body {
                 display: block;
                 position: relative;
                 transition: 0.5s ease-in-out;
+                transition-delay: 0.2s;
 
                 svg {
                     transition: 0.5s ease-in-out;
+                    transition-delay: 0.2s;
 
                     &:hover {
                         transform: scale(0.8);
@@ -378,22 +382,8 @@ body {
                     position: relative;
                     border: 1px solid rgb(255, 255, 255);
                     border-radius: 17px;
-                    box-shadow: inset 0 0 10px 1px rgb(255, 255, 255), 0 0 10px 1px rgb(255, 255, 255);
                     margin: 0 20px 20px 0;
                     overflow: hidden;
-
-                    &::before {
-                        content: "";
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        box-shadow: inset 0 0 10px 1px rgb(255, 255, 255), 0 0 10px 1px rgb(255, 255, 255);
-                        z-index: 1;
-                        border-radius: 17px; /* Keep the border-radius consistent */
-                    }
-
                 }
 
                 &-product-1 {
@@ -544,9 +534,181 @@ body {
 
     .recipes {
 
+        overflow: hidden;
+        padding-bottom: 2rem;
+
+        &-introduction {
+
+            h1 {
+                background-image: linear-gradient(25deg, rgb(255, 255, 255), rgb(255, 255, 255) 45%);
+                background-clip: text;
+                color: transparent;
+                text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.87);
+                font-size: 10rem;
+            }
+
+            &-headers {
+
+                &-header1 {
+                    margin-left: 40%;
+                    margin-top: 80%;
+                    transform: rotate(140deg);
+                    transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+
+                    &.centered {
+                        margin: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-header2 {
+                    margin-left: 30%;
+                    margin-top: 110%;
+                    transform: rotate(120deg);
+                    transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+
+                    &.centered {
+                        margin: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-header3 {
+                    margin-left: 30%;
+                    margin-top: 140%;
+                    transform: rotate(-90deg);
+                    transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+
+                    &.centered {
+                        margin: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-header4 {
+                    margin-left: 10%;
+                    margin-top: 110%;
+                    transform: rotate(150deg);
+                    transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+
+                    &.centered {
+                        margin: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-header5 {
+                    margin-left: 75%;
+                    margin-top: 130%;
+                    transform: rotate(120deg);
+                    transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+
+                    &.centered {
+                        margin: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-header6 {
+                    margin-left: 80%;
+                    margin-top: 50%;
+                    transform: rotate(140deg);
+                    transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+
+                    &.centered {
+                        margin: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-header7 {
+                    margin-right: 90%;
+                    margin-top: 90%;
+                    transform: rotate(-50deg);
+                    transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+
+                    &.centered {
+                        margin: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+
+            &-text {
+                width: 500%;
+                margin: 3rem 0 6rem 0;
+                line-height: 50px;
+
+                &-line1 {
+                    margin-left: 70%;
+                    transform: rotate(20deg);
+                    transition: margin-left 0.5s ease-in-out, transform 0.5s ease-in-out;
+                    transition-delay: 1s;
+
+                    &.centered {
+                        margin-left: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-line2 {
+                    margin-right: 70%;
+                    transform: rotate(-40deg);
+                    transition: margin-right 0.7s ease-in-out, transform 0.7s ease-in-out;
+                    transition-delay: 1s;
+
+                    &.centered {
+                        margin-right: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-line3 {
+                    margin-left: 70%;
+                    transform: rotate(60deg);
+                    transition: margin-left 0.9s ease-in-out, transform 0.9s ease-in-out;
+                    transition-delay: 1s;
+
+                    &.centered {
+                        margin-left: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-line4 {
+                    margin-right: 70%;
+                    transform: rotate(80deg);
+                    transition: margin-right 1.1s ease-in-out, transform 1.1s ease-in-out;
+                    transition-delay: 1s;
+
+                    &.centered {
+                        margin-right: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+                &-line5 {
+                    margin-left: 70%;
+                    transform: rotate(-100deg);
+                    transition: margin-left 1.3s ease-in-out, transform 1.3s ease-in-out;
+                    transition-delay: 1s;
+
+                    &.centered {
+                        margin-left: 0; // Apply margin-left: 0 when centered
+                        transform: rotate(0deg);
+                    }
+                }
+
+
+                p {
+                    font-size: 15px;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+        }
+
         &-top-left {
             position: relative; /* Making the pseudo element apply the effect on this container */
-            margin: 0rem 0;
 
             &::before {
                 content: "";
@@ -554,7 +716,7 @@ body {
                 top: 0;
                 left: 0;
                 width: 1px;
-                height: 110px;
+                height: 22%;
                 background-color: white;
                 transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
                 transform-origin: top center;
@@ -566,7 +728,7 @@ body {
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 310px;
+                width: 34%;
                 height: 1px;
                 background-color: white;
                 transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
@@ -581,7 +743,7 @@ body {
                         bottom: 0; /* Position at the bottom */
                         right: 0;  /* Position at the right */
                         width: 1px;
-                        height: 420px; /* Adjust the height to expand upwards */
+                        height: 82%; /* Adjust the height to expand upwards */
                         background-color: white;
                         transform: scaleY(1);
                         transform-origin: bottom center;
@@ -593,7 +755,7 @@ body {
                     position: absolute;
                     bottom: 0; /* Adjust the position to bottom */
                     right: 0;  /* Adjust the position to right */
-                    width: 470px;
+                    width: 51%;
                     height: 1px;
                     background-color: white;
                     transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
@@ -617,6 +779,51 @@ body {
             padding: 0 0 5rem 0;
             font-family: Arial, Helvetica, sans-serif;
 
+            // &-bottle-1 {
+            //     transition: 0.5s ease-in-out;
+            //     margin-right: 9rem;
+            //     transform: rotate(-25deg);
+
+            //     svg {
+            //         transition: 0.5s ease-in-out;
+            //         height: 6rem;
+
+            //         &:hover {
+            //             transform: scale(0.8);
+            //         }
+            //     }
+            // }
+
+            // &-bottle-2 {
+            //     transition: 0.5s ease-in-out;
+            //     margin-right: 9rem;
+            //     transform: rotate(35deg);
+
+            //     svg {
+            //         transition: 0.5s ease-in-out;
+            //         height: 6rem;
+
+            //         &:hover {
+            //             transform: scale(0.8);
+            //         }
+            //     }
+            // }
+
+            // &-bottle-3 {
+            //     transition: 0.5s ease-in-out;
+            //     margin-right: 9rem;
+            //     transform: rotate(-25deg);
+
+            //     svg {
+            //         transition: 0.5s ease-in-out;
+            //         height: 6rem;
+
+            //         &:hover {
+            //             transform: scale(0.8);
+            //         }
+            //     }
+            // }
+
         }
 
         &-text {
@@ -624,6 +831,7 @@ body {
             font-size: 15px;
             line-height: 25px;
             opacity: 0.8;
+            padding-top: 5px;
         }
     }
 }

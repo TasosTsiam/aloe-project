@@ -1,0 +1,548 @@
+body {
+    background: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}
+
+.nav-link {
+    color: white;
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0px;
+    transition: 0.2s ease-in-out;
+    position: relative;
+}
+
+&::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 30%;
+    background-color: white;
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 0px 5px 1px white;
+}
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 1px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0px 0px 5px 1px white;
+}
+
+&:hover {
+    color: white;
+    text-shadow: 0px 0px 15px white;
+    box-sizing: border-box;
+    border-radius: 6px;
+
+    &::before {
+        transform: scaleY(1);
+    }
+
+    &::after {
+        transform: scaleX(1);
+    }
+}
+
+.s1-left-div {
+    h4 {
+        text-shadow: 1px 1px 3px rgb(0, 0, 0);
+        font-weight: 400;
+    }
+
+    h1 {
+        padding-top: 1rem;
+        font-size: 5rem;
+        background-image: linear-gradient(35deg, rgb(160, 123, 0) rgb(255, 255, 255) 45%);
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.87);
+
+        span {
+            font-style: italic;
+            background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
+        }
+    }
+
+    p {
+        padding-top: 2rem;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.699);
+    }
+
+    .button-container {
+        padding-top: 3rem;
+
+        button {
+            box-sizing: border-box;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            background: transparent;
+            box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+            padding: 15px 30px;
+            margin-right: 5rem;
+            border-radius: 10px;
+            border: 0px solid;
+
+            &:hover {
+                box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+            }
+        }
+    }
+}
+
+.s1-right-div {
+
+    .gradient-img-container {
+        display: flex;
+        justify-content: space-between;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 35rem;
+        width: 35rem;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 20px 20px 40px 2px rgb(255, 255, 255);
+        transition: 0.5s ease-in-out;
+
+        .gradient-image-1 {
+            background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
+            background-size: cover;
+            display: block;
+            position: relative;
+            transition: 0.5s ease-in-out;
+
+            svg {
+                transition: 0.5s ease-in-out;
+
+                &:hover {
+                    transform: scale(0.8);
+                }
+            }
+        }
+
+        .gradient-image-2 {
+            background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
+            background-size: cover;
+            display: block;
+            position: relative;
+            transition: 0.5s ease-in-out;
+
+            svg {
+                transition: 0.5s ease-in-out;
+
+                &:hover {
+                    transform: scale(0.8);
+                }
+            }
+        }
+
+        .gradient-image-3 {
+            background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
+            background-size: cover;
+            display: block;
+            position: relative;
+            transition: 0.5s ease-in-out;
+
+            svg {
+                transition: 0.5s ease-in-out;
+
+                &:hover {
+                    transform: scale(0.8);
+                }
+            }
+        }
+    }
+}
+
+.products-container {
+    position: relative; /* Making the pseudo element apply the effect on this container */
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 70px;
+        background-color: white;
+        transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+        transform-origin: top center;
+        box-shadow: 0px 0px 25px 4px #dbf1fd;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 70px;
+        height: 1px;
+        background-color: white;
+        transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+        transform-origin: left center;
+        box-shadow: 0px 0px 25px 4px #dbf1fd;
+    }
+
+    &-bottom-rightt {
+        &::before {
+            content: "";
+                position: absolute;
+                bottom: 0; /* Position at the bottom */
+                right: 0;  /* Position at the right */
+                width: 1px;
+                height: 70px; /* Adjust the height to expand upwards */
+                background-color: white;
+                transform: scaleY(1);
+                transform-origin: bottom center;
+                box-shadow: 0px 0px 25px 4px #dbf1fd;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0; /* Adjust the position to bottom */
+            right: 0;  /* Adjust the position to right */
+            width: 70px;
+            height: 1px;
+            background-color: white;
+            transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+            transform-origin: right center; /* Adjust the transform origin for the right */
+            box-shadow: 0px 0px 25px 4px #dbf1fd;
+        }
+    }
+
+    .line-effect-wrapper {
+
+        position: relative; /* Add this to make sure pseudo-elements are relative to this container */
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 35px;
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+            transform-origin: top center;
+            box-shadow: 0px 0px 55px 8px #dbf1fd;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 35px;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.8);
+            transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+            transform-origin: left center;
+            box-shadow: 0px 0px 55px 8px #dbf1fd;
+        }
+
+        &-bottom-right {
+            &::before {
+                content: "";
+                    position: absolute;
+                    bottom: 0; /* Position at the bottom */
+                    right: 0;  /* Position at the right */
+                    width: 1px;
+                    height: 35px; /* Adjust the height to expand upwards */
+                    background-color: rgba(255, 255, 255, 0.8);
+                    transform: scaleY(1);
+                    transform-origin: bottom center;
+                    box-shadow: 0px 0px 55px 8px #dbf1fd;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0; /* Adjust the position to bottom */
+                right: 0;  /* Adjust the position to right */
+                width: 35px;
+                height: 1px;
+                background-color: rgba(255, 255, 255, 0.8);
+                transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+                transform-origin: right center; /* Adjust the transform origin for the right */
+                box-shadow: 0px 0px 55px 8px #dbf1fd;
+            }
+        }
+
+        .priceplans {
+            padding-bottom: 50px;
+            padding-top: 50px;
+
+            &-carditem {
+                position: relative;
+                border: 1px solid rgb(255, 255, 255);
+                border-radius: 17px;
+                box-shadow: inset 0 0 10px 1px rgb(255, 255, 255), 0 0 10px 1px rgb(255, 255, 255);
+                margin: 0 20px 20px 0;
+                overflow: hidden;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    box-shadow: inset 0 0 10px 1px rgb(255, 255, 255), 0 0 10px 1px rgb(255, 255, 255);
+                    z-index: 1;
+                    border-radius: 17px; /* Keep the border-radius consistent */
+                }
+
+            }
+
+            &-product-1 {
+                @include product-styles;
+                background: url(../images/aloe-bottle.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            &-product-2 {
+                @include product-styles;
+                background: url(../images/aloe-leaves.jpg);
+                background-size: 80%;
+                background-color: white;
+                background-repeat: no-repeat;
+                background-position: center;
+
+            }
+
+            &-product-3 {
+                @include product-styles;
+                background: url(../images/aloe-flowerpot.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+            &-description-btn {
+
+                button {
+                    border: 0;
+                    border-radius: 12px;
+                    color: transparent;
+                    background: linear-gradient(35deg, springgreen, #dbf1fd);
+                    background-clip: text;
+                    font-size: 12px;
+                    z-index: 1;
+                }
+
+                span {
+                    svg {
+                        min-height: 15px;
+                        min-width: 15px;
+                    }
+                }
+            }
+
+            &-title {
+                padding-bottom: 1rem;
+
+                &-h3-1 {
+                    color: transparent;
+                    background: linear-gradient(35deg, springgreen, #dbf1fd);
+                    background-clip: text;
+                }
+
+                &-h3-2 {
+                    color: transparent;
+                    background: linear-gradient(35deg, springgreen, #dbf1fd);
+                    background-clip: text;
+                }
+
+                &-h3-3 {
+                    color: transparent;
+                    background: linear-gradient(35deg, springgreen, #dbf1fd);
+                    background-clip: text;
+                }
+
+                h6 {
+                    letter-spacing: 1px;
+                }
+            }
+
+            &-content {
+                padding: 2rem;
+                padding-top: 0.5rem;
+                background: linear-gradient(90deg, #dbf1fd98, #dbf1fd3f);
+                color: rgba(255, 255, 255, 0.836);
+
+                div {
+                    margin-top: 0.5rem;
+                    gap: 10px;
+
+                    p {
+                        font-size: 13px;
+                    }
+
+                }
+
+                svg {
+                    min-height: 20px;
+                    min-width: 20px;
+                    color: springgreen;
+                }
+
+                #description {
+                    transition: 1s ease-in-out;
+                    opacity: 1;
+
+                }
+            }
+
+            &-button {
+
+                button {
+                    border: 0;
+                    width: 100%;
+                    padding: 0.5rem 0;
+                    border-radius: 17px;
+                    background: transparent;
+                    color: rgb(255, 255, 255);
+                    letter-spacing: 1px;
+                    box-shadow: 2px 2px 1px 1px rgba(255, 255, 255);
+                    z-index: 1;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover {
+                        box-shadow: -3px -3px 2px 1px rgba(255, 255, 255);
+                    }
+                }
+            }
+
+            .swiper-slide{
+                width: 328px;
+                height: 550px;
+                background: rgb(0, 0, 0);
+
+            }
+
+            .swiper-wrapper {
+                padding-bottom: 50px;
+                padding-top: 10px;
+            }
+
+            .swiper-button-prev:after, .swiper-button-next:after{
+                background: linear-gradient(90deg, #dbf1fd, #ffffff);
+                color: transparent;
+                background-clip: text;
+            }
+
+            .swiper-pagination-bullet-active {
+                background: linear-gradient(90deg, #dbf1fd, #dbf1fd8a);
+            }
+        }
+    }
+}
+
+.recipes {
+
+    &-top-left {
+        position: relative; /* Making the pseudo element apply the effect on this container */
+        margin: 0rem 0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 110px;
+            background-color: white;
+            transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+            transform-origin: top center;
+            box-shadow: 0px 0px 25px 4px #dbf1fd;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 310px;
+            height: 1px;
+            background-color: white;
+            transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+            transform-origin: left center;
+            box-shadow: 0px 0px 25px 4px #dbf1fd;
+        }
+
+        .bottom-right {
+            &::before {
+                content: "";
+                    position: absolute;
+                    bottom: 0; /* Position at the bottom */
+                    right: 0;  /* Position at the right */
+                    width: 1px;
+                    height: 420px; /* Adjust the height to expand upwards */
+                    background-color: white;
+                    transform: scaleY(1);
+                    transform-origin: bottom center;
+                    box-shadow: 0px 0px 25px 4px #dbf1fd;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0; /* Adjust the position to bottom */
+                right: 0;  /* Adjust the position to right */
+                width: 470px;
+                height: 1px;
+                background-color: white;
+                transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+                transform-origin: right center; /* Adjust the transform origin for the right */
+                box-shadow: 0px 0px 25px 4px #dbf1fd;
+            }
+        }
+    }
+
+    .row {
+        border: 0;
+        padding: 1rem 3rem;
+    }
+
+    &-title {
+        padding: 1rem 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    &-instructions {
+        padding: 0 0 5rem 0;
+        font-family: Arial, Helvetica, sans-serif;
+
+    }
+
+    &-text {
+        padding: 0 0 5rem 0;
+        font-size: 15px;
+        line-height: 25px;
+        opacity: 0.8;
+    }
+}
+
+
