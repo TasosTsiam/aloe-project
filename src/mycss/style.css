@@ -121,10 +121,10 @@ body {
 .homepage .s1-left-div h1 {
   padding-top: 1rem;
   font-size: 5rem;
-  background-image: linear-gradient(35deg, gold, rgb(255, 255, 255) 45%);
+  background-image: linear-gradient(25deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.8) 75%);
   background-clip: text;
   color: transparent;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.87);
+  text-shadow: 2px 2px 15px rgba(209, 209, 209, 0.5);
 }
 .homepage .s1-left-div h1 span {
   font-style: italic;
@@ -463,7 +463,7 @@ body {
   background-image: linear-gradient(25deg, rgb(255, 255, 255), rgb(255, 255, 255) 45%);
   background-clip: text;
   color: transparent;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.87);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.87);
   font-size: 10rem;
 }
 .homepage .recipes-introduction-headers-header1 {
@@ -595,10 +595,10 @@ body {
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
 }
-.homepage .recipes-top-left {
+.homepage .recipes-top-left-1 {
   position: relative; /* Making the pseudo element apply the effect on this container */
 }
-.homepage .recipes-top-left::before {
+.homepage .recipes-top-left-1::before {
   content: "";
   position: absolute;
   top: 0;
@@ -610,7 +610,7 @@ body {
   transform-origin: top center;
   box-shadow: 0px 0px 25px 4px #dbf1fd;
 }
-.homepage .recipes-top-left::after {
+.homepage .recipes-top-left-1::after {
   content: "";
   position: absolute;
   top: 0;
@@ -622,7 +622,13 @@ body {
   transform-origin: left center;
   box-shadow: 0px 0px 25px 4px #dbf1fd;
 }
-.homepage .recipes-top-left .bottom-right::before {
+.homepage .recipes-top-left-1::before {
+  height: 17%;
+}
+.homepage .recipes-top-left-1::after {
+  width: 37%;
+}
+.homepage .recipes-top-left-1 .bottom-right-1::before {
   content: "";
   position: absolute;
   bottom: 0; /* Position at the bottom */
@@ -634,7 +640,112 @@ body {
   transform-origin: bottom center;
   box-shadow: 0px 0px 25px 4px #dbf1fd;
 }
-.homepage .recipes-top-left .bottom-right::after {
+.homepage .recipes-top-left-1 .bottom-right-1::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Adjust the position to bottom */
+  right: 0; /* Adjust the position to right */
+  width: 51%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+  transform-origin: right center; /* Adjust the transform origin for the right */
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-1 .bottom-right-1::before {
+  height: 86%;
+}
+.homepage .recipes-top-left-2 {
+  position: relative; /* Making the pseudo element apply the effect on this container */
+}
+.homepage .recipes-top-left-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 22%;
+  background-color: white;
+  transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-2 .bottom-right-2::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+  width: 1px;
+  height: 82%; /* Adjust the height to expand upwards */
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-2 .bottom-right-2::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Adjust the position to bottom */
+  right: 0; /* Adjust the position to right */
+  width: 51%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+  transform-origin: right center; /* Adjust the transform origin for the right */
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-3 {
+  position: relative; /* Making the pseudo element apply the effect on this container */
+}
+.homepage .recipes-top-left-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 22%;
+  background-color: white;
+  transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-3 .bottom-right-3::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+  width: 1px;
+  height: 82%; /* Adjust the height to expand upwards */
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-3 .bottom-right-3::after {
   content: "";
   position: absolute;
   bottom: 0; /* Adjust the position to bottom */
@@ -653,6 +764,9 @@ body {
 .homepage .recipes-title {
   padding: 1rem 0;
   font-family: Arial, Helvetica, sans-serif;
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd 30%);
+  background-clip: text;
 }
 .homepage .recipes-instructions {
   padding: 0 0 5rem 0;
@@ -662,6 +776,16 @@ body {
   padding: 0 0 5rem 0;
   font-size: 15px;
   line-height: 25px;
-  opacity: 0.8;
   padding-top: 5px;
+}
+.homepage .recipes-ingredients {
+  column-gap: 7rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homepage .recipes-ingredients p {
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homepage .recipes p {
+  opacity: 0.8;
 }/*# sourceMappingURL=style.css.map */

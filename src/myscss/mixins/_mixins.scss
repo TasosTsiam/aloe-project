@@ -3,3 +3,62 @@
     height: 45%;
     z-index: 0;
 }
+
+
+@mixin top-left {
+    position: relative; /* Making the pseudo element apply the effect on this container */
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 22%;
+        background-color: white;
+        transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+        transform-origin: top center;
+        box-shadow: 0px 0px 25px 4px #dbf1fd;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 34%;
+        height: 1px;
+        background-color: white;
+        transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+        transform-origin: left center;
+        box-shadow: 0px 0px 25px 4px #dbf1fd;
+    }
+}
+
+@mixin bottom-right {
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0; /* Position at the bottom */
+        right: 0;  /* Position at the right */
+        width: 1px;
+        height: 82%; /* Adjust the height to expand upwards */
+        background-color: white;
+        transform: scaleY(1);
+        transform-origin: bottom center;
+        box-shadow: 0px 0px 25px 4px #dbf1fd;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0; /* Adjust the position to bottom */
+        right: 0;  /* Adjust the position to right */
+        width: 51%;
+        height: 1px;
+        background-color: white;
+        transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+        transform-origin: right center; /* Adjust the transform origin for the right */
+        box-shadow: 0px 0px 25px 4px #dbf1fd;
+    }
+}

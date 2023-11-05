@@ -30,6 +30,28 @@ function Recipes() {
     const text4 = "Sure, there are people who really enjoy eating aloe vera,"
     const text5 = "but for those who don’t, we came up with some delicious Aloe Vera Recipes for you!"
 
+    const nectarText1 = `Indulge in the exquisite blend of Mavrodaphne Nectar, a tantalizing
+                        beverage that beckons the senses with its delightful taste and inherent health benefits.
+                        This recipe combines Aloe Vera gel, honey and the ancient Greek wine Mavrodaphne,
+                        to create a symphony of flavors that both soothes and energizes.
+                        Beyond its delicious appeal, Mavrodaphne Nectar is a potent health elixir.
+                        The synergy of these three ingredients fortifies your respiratory system,
+                        providing additional support against colds and respiratory ailments. `
+
+    const nectarText2 = `This divine elixir, aptly named "Nectar," pays homage to the legendary drink of the Olympic Gods,
+                        bestowing a sense of majesty to your well-being.`
+
+    const sauceText1 = `Indulge in the culinary enchantment of AmourRose Sauce, 
+                        a remarkable infusion of beets, honey, and aloe gel that elevates your dining experience to new heights. 
+                        Crafted with precision and love, this deep-red elixir embodies the perfect blend of romance and flavor. 
+                        To create this ambrosial delight, simply combine the freshest beets, 
+                        a drizzle of honey, and a touch of aloe gel. 
+                        The result is a luxurious sauce that transcends ordinary dining, 
+                        lending an air of high-class sophistication to your culinary creations.`
+
+    const sauceText2 = `Pour the "AmourRose Sauce" over your salads, roasted vegetables, 
+                        grilled meats, or seafood to unlock a world of gastronomic bliss.`
+
     return (
         <div className={`recipes container d-flex flex-column align-items-center ${isRecipesVisible ? "recipes-visible" : ""}`}>
             <div className="recipes-introduction d-flex flex-column align-items-center text-center">
@@ -50,77 +72,98 @@ function Recipes() {
                     <div className={`recipes-introduction-text-line5 ${isRecipesVisible ? "centered" : ""}`}>{text5}</div>
                 </div>
             </div>
-            <div className="recipes-top-left col-8">
-                <div className="bottom-right">
+            <div className="recipes-top-left-1 col-8">
+                <div className="bottom-right-1">
                     <div className="row d-flex justify-content-between">
-                        <h2 className="recipes-title mb-0">Aloe Vera Recipe 1</h2>
+                        <h2 className="recipes-title mb-0">Mavrodaphne Nectar</h2>
                         <div className="recipes-instructions d-flex flex-column col-6">
                             <h4>Instructions</h4>
                         </div>
-                        <div className="recipes-text d-flex col-6">
-                            <p className="mb-0">
-                                Discover the charm of our Aloe Vera plants, nurtured with dedication and care. 
-                                These thriving green companions are the heart of our Aloe family, 
-                                cultivated with utmost precision to deliver the purest Aloe experience. 
-                                Grown from 5-year-old mature plants, our Aloe Vera specimens offer 
-                                a living testament to nature's wonders. With leaves meticulously 
-                                selected to preserve their full 100% gel capacity, these plants 
-                                are a source of wellness and vitality. When you welcome an Aloe Vera plant
-                                into your space, you invite a touch of nature's magic that not only 
-                                beautifies your surroundings but also offers the potential for a host of health benefits. 
-                                Embrace the vitality and elegance that our Aloe Vera plants bring to your home, 
-                                and let nature's goodness flourish in your life.
+                        <div className="recipes-text d-flex flex-column col-6">
+                            <p className="mb-3">
+                                {nectarText1}
                             </p>
+                            <p className="mb-0">
+                                {nectarText2}
+                            </p>
+                            <div className="recipes-ingredients d-flex mt-5">
+                                <div className="d-flex flex-column">
+                                    <h6>Ingredients</h6>
+                                    <p className="mb-0">Mavrodaphne</p>
+                                    <p className="mb-0">Honey</p>
+                                    <p className="mb-0">Aloe Vera gel</p>
+                                </div>
+                                <div className="d-flex flex-column">
+                                <h6>Portion</h6>
+                                    <p className="mb-0">20%</p>
+                                    <p className="mb-0">20%</p>
+                                    <p className="mb-0">60%</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="recipes-top-left col-8">
-                <div className="bottom-right">
+            <div className="recipes-top-left-2 col-8">
+                <div className="bottom-right-2">
                     <div className="row d-flex justify-content-between">
-                        <h2 className="recipes-title mb-0">Aloe Vera Recipe 2</h2>
+                        <h2 className="recipes-title mb-0">AmourRose Sauce</h2>
                         <div className="recipes-instructions d-flex flex-column col-6">
                             <h4>Instructions</h4>
                         </div>
-                        <div className="recipes-text d-flex col-6">
-                            <p className="mb-0">
-                                Discover the charm of our Aloe Vera plants, nurtured with dedication and care. 
-                                These thriving green companions are the heart of our Aloe family, 
-                                cultivated with utmost precision to deliver the purest Aloe experience. 
-                                Grown from 5-year-old mature plants, our Aloe Vera specimens offer 
-                                a living testament to nature's wonders. With leaves meticulously 
-                                selected to preserve their full 100% gel capacity, these plants 
-                                are a source of wellness and vitality. When you welcome an Aloe Vera plant
-                                into your space, you invite a touch of nature's magic that not only 
-                                beautifies your surroundings but also offers the potential for a host of health benefits. 
-                                Embrace the vitality and elegance that our Aloe Vera plants bring to your home, 
-                                and let nature's goodness flourish in your life.
+                        <div className="recipes-text d-flex flex-column col-6">
+                            <p className="mb-3">
+                                {sauceText1}
                             </p>
+                            <p className="mb-0">
+                                {sauceText2}
+                            </p>
+                            <div className="recipes-ingredients d-flex mt-5">
+                                <div className="d-flex flex-column">
+                                    <h6>Ingredients</h6>
+                                    <p className="mb-0">Beets</p>
+                                    <p className="mb-0">Honey</p>
+                                    <p className="mb-0">Aloe Vera gel</p>
+                                </div>
+                                <div className="d-flex flex-column">
+                                <h6>Portion</h6>
+                                    <p className="mb-0">400ml</p>
+                                    <p className="mb-0">3 tablespoons</p>
+                                    <p className="mb-0">100ml</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="recipes-top-left col-8">
-                <div className="bottom-right">
+            <div className="recipes-top-left-3 col-8">
+                <div className="bottom-right-3">
                     <div className="row d-flex justify-content-between">
                         <h2 className="recipes-title mb-0">Aloe Vera Recipe 3</h2>
                         <div className="recipes-instructions d-flex flex-column col-6">
                             <h4>Instructions</h4>
                         </div>
-                        <div className="recipes-text d-flex col-6">
-                            <p className="mb-0">
-                                Discover the charm of our Aloe Vera plants, nurtured with dedication and care. 
-                                These thriving green companions are the heart of our Aloe family, 
-                                cultivated with utmost precision to deliver the purest Aloe experience. 
-                                Grown from 5-year-old mature plants, our Aloe Vera specimens offer 
-                                a living testament to nature's wonders. With leaves meticulously 
-                                selected to preserve their full 100% gel capacity, these plants 
-                                are a source of wellness and vitality. When you welcome an Aloe Vera plant
-                                into your space, you invite a touch of nature's magic that not only 
-                                beautifies your surroundings but also offers the potential for a host of health benefits. 
-                                Embrace the vitality and elegance that our Aloe Vera plants bring to your home, 
-                                and let nature's goodness flourish in your life.
+                        <div className="recipes-text d-flex flex-column col-6">
+                            <p className="mb-3">
+                                {nectarText1}
                             </p>
+                            <p className="mb-0">
+                                {nectarText2}
+                            </p>
+                            <div className="recipes-ingredients d-flex mt-5">
+                                <div className="d-flex flex-column">
+                                    <h6>Ingredients</h6>
+                                    <p className="mb-0">Mavrodaphne</p>
+                                    <p className="mb-0">Honey</p>
+                                    <p className="mb-0">Aloe Vera gel</p>
+                                </div>
+                                <div className="d-flex flex-column">
+                                <h6>Portion</h6>
+                                    <p className="mb-0">20%</p>
+                                    <p className="mb-0">20%</p>
+                                    <p className="mb-0">60%</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
