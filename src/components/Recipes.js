@@ -41,16 +41,29 @@ function Recipes() {
     const nectarText2 = `This divine elixir, aptly named "Nectar," pays homage to the legendary drink of the Olympic Gods,
                         bestowing a sense of majesty to your well-being.`
 
-    const sauceText1 = `Indulge in the culinary enchantment of AmourRose Sauce, 
-                        a remarkable infusion of beets, honey, and aloe gel that elevates your dining experience to new heights. 
-                        Crafted with precision and love, this deep-red elixir embodies the perfect blend of romance and flavor. 
-                        To create this ambrosial delight, simply combine the freshest beets, 
-                        a drizzle of honey, and a touch of aloe gel. 
-                        The result is a luxurious sauce that transcends ordinary dining, 
+    const sauceText1 = `Indulge in the culinary enchantment of AmourRose Sauce,
+                        a remarkable infusion of beets, honey, and aloe gel that elevates your dining experience to new heights.
+                        Crafted with precision and love, this deep-red elixir embodies the perfect blend of romance and flavor.
+                        To create this ambrosial delight, simply combine the freshest beets,
+                        a drizzle of honey, and a touch of aloe gel.
+                        The result is a luxurious sauce that transcends ordinary dining,
                         lending an air of high-class sophistication to your culinary creations.`
 
-    const sauceText2 = `Pour the "AmourRose Sauce" over your salads, roasted vegetables, 
+    const sauceText2 = `Pour the "AmourRose Sauce" over your salads, roasted vegetables,
                         grilled meats, or seafood to unlock a world of gastronomic bliss.`
+
+    const smoothieText1 = `Dive into the world of our "Blissful Symphony" smoothie.
+                            Melding your favorite milk with ripe strawberries, a banana,
+                            and the refreshing essence of aloe gel ice cubes, this concoction is a treat for your senses.
+                            As you blend these elements, a harmonious mix unfolds, offering a satisfying experience
+                            that pleases your taste buds.
+                            Strawberries and banana contribute natural sweetness and essential nutrients,
+                            while aloe gel ice cubes - that you can have if you pour gel into an icebox -
+                            add a unique, refreshing touch, whilst also providing
+                            all the benefits of Aloe Vera.`
+
+    const smoothieText2 = `Enjoy this revitalizing elixir, a departure from the ordinary,
+                            and let each sip bring a moment of culinary joy.`
 
     return (
         <div className={`recipes container d-flex flex-column align-items-center ${isRecipesVisible ? "recipes-visible" : ""}`}>
@@ -139,29 +152,31 @@ function Recipes() {
             <div className="recipes-top-left-3 col-8">
                 <div className="bottom-right-3">
                     <div className="row d-flex justify-content-between">
-                        <h2 className="recipes-title mb-0">Aloe Vera Recipe 3</h2>
+                        <h2 className="recipes-title mb-0">Blissful Symphony</h2>
                         <div className="recipes-instructions d-flex flex-column col-6">
                             <h4>Instructions</h4>
                         </div>
                         <div className="recipes-text d-flex flex-column col-6">
                             <p className="mb-3">
-                                {nectarText1}
+                                {smoothieText1}
                             </p>
                             <p className="mb-0">
-                                {nectarText2}
+                                {smoothieText2}
                             </p>
                             <div className="recipes-ingredients d-flex mt-5">
                                 <div className="d-flex flex-column">
                                     <h6>Ingredients</h6>
-                                    <p className="mb-0">Mavrodaphne</p>
-                                    <p className="mb-0">Honey</p>
+                                    <p className="mb-0">Milk</p>
+                                    <p className="mb-0">Strawberries</p>
+                                    <p className="mb-0">Banana</p>
                                     <p className="mb-0">Aloe Vera gel</p>
                                 </div>
                                 <div className="d-flex flex-column">
                                 <h6>Portion</h6>
-                                    <p className="mb-0">20%</p>
-                                    <p className="mb-0">20%</p>
-                                    <p className="mb-0">60%</p>
+                                    <p className="mb-0">400ml</p>
+                                    <p className="mb-0">80gr</p>
+                                    <p className="mb-0">1 full piece</p>
+                                    <p className="mb-0">2-3 Ice cubes</p>
                                 </div>
                             </div>
                         </div>
