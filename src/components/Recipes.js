@@ -44,7 +44,7 @@ function Recipes() {
     const sauceText1 = `Indulge in the culinary enchantment of AmourRose Sauce,
                         a remarkable infusion of beets, honey, and aloe gel that elevates your dining experience to new heights.
                         Crafted with precision and love, this deep-red elixir embodies the perfect blend of romance and flavor.
-                        To create this ambrosial delight, simply combine the freshest beets,
+                        To create this ambrosial delight, simply blend the freshest well-boiled beets,
                         a drizzle of honey, and a touch of aloe gel.
                         The result is a luxurious sauce that transcends ordinary dining,
                         lending an air of high-class sophistication to your culinary creations.`

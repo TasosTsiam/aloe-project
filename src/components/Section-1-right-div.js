@@ -101,7 +101,7 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                 <div className="gradient-image-3 d-flex justify-content-center"
                     style={
                         backgroundImage === aloe1 ? {
-                            left: '-61%',
+                            left: '-60%',
                             top: '-12%',
                             height: '150px',
                             width: '150px',
