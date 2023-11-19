@@ -18,7 +18,7 @@ function App() {
                     <div className="col-12 align-self-center">
                         <Main />
                     </div>
-                    <div className="col-12 align-self-end">
+                    <div className="homepage col-12 align-self-end">
                         <Footer/>
                     </div>
                 </div>
