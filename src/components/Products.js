@@ -127,7 +127,7 @@ function Products () {
                                             featureDescription2 ? (
                                                 <div id="features" className="flex-grow-1">
                                                     <div className="priceplans-title d-flex justify-content-between align-items-center">
-                                                        <h4 className="mb-0">Bottles</h4>
+                                                        <h4 className="mb-0">Bottles <span>{`(`}200ml{`)`}</span></h4>
                                                         <h4 className="priceplans-title-h3-1 mb-0">$ 4.99</h4>
                                                     </div>
                                                     <div className="d-flex">

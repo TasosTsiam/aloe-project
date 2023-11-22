@@ -401,6 +401,10 @@ body {
 .homepage .products-container .line-effect-wrapper .priceplans-title h6 {
   letter-spacing: 1px;
 }
+.homepage .products-container .line-effect-wrapper .priceplans-title span {
+  font-size: 14px;
+  font-weight: lighter;
+}
 .homepage .products-container .line-effect-wrapper .priceplans-content {
   padding: 2rem;
   padding-top: 0.5rem;
@@ -874,4 +878,31 @@ body {
 .homepage .footer-copyrights {
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   padding: 2rem 0;
+}
+.homepage-scroll-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 0;
+}
+.homepage-scroll-button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+  transform: scale(1.2);
+}
+.homepage-scroll-button.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.homepage-scroll-button svg {
+  font-weight: solid 4px;
 }/*# sourceMappingURL=style.css.map */

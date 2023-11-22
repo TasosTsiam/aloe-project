@@ -31,31 +31,31 @@ function S1LeftDiv({ hover1, hover2, hover3 }) {
                     Click me
                 </Button>
                 <CSSTransition
-                        in={open}
-                        timeout={300} // Adjust the duration of the fade animation
-                        classNames="fade"
-                        unmountOnExit
-                    >
-                        <div id="fade-buttons">
-                            <ScrollLink
-                                to="section-2" // ID of the target element to scroll to
-                                // Add smooth scrolling effect
-                                duration={300} // Duration of the scroll animation in milliseconds
-                            >
-                                <Button className="button-2" onMouseOver={hover2}>
-                                    Products
-                                </Button>
-                            </ScrollLink>
-                            <ScrollLink
-                                to="section-3" // ID of the target element to scroll to
-                                // Add smooth scrolling effect
-                                duration={300} // Duration of the scroll animation in milliseconds
-                            >
-                                <Button className="button-3" onMouseOver={hover3}>
-                                Recipes
-                                </Button>
-                            </ScrollLink>
-                        </div>
+                    in={open}
+                    timeout={300} // Adjust the duration of the fade animation
+                    classNames="fade"
+                    unmountOnExit
+                >
+                    <div id="fade-buttons">
+                        <ScrollLink
+                            to="section-2" // ID of the target element to scroll to
+                            // Add smooth scrolling effect
+                            duration={300} // Duration of the scroll animation in milliseconds
+                        >
+                            <Button className="button-2" onMouseOver={hover2}>
+                                Products
+                            </Button>
+                        </ScrollLink>
+                        <ScrollLink
+                            to="section-3" // ID of the target element to scroll to
+                            // Add smooth scrolling effect
+                            duration={300} // Duration of the scroll animation in milliseconds
+                        >
+                            <Button className="button-3" onMouseOver={hover3}>
+                            Recipes
+                            </Button>
+                        </ScrollLink>
+                    </div>
                 </CSSTransition>
             </div>
         </div>

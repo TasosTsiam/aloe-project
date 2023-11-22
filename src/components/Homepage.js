@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import aloe1 from '../images/aloe-1.jpg';
 import aloe2 from '../images/aloe-2.jpg';
 import aloe3 from '../images/aloe-3.jpg';
@@ -7,6 +7,7 @@ import S1LeftDiv from './Section-1-left-div.js';
 import S1RightDiv from './Section-1-right-div.js';
 import Products from './Products.js';
 import Recipes from './Recipes.js';
+import { BsArrowUp } from "react-icons/bs";
 
 
 
@@ -15,6 +16,32 @@ function Homepage() {
     const [backgroundImage, setBackgroundImage] = useState(aloe1);
 
     const [boxShadow, setBoxShadow] = useState('');
+
+    const [showScrollButton, setShowScrollButton] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const section1 = document.getElementById('section-1');
+            const scrollButtonThreshold = section1 ? section1.offsetTop + section1.offsetHeight : 0;
+
+            if (window.pageYOffset > scrollButtonThreshold) {
+                setShowScrollButton(true);
+            } else {
+                setShowScrollButton(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
 
     function hover1() {
         setBackgroundImage(aloe1);
@@ -57,6 +84,12 @@ function Homepage() {
                     </div>
                 </div>
             </section>
+            <button
+                className={`homepage-scroll-button ${showScrollButton ? 'visible' : ''}`}
+                onClick={scrollToTop}
+            >
+                <BsArrowUp/>
+            </button>
         </>
     )
 }
