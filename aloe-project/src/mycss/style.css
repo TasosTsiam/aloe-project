@@ -1,0 +1,2042 @@
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes drop {
+  0% {
+    transform: translate(-57%, -5%);
+    opacity: 0;
+  }
+  70% {
+    transform: translate(calc(-50% + var(--x)), calc(var(--y) + 20px));
+  }
+  85% {
+    transform: translate(calc(-50% + var(--x)), calc(var(--y) - 10px));
+  }
+  100% {
+    transform: translate(calc(-50% + var(--x)), var(--y));
+    opacity: 1;
+  }
+}
+@keyframes update {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes white-shadow-wrapper {
+  0% {
+    box-shadow: 0px 0px 0px 0px;
+  }
+  50% {
+    box-shadow: 0px 0px 6px 4px whitesmoke;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px;
+  }
+}
+body {
+  background: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+
+.parent-container {
+  padding: 0.5rem 10rem;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .parent-container {
+    padding: 0.5rem 4rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .parent-container {
+    padding: 0.5rem 8rem;
+  }
+}
+
+.navbar {
+  margin-bottom: 2rem;
+}
+@media (max-width: 991px) {
+  .navbar .nav-parent-div {
+    justify-content: space-between !important;
+  }
+}
+.navbar .nav-parent-div .navbar-collapse {
+  justify-content: center;
+}
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+  color: white;
+  font-size: 1.2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 0px;
+  transition: 0.2s ease-in-out;
+  position: relative;
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 1rem 1rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+}
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 30%;
+  background-color: white;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover {
+  color: white;
+  text-shadow: 0px 0px 15px white;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover::before {
+  transform: scaleY(1);
+}
+.navbar .nav-parent-div .navbar-collapse .navbar-nav .nav-link:hover::after {
+  transform: scaleX(1);
+}
+@media (max-width: 991px) {
+  .navbar .nav-parent-div .navbar-collapse .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.homepage .s1-left-div h4 {
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  font-weight: 400;
+}
+.homepage .s1-left-div h1 {
+  padding-top: 1rem;
+  font-size: 5rem;
+  background-image: linear-gradient(25deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.8) 75%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 15px rgba(209, 209, 209, 0.5);
+}
+.homepage .s1-left-div h1 span {
+  font-style: italic;
+  background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
+}
+.homepage .s1-left-div p {
+  padding-top: 2rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.699);
+}
+.homepage .s1-left-div .button-container {
+  padding-top: 3rem;
+}
+.homepage .s1-left-div .button-container button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.homepage .s1-left-div .button-container button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.homepage .s1-left-div .fade-enter {
+  opacity: 0;
+}
+.homepage .s1-left-div .fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.homepage .s1-left-div .fade-exit {
+  opacity: 1;
+}
+.homepage .s1-left-div .fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+.homepage .s1-right-div .gradient-img-container {
+  display: flex;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 35rem;
+  width: 35rem;
+  border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow: 20px 20px 40px 2px rgb(255, 255, 255);
+  transition: 0.5s ease-in-out;
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-1 {
+  background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
+  background-size: cover;
+  display: block;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-1 svg {
+  transition: 0.5s ease-in-out;
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-1 svg:hover {
+  transform: scale(0.8);
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-2 {
+  background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
+  background-size: cover;
+  display: block;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.1s;
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-2 svg {
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.1s;
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-2 svg:hover {
+  transform: scale(0.8);
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-3 {
+  background-image: radial-gradient(circle, transparent, rgb(255, 255, 255) 25%, transparent 50%);
+  background-size: cover;
+  display: block;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.2s;
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-3 svg {
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.2s;
+}
+.homepage .s1-right-div .gradient-img-container .gradient-image-3 svg:hover {
+  transform: scale(0.8);
+}
+.homepage .products-container {
+  position: relative; /* Making the pseudo element apply the effect on this container */
+}
+.homepage .products-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 70px;
+  background-color: white;
+  transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .products-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .products-container-bottom-rightt::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+  width: 1px;
+  height: 70px; /* Adjust the height to expand upwards */
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .products-container-bottom-rightt::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Adjust the position to bottom */
+  right: 0; /* Adjust the position to right */
+  width: 70px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+  transform-origin: right center; /* Adjust the transform origin for the right */
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .products-container .line-effect-wrapper {
+  position: relative; /* Add this to make sure pseudo-elements are relative to this container */
+}
+.homepage .products-container .line-effect-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scaleY(1); /* Apply the scaleY transformation here for the permanent effect */
+  transform-origin: top center;
+  box-shadow: 0px 0px 55px 8px #dbf1fd;
+}
+.homepage .products-container .line-effect-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scaleX(1); /* Apply the scaleX transformation here for the permanent effect */
+  transform-origin: left center;
+  box-shadow: 0px 0px 55px 8px #dbf1fd;
+}
+.homepage .products-container .line-effect-wrapper-bottom-right::before {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+  width: 1px;
+  height: 35px; /* Adjust the height to expand upwards */
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 55px 8px #dbf1fd;
+}
+.homepage .products-container .line-effect-wrapper-bottom-right::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Adjust the position to bottom */
+  right: 0; /* Adjust the position to right */
+  width: 35px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scaleX(1); /* Apply the scaleX transformation for the permanent effect */
+  transform-origin: right center; /* Adjust the transform origin for the right */
+  box-shadow: 0px 0px 55px 8px #dbf1fd;
+}
+.homepage .products-container .line-effect-wrapper .priceplans {
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-carditem {
+  position: relative;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 17px;
+  margin: 0 20px 20px 0;
+  overflow: hidden;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-product-1 {
+  position: relative;
+  height: 45%;
+  z-index: 0;
+  background: url(../images/aloe-bottle.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-product-2 {
+  position: relative;
+  height: 45%;
+  z-index: 0;
+  background: url(../images/aloe-leaves.jpg);
+  background-size: 80%;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-product-3 {
+  position: relative;
+  height: 45%;
+  z-index: 0;
+  background: url(../images/aloe-flowerpot.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-description-btn button {
+  border: 0;
+  border-radius: 12px;
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
+  background-clip: text;
+  font-size: 12px;
+  z-index: 1;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-description-btn span svg {
+  min-height: 15px;
+  min-width: 15px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title {
+  padding-bottom: 1rem;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title-h3-1 {
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
+  background-clip: text;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title-h3-2 {
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
+  background-clip: text;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title-h3-3 {
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
+  background-clip: text;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title h6 {
+  letter-spacing: 1px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-title span {
+  font-size: 14px;
+  font-weight: lighter;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-content {
+  padding: 2rem;
+  padding-top: 0.5rem;
+  background: linear-gradient(90deg, rgba(219, 241, 253, 0.5960784314), rgba(219, 241, 253, 0.2470588235));
+  color: rgba(255, 255, 255, 0.836);
+}
+.homepage .products-container .line-effect-wrapper .priceplans-content div {
+  margin-top: 0.5rem;
+  gap: 10px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-content div p {
+  font-size: 13px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-content svg {
+  min-height: 20px;
+  min-width: 20px;
+  color: springgreen;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-content #description {
+  transition: 1s ease-in-out;
+  opacity: 1;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-button button {
+  border: 0;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 17px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 1px 1px rgb(255, 255, 255);
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.homepage .products-container .line-effect-wrapper .priceplans-button button:hover {
+  box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
+}
+.homepage .products-container .line-effect-wrapper .priceplans .swiper-slide {
+  width: 328px;
+  height: 550px;
+  background: rgb(0, 0, 0);
+}
+.homepage .products-container .line-effect-wrapper .priceplans .swiper-wrapper {
+  padding-bottom: 50px;
+  padding-top: 10px;
+}
+.homepage .products-container .line-effect-wrapper .priceplans .swiper-button-prev:after, .homepage .products-container .line-effect-wrapper .priceplans .swiper-button-next:after {
+  background: linear-gradient(90deg, #dbf1fd, #ffffff);
+  color: transparent;
+  background-clip: text;
+}
+.homepage .products-container .line-effect-wrapper .priceplans .swiper-pagination-bullet-active {
+  background: linear-gradient(90deg, #dbf1fd, rgba(219, 241, 253, 0.5411764706));
+}
+.homepage .recipes {
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+.homepage .recipes-introduction h1 {
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+  font-size: 10rem;
+}
+.homepage .recipes-introduction-headers-header1 {
+  margin-left: 40%;
+  margin-top: 80%;
+  transform: rotate(140deg);
+  transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+}
+.homepage .recipes-introduction-headers-header1.centered {
+  margin: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-headers-header2 {
+  margin-left: 30%;
+  margin-top: 110%;
+  transform: rotate(120deg);
+  transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+}
+.homepage .recipes-introduction-headers-header2.centered {
+  margin: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-headers-header3 {
+  margin-left: 30%;
+  margin-top: 140%;
+  transform: rotate(-90deg);
+  transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+}
+.homepage .recipes-introduction-headers-header3.centered {
+  margin: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-headers-header4 {
+  margin-left: 10%;
+  margin-top: 110%;
+  transform: rotate(150deg);
+  transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+}
+.homepage .recipes-introduction-headers-header4.centered {
+  margin: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-headers-header5 {
+  margin-left: 75%;
+  margin-top: 130%;
+  transform: rotate(120deg);
+  transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+}
+.homepage .recipes-introduction-headers-header5.centered {
+  margin: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-headers-header6 {
+  margin-left: 80%;
+  margin-top: 50%;
+  transform: rotate(140deg);
+  transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+}
+.homepage .recipes-introduction-headers-header6.centered {
+  margin: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-headers-header7 {
+  margin-right: 90%;
+  margin-top: 90%;
+  transform: rotate(-50deg);
+  transition: margin 1.5s ease-in-out, transform 1.5s ease-in-out !important;
+}
+.homepage .recipes-introduction-headers-header7.centered {
+  margin: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-text {
+  width: 500%;
+  margin: 3rem 0 6rem 0;
+  line-height: 40px;
+  font-size: 20px;
+}
+.homepage .recipes-introduction-text-line1 {
+  margin-left: 70%;
+  transform: rotate(20deg);
+  transition: margin-left 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition-delay: 1s;
+}
+.homepage .recipes-introduction-text-line1.centered {
+  margin-left: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-text-line2 {
+  margin-right: 70%;
+  transform: rotate(-40deg);
+  transition: margin-right 0.7s ease-in-out, transform 0.7s ease-in-out;
+  transition-delay: 1s;
+}
+.homepage .recipes-introduction-text-line2.centered {
+  margin-right: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-text-line3 {
+  margin-left: 70%;
+  transform: rotate(60deg);
+  transition: margin-left 0.9s ease-in-out, transform 0.9s ease-in-out;
+  transition-delay: 1s;
+}
+.homepage .recipes-introduction-text-line3.centered {
+  margin-left: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-text-line4 {
+  margin-right: 70%;
+  transform: rotate(80deg);
+  transition: margin-right 1.1s ease-in-out, transform 1.1s ease-in-out;
+  transition-delay: 1s;
+}
+.homepage .recipes-introduction-text-line4.centered {
+  margin-right: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-text-line5 {
+  margin-left: 70%;
+  transform: rotate(-100deg);
+  transition: margin-left 1.3s ease-in-out, transform 1.3s ease-in-out;
+  transition-delay: 1s;
+}
+.homepage .recipes-introduction-text-line5.centered {
+  margin-left: 0;
+  transform: rotate(0deg);
+}
+.homepage .recipes-introduction-text p {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homepage .recipes-top-left-1 {
+  position: relative;
+}
+.homepage .recipes-top-left-1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 17.5%;
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-1 .bottom-right-1::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 82%;
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-1 .bottom-right-1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 51%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: right center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-1 .bottom-right-1::before {
+  height: 86%;
+}
+.homepage .recipes-top-left-2 {
+  position: relative;
+}
+.homepage .recipes-top-left-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 17.5%;
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-2::before {
+  height: 18.2%;
+}
+.homepage .recipes-top-left-2 .bottom-right-2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 82%;
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-2 .bottom-right-2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 51%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: right center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-2 .bottom-right-2::before {
+  height: 86%;
+}
+.homepage .recipes-top-left-3 {
+  position: relative;
+}
+.homepage .recipes-top-left-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 17.5%;
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: top center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: left center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-3 .bottom-right-3::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  height: 82%;
+  background-color: white;
+  transform: scaleY(1);
+  transform-origin: bottom center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-3 .bottom-right-3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 51%;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(1);
+  transform-origin: right center;
+  box-shadow: 0px 0px 25px 4px #dbf1fd;
+}
+.homepage .recipes-top-left-3 .bottom-right-3::before {
+  height: 86%;
+}
+.homepage .recipes .row {
+  border: 0;
+  padding: 1rem 3rem;
+}
+.homepage .recipes-title {
+  padding: 1rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd 30%);
+  background-clip: text;
+}
+.homepage .recipes-instructions {
+  padding: 0 0 5rem 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homepage .recipes-text {
+  padding: 0 0 5rem 0;
+  font-size: 15px;
+  line-height: 25px;
+  padding-top: 5px;
+}
+.homepage .recipes-ingredients {
+  column-gap: 7rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homepage .recipes-ingredients p {
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.homepage .recipes p {
+  opacity: 0.8;
+}
+.homepage .reviews .modal-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+.homepage .reviews .modal-overlay .close-modal {
+  position: fixed;
+  top: 12%;
+  right: 18%;
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.homepage .reviews .modal-overlay .close-modal:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.homepage .reviews .modal-overlay .all-reviews-container {
+  width: 60%;
+  max-width: 900px;
+  height: 70vh;
+  box-sizing: border-box;
+  border: 0;
+  background: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
+  border-radius: 12px;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+  padding: 2rem;
+  overflow-y: auto;
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border {
+  padding-bottom: 3rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.692);
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-image {
+  background: url(../images/frenkie.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name, .homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product {
+  font-size: 14px;
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name p, .homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product p {
+  margin: 0;
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name span, .homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product span {
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  font-weight: 500;
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .review-star svg {
+  filter: drop-shadow(1px 1px 3px white);
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review {
+  gap: 1rem;
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button {
+  background: none;
+  border: 0;
+  margin: 2px;
+  transition: 0.3s ease-in-out;
+  padding-bottom: 4px;
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button:hover {
+  transform: scale(1.2);
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button {
+  color: rgb(122, 255, 88);
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button {
+  background: none;
+  border: 0;
+  margin: 2px;
+  transition: 0.3s ease-in-out;
+  padding-bottom: 4px;
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button:hover {
+  transform: scale(1.2);
+}
+.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button {
+  color: rgb(255, 90, 69);
+}
+.homepage .reviews .modal-overlay .add-review-container {
+  width: 60%;
+  max-width: 900px;
+  height: 70vh;
+  box-sizing: border-box;
+  border: 0;
+  background: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
+  border-radius: 12px;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+  padding: 2rem;
+  overflow-y: auto;
+}
+.homepage .reviews .modal-overlay .add-review-container .review-form {
+  width: 50%;
+  justify-self: center;
+}
+.homepage .reviews .modal-overlay .add-review-container .review-form input, .homepage .reviews .modal-overlay .add-review-container .review-form select, .homepage .reviews .modal-overlay .add-review-container .review-form textarea, .homepage .reviews .modal-overlay .add-review-container .review-form button {
+  width: 80%;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 1px 1px 12px rgba(255, 255, 255, 0.651);
+}
+.homepage .reviews .modal-overlay .add-review-container .review-form textarea {
+  width: 100%;
+  min-height: 200px;
+}
+.homepage .reviews .modal-overlay .add-review-container .review-form button {
+  width: fit-content;
+  padding: 15px 30px;
+}
+.homepage .reviews .bottle-wrapper .bottle-left .bottle-text-left {
+  font-size: 8.5rem;
+  font-weight: 500;
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+}
+.homepage .reviews .bottle-wrapper .bottle-left .all-reviews-button {
+  padding-top: 2rem;
+}
+.homepage .reviews .bottle-wrapper .bottle-left .all-reviews-button button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.homepage .reviews .bottle-wrapper .bottle-left .all-reviews-button button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.homepage .reviews .bottle-wrapper .bottle-right .bottle-text-right {
+  font-size: 8.5rem;
+  font-weight: 500;
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+}
+.homepage .reviews .bottle-wrapper .bottle-right .add-review-button {
+  padding-top: 2rem;
+}
+.homepage .reviews .bottle-wrapper .bottle-right .add-review-button button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.homepage .reviews .bottle-wrapper .bottle-right .add-review-button button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.homepage .reviews .bottle-wrapper .bottle-right .add-review-button button {
+  margin: 0;
+}
+.homepage .reviews .bottle-wrapper .bottle {
+  padding-right: 5rem;
+}
+.homepage .reviews .bottle-wrapper .bottle svg {
+  transition: 1.5s ease-in-out;
+}
+.homepage .reviews .bottle-wrapper .bottle svg.reviews-visible {
+  transform: rotate(150deg);
+}
+.homepage .reviews .text-parent {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+}
+.homepage .reviews .text-parent .review-wrapper1 {
+  --x: -200px;
+  --y: 300px;
+}
+.homepage .reviews .text-parent .review-wrapper1 .drop {
+  position: absolute;
+  top: -5%;
+  left: 57%;
+  transform: translate(-50%, -5%);
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.homepage .reviews .text-parent .review-wrapper1 .drop:hover {
+  box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
+}
+.homepage .reviews .text-parent .review-wrapper1 .drop::before {
+  content: "";
+  position: absolute;
+  bottom: 125%;
+  right: 50%;
+  width: 1px;
+  height: 190px;
+  background-color: white;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.homepage .reviews .text-parent .review-wrapper1 .drop::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  right: 125%;
+  width: 500px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.homepage .reviews .text-parent .review-wrapper1 .drop:hover {
+  color: white;
+  text-shadow: 0px 0px 15px white;
+  box-sizing: border-box;
+}
+.homepage .reviews .text-parent .review-wrapper1 .drop:hover::before {
+  transform: scaleY(1);
+}
+.homepage .reviews .text-parent .review-wrapper1 .drop:hover::after {
+  transform: scaleX(1);
+}
+.homepage .reviews .text-parent .review-wrapper1.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.2s;
+}
+.homepage .reviews .text-parent .review-wrapper1 .review-popup {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  transition: all 0.4s ease;
+  padding: 1rem;
+}
+.homepage .reviews .text-parent .review-wrapper1 .review-popup .actual-border .review-star svg {
+  filter: drop-shadow(1px 1px 3px white);
+}
+.homepage .reviews .text-parent .review-wrapper1 .review-popup {
+  top: 20%;
+  left: 25%;
+}
+.homepage .reviews .text-parent .review-wrapper1 .review-popup.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-image {
+  margin-left: -8%;
+  margin-top: -15%;
+  background: url(../images/frenkie.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name, .homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product {
+  margin-top: -15%;
+  font-size: 14px;
+}
+.homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name p, .homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product p {
+  margin: 0;
+}
+.homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name span, .homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product span {
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  font-weight: 500;
+}
+.homepage .reviews .text-parent .review-wrapper2 {
+  --x: -80px;
+  --y: 400px;
+}
+.homepage .reviews .text-parent .review-wrapper2 .drop {
+  position: absolute;
+  top: -5%;
+  left: 57%;
+  transform: translate(-50%, -5%);
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.homepage .reviews .text-parent .review-wrapper2 .drop:hover {
+  box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
+}
+.homepage .reviews .text-parent .review-wrapper2 .drop::before {
+  content: "";
+  position: absolute;
+  top: 125%;
+  right: 50%;
+  width: 1px;
+  height: 190px;
+  background-color: white;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.homepage .reviews .text-parent .review-wrapper2 .drop::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  right: 125%;
+  width: 500px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.homepage .reviews .text-parent .review-wrapper2 .drop:hover {
+  color: white;
+  text-shadow: 0px 0px 15px white;
+  box-sizing: border-box;
+}
+.homepage .reviews .text-parent .review-wrapper2 .drop:hover::before {
+  transform: scaleY(1);
+}
+.homepage .reviews .text-parent .review-wrapper2 .drop:hover::after {
+  transform: scaleX(1);
+}
+.homepage .reviews .text-parent .review-wrapper2.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.4s;
+}
+.homepage .reviews .text-parent .review-wrapper2 .review-popup {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  transition: all 0.4s ease;
+  padding: 1rem;
+}
+.homepage .reviews .text-parent .review-wrapper2 .review-popup .actual-border .review-star svg {
+  filter: drop-shadow(1px 1px 3px white);
+}
+.homepage .reviews .text-parent .review-wrapper2 .review-popup {
+  top: 75%;
+  left: 32%;
+}
+.homepage .reviews .text-parent .review-wrapper2 .review-popup.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-image {
+  margin-left: -8%;
+  margin-bottom: -15%;
+  background: url(../images/pedri.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name, .homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product {
+  margin-bottom: -15%;
+  font-size: 14px;
+}
+.homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name p, .homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product p {
+  margin: 0;
+}
+.homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name span, .homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product span {
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  font-weight: 500;
+}
+.homepage .reviews .text-parent .review-wrapper3 {
+  --x: 80px;
+  --y: 330px;
+}
+.homepage .reviews .text-parent .review-wrapper3 .drop {
+  position: absolute;
+  top: -5%;
+  left: 57%;
+  transform: translate(-50%, -5%);
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.homepage .reviews .text-parent .review-wrapper3 .drop:hover {
+  box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
+}
+.homepage .reviews .text-parent .review-wrapper3 .drop::before {
+  content: "";
+  position: absolute;
+  top: 125%;
+  right: 50%;
+  width: 1px;
+  height: 190px;
+  background-color: white;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.homepage .reviews .text-parent .review-wrapper3 .drop::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 125%;
+  width: 500px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.homepage .reviews .text-parent .review-wrapper3 .drop:hover {
+  color: white;
+  text-shadow: 0px 0px 15px white;
+  box-sizing: border-box;
+}
+.homepage .reviews .text-parent .review-wrapper3 .drop:hover::before {
+  transform: scaleY(1);
+}
+.homepage .reviews .text-parent .review-wrapper3 .drop:hover::after {
+  transform: scaleX(1);
+}
+.homepage .reviews .text-parent .review-wrapper3.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.6s;
+}
+.homepage .reviews .text-parent .review-wrapper3 .review-popup {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  transition: all 0.4s ease;
+  padding: 1rem;
+}
+.homepage .reviews .text-parent .review-wrapper3 .review-popup .actual-border .review-star svg {
+  filter: drop-shadow(1px 1px 3px white);
+}
+.homepage .reviews .text-parent .review-wrapper3 .review-popup {
+  top: 62%;
+  left: 81.5%;
+}
+.homepage .reviews .text-parent .review-wrapper3 .review-popup.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-image {
+  margin-right: -8%;
+  margin-bottom: 15%;
+  background: url(../images/aitana.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name, .homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product {
+  margin-bottom: 15%;
+  font-size: 14px;
+}
+.homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name p, .homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product p {
+  margin: 0;
+}
+.homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name span, .homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product span {
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  font-weight: 500;
+}
+.homepage .reviews .text-parent .review-wrapper4 {
+  --x: 180px;
+  --y: 180px;
+}
+.homepage .reviews .text-parent .review-wrapper4 .drop {
+  position: absolute;
+  top: -5%;
+  left: 57%;
+  transform: translate(-50%, -5%);
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.homepage .reviews .text-parent .review-wrapper4 .drop:hover {
+  box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
+}
+.homepage .reviews .text-parent .review-wrapper4 .drop::before {
+  content: "";
+  position: absolute;
+  top: 125%;
+  right: 50%;
+  width: 1px;
+  height: 170px;
+  background-color: white;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.homepage .reviews .text-parent .review-wrapper4 .drop::after {
+  content: "";
+  position: absolute;
+  bottom: 50%;
+  left: 125%;
+  width: 500px;
+  height: 1px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 0px 5px 1px white;
+}
+.homepage .reviews .text-parent .review-wrapper4 .drop:hover {
+  color: white;
+  text-shadow: 0px 0px 15px white;
+  box-sizing: border-box;
+}
+.homepage .reviews .text-parent .review-wrapper4 .drop:hover::before {
+  transform: scaleY(1);
+}
+.homepage .reviews .text-parent .review-wrapper4 .drop:hover::after {
+  transform: scaleX(1);
+}
+.homepage .reviews .text-parent .review-wrapper4.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.8s;
+}
+.homepage .reviews .text-parent .review-wrapper4 .review-popup {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  transition: all 0.4s ease;
+  padding: 1rem;
+}
+.homepage .reviews .text-parent .review-wrapper4 .review-popup .actual-border .review-star svg {
+  filter: drop-shadow(1px 1px 3px white);
+}
+.homepage .reviews .text-parent .review-wrapper4 .review-popup {
+  top: 35%;
+  left: 88%;
+}
+.homepage .reviews .text-parent .review-wrapper4 .review-popup.active {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-image {
+  margin-right: -8%;
+  margin-bottom: -15%;
+  background: url(../images/raphinha.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name, .homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product {
+  margin-bottom: -15%;
+  font-size: 14px;
+}
+.homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name p, .homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product p {
+  margin: 0;
+}
+.homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name span, .homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product span {
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  font-weight: 500;
+}
+.homepage .footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.homepage .footer-main-content {
+  padding: 2rem 0;
+}
+@media (max-width: 991.98px) {
+  .homepage .footer-hero {
+    justify-content: center;
+  }
+}
+.homepage .footer-logo {
+  padding-right: 2rem;
+}
+.homepage .footer-logo img {
+  width: 100px;
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .homepage .footer-logo img {
+    width: 60px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .homepage .footer-logo img {
+    width: 70px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .homepage .footer-logo img {
+    width: 85px;
+  }
+}
+.homepage .footer-headers h1 {
+  font-size: 4rem;
+  background-image: linear-gradient(25deg, rgb(255, 255, 255), rgba(255, 255, 255, 0.8) 75%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 15px rgba(209, 209, 209, 0.5);
+}
+.homepage .footer-headers h1 span {
+  font-style: italic;
+  background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .homepage .footer-headers h1 {
+    font-size: 2.75rem;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .homepage .footer-headers h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .homepage .footer-headers h1 {
+    font-size: 3.5rem;
+  }
+}
+.homepage .footer-menu {
+  list-style-type: none;
+}
+.homepage .footer-menu li {
+  transition: 0.3s ease-in-out;
+}
+.homepage .footer-menu li:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+.homepage .footer-socials {
+  font-size: 30px;
+}
+.homepage .footer-socials-bslogo {
+  transition: 0.3s ease-in-out;
+}
+.homepage .footer-socials-bslogo:hover {
+  color: springgreen;
+  cursor: pointer;
+  transform: scale(1.3);
+}
+.homepage .footer-copyrights {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 2rem 0;
+}
+.homepage-scroll-button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in-out;
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 0;
+}
+.homepage-scroll-button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+  transform: scale(1.2);
+}
+.homepage-scroll-button.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.homepage-scroll-button svg {
+  font-weight: solid 4px;
+}
+
+.order-online {
+  margin-bottom: 10rem;
+}
+.order-online .empty-cart-modal {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  font-size: 25px;
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+.order-online .empty-cart-modal button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.order-online .empty-cart-modal button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.order-online .empty-cart-modal button {
+  margin: 0;
+}
+.order-online .all-products .shopping-cart-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.order-online .all-products .cart-items-parent {
+  border-bottom: 1px solid white;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer {
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.61);
+  height: 200px;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner {
+  border-radius: 12px;
+  height: 100px;
+  width: 100%;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-product .product-image {
+  height: 100px;
+  width: 100px;
+  background-size: 100%;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-product .product-image.leaves {
+  background-image: url(../images/aloe-leaves.jpg);
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-product .product-image.bottles {
+  background-image: url(../images/aloe-bottle.jpg);
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-product .product-image.plants {
+  background-image: url(../images/aloe-flowerpot.jpg);
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-product .product-content svg {
+  min-height: 20px;
+  min-width: 20px;
+  color: springgreen;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-product .product-content h4 {
+  color: transparent;
+  background: linear-gradient(15deg, springgreen, #dbf1fd 70%);
+  background-clip: text;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-product .product-content span {
+  font-size: 13px;
+  color: white;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-price {
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
+  background-clip: text;
+  font-size: 25px;
+  font-weight: 500;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-price span {
+  color: white;
+  padding-right: 5px;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-add-remove button {
+  border: 0;
+  background: transparent;
+  color: white;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-add-remove .quantity {
+  padding: 5px 0;
+  height: 100px;
+  width: 60px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px rgba(255, 255, 255, 0.61);
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-add-remove .quantity svg {
+  transition: 0.2s ease-in-out;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-add-remove .quantity svg:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-add-remove .remove {
+  height: 100px;
+  width: 60px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px rgba(255, 255, 255, 0.61);
+  font-size: 40px;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-add-remove .remove svg {
+  transition: 0.1s ease-in-out;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .cart-items-inner .cart-add-remove .remove svg:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .gift-unlocked {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 0.3s ease-in-out;
+  color: transparent;
+  background: linear-gradient(35deg, springgreen, #dbf1fd);
+  background-clip: text;
+}
+.order-online .all-products .cart-items-parent .cart-items-outer .update {
+  animation: update 0.3s ease-in-out;
+}
+.order-online .all-products .sub-total {
+  position: relative;
+  font-size: 25px;
+}
+.order-online .all-products .proceed-button {
+  position: absolute;
+  left: 102%;
+}
+.order-online .all-products .proceed-button button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.order-online .all-products .proceed-button button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.order-online .all-products .proceed-button button {
+  background-color: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
+  margin: 0;
+}
+.order-online .order-line {
+  border-left: 1px solid rgba(255, 255, 255, 0.63);
+}
+.order-online .disabled {
+  pointer-events: none;
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+.order-online .delivery-and-check {
+  position: relative;
+  width: 30%;
+}
+.order-online .delivery-and-check .proceed-back-button {
+  position: absolute;
+  bottom: 0;
+  left: -21%;
+}
+.order-online .delivery-and-check .proceed-back-button button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.order-online .delivery-and-check .proceed-back-button button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.order-online .delivery-and-check .delivery-information {
+  height: 100%;
+  transition: 0.2s ease-in-out;
+}
+.order-online .delivery-and-check .delivery-information .delivery-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+.order-online .delivery-and-check .delivery-information .delivery-form {
+  position: relative;
+  height: 100%;
+}
+.order-online .delivery-and-check .delivery-information .delivery-form .delivery-info .input-wrapper {
+  position: relative;
+}
+.order-online .delivery-and-check .delivery-information .delivery-form .delivery-info .input-wrapper .input-error {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 12px;
+  color: rgb(255, 80, 80);
+}
+.order-online .delivery-and-check .delivery-information .delivery-form .delivery-info .input-wrapper input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: white;
+}
+.order-online .delivery-and-check .delivery-information .delivery-form .delivery-info .input-wrapper input:focus {
+  outline: none;
+}
+.order-online .delivery-and-check .delivery-information .delivery-form button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.order-online .delivery-and-check .delivery-information .delivery-form button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.order-online .delivery-and-check .delivery-information .delivery-form button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  margin: 0;
+}
+.order-online .delivery-and-check .check-out-info {
+  position: relative;
+  height: 100%;
+}
+.order-online .delivery-and-check .check-out-info .clear-x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  width: 60px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px rgba(255, 255, 255, 0.61);
+  font-size: 40px;
+}
+.order-online .delivery-and-check .check-out-info .clear-x svg {
+  transition: 0.1s ease-in-out;
+}
+.order-online .delivery-and-check .check-out-info .clear-x svg:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.order-online .delivery-and-check .check-out-info .payments-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+.order-online .delivery-and-check .check-out-info .cash-card-buttons {
+  margin-bottom: 3rem;
+}
+.order-online .delivery-and-check .check-out-info .cash-card-buttons button {
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.61);
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  background: transparent;
+  transition: 0.2s ease-in-out;
+}
+.order-online .delivery-and-check .check-out-info .cash-card-buttons button .cash-background, .order-online .delivery-and-check .check-out-info .cash-card-buttons button .card-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  height: 9px;
+  width: 9px;
+  transition: 0.2s ease-in-out;
+  opacity: 1;
+  background: white;
+}
+.order-online .delivery-and-check .check-out-info .cash-card-buttons button:hover {
+  border: 2px solid white;
+}
+.order-online .delivery-and-check .check-out-info .cash-card-buttons button:hover:hover + p {
+  opacity: 1;
+}
+.order-online .delivery-and-check .check-out-info .cash-card-buttons p {
+  opacity: 0.7;
+  transition: 0.2s ease-in-out;
+  font-size: 20px;
+}
+.order-online .delivery-and-check .check-out-info .cash-text-details {
+  width: 100%;
+  margin-top: 3rem;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px rgb(255, 255, 255);
+  padding: 2rem;
+}
+.order-online .delivery-and-check .check-out-info .cash-text-details svg {
+  min-height: 20px;
+  min-width: 20px;
+  color: springgreen;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper {
+  height: 100%;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-choice {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  width: 100%;
+  font-size: 29px;
+  font-style: italic;
+  font-weight: bold;
+  border: 2px solid white;
+  border-radius: 17px;
+  box-shadow: 1px 1px 7px white;
+  overflow: hidden;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-choice .card-name {
+  flex: 50%;
+  user-select: none;
+  transition: 0.2s ease-in-out;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-choice .card-name:hover {
+  cursor: pointer;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-choice .active {
+  background-color: white;
+  color: black;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-choice.no-card-selected {
+  animation: white-shadow-wrapper 0.6s ease-in-out;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .division-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgb(255, 255, 255);
+  height: 100%;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-info {
+  position: relative;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px rgb(255, 255, 255);
+  padding: 2rem;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-info .card-input-wrapper {
+  position: relative;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-info .card-input-wrapper .card-input-error {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 12px;
+  color: rgb(255, 80, 80);
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-info .card-input-wrapper input {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: white;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-info .card-input-wrapper input:focus {
+  outline: none;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-info .card-input-wrapper .exp-cvv .exp {
+  flex: 60%;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-info .card-input-wrapper .exp-cvv .cvv {
+  flex: 30%;
+}
+.order-online .delivery-and-check .check-out-info .card-wrapper .card-info .sub-total-showcasing {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -20%;
+}
+.order-online .delivery-and-check .check-out-info .purchase-button {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.order-online .delivery-and-check .check-out-info .purchase-button .date-arrival-text {
+  width: 100%;
+}
+.order-online .delivery-and-check .check-out-info .purchase-button button {
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  margin-right: 5rem;
+  border-radius: 10px;
+  border: 0px solid;
+  transition: 0.2s ease-in-out;
+}
+.order-online .delivery-and-check .check-out-info .purchase-button button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.order-online .delivery-and-check .check-out-info .purchase-button button {
+  margin: 0;
+  width: fit-content;
+}
+.order-online .delivery-and-check .confirmation-info {
+  height: 100%;
+  font-size: 25px;
+}
+.order-online .delivery-and-check .confirmation-info .confirmation-check {
+  border: 2px solid whitesmoke;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px rgb(255, 255, 255);
+  padding: 20px;
+}
+.order-online .delivery-and-check .confirmation-info .confirmation-check svg {
+  filter: drop-shadow(0px 0px 6px white);
+}/*# sourceMappingURL=style.css.map */
