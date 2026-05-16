@@ -79,12 +79,14 @@ function Order() {
     const handleDeliveryInputChange = (e) => {
         const {name, value} = e.target;
 
+        const formattedValue = name === "firstName" || name === "lastName" || name === "city" || name === "municipality" || name === "streetAddress" ?
+            value.charAt(0).toUpperCase() + value.slice(1) :
+            value;
+
         setDeliveryData(prev => ({
             ...prev,
-            [name]: value
+            [name]: formattedValue
         }));
-
-        console.log(deliveryData);
     }
 
 // -------------------------------------------------------------   DELIVERY FORM CODE    -------------------------------------------------------------
@@ -107,9 +109,22 @@ function Order() {
     const handlePaymentInputChange = (e) => {
         const { name, value } = e.target;
 
+        let formattedValue = "";
+
+        if (name === "name") {
+            formattedValue = value.toUpperCase()
+        }
+        else if (name === "number") {
+            formattedValue = value.replace(/[^0-9]/g, "").slice(0, 16).match(/.{1,4}/g)?.join("-") || "";
+        }
+        else if (name === "expiry") {
+            formattedValue = value.replace(/[^0-9]/g, "").slice(0, 4).match(/.{1,2}/g)?.join("/") || "";
+        }
+
+
         setCardData(prev => ({
             ...prev,
-            [name]: value
+            [name]: formattedValue
         }));
     };
 
@@ -141,36 +156,54 @@ function Order() {
         if (isEmpty(deliveryData.firstName)) {
             errors.firstName = "First name is required";
         }
+        else if (!/^[a-zA-Z -]{2,25}$/.test(deliveryData.firstName)) {
+            errors.firstName = "English letters, between 2-25 length"
+        }
 
         if (isEmpty(deliveryData.lastName)) {
             errors.lastName = "Last name is required";
         }
+        else if (!/^[a-zA-Z -]{2,25}$/.test(deliveryData.lastName)) {
+            errors.lastName = "English letters, between 2-25 length"
+        }
 
         if (isEmpty(deliveryData.phoneNumber)) {
             errors.phoneNumber = "Phone number is required";
-        } else if (deliveryData.phoneNumber.length < 10) {
-            errors.phoneNumber = "Too short";
+        }
+        else if (!/^\d{10}$/.test(deliveryData.phoneNumber)) {
+            errors.phoneNumber = "Digits only, length of 10";
         }
 
-        if (isEmpty(deliveryData.email) || !deliveryData.email.includes("@")) {
+        if (isEmpty(deliveryData.email)) {
+            errors.email = "Invalid email";
+        }
+        else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-z_A-Z]{2,6}$/.test(deliveryData.email)) {
             errors.email = "Invalid email";
         }
 
         if (isEmpty(deliveryData.city)) {
             errors.city = "City is required";
         }
+        else if (!/^[a-zA-Z -,]{2,25}$/.test(deliveryData.city)) {
+            errors.city = "English letters, between 2-25 length"
+        }
 
         if (isEmpty(deliveryData.municipality)) {
             errors.municipality = "Municipality is required";
         }
+        else if (!/^[a-zA-Z -,]{2,25}$/.test(deliveryData.municipality)) {
+            errors.municipality = "English letters, between 2-25 length"
+        }
 
-        if (deliveryData.zip.length !== 5) {
+        if (!/^[0-9]{5}$/.test(deliveryData.zip)) {
             errors.zip = "ZIP must be 5 digits";
         }
 
         if (isEmpty(deliveryData.streetAddress)) {
             errors.streetAddress = "Address is required";
         }
+        else if (!/^[a-zA-Z0-9&/ ]{2,40}$/.test(deliveryData.streetAddress))
+            errors.streetAddress = "Required valid name and number";
 
         if (Object.keys(errors).length > 0) {
             setFormErrors(errors);
@@ -179,7 +212,6 @@ function Order() {
 
         setFormErrors({});
         return true;
-        console.log("All good ✅");
     };
 
     const [cardFormErrors, setCardFormErrors] = useState({});
@@ -190,17 +222,29 @@ function Order() {
         if (isEmpty(cardData.name)) {
             errors.name = "required";
         }
+        else if (!/^[a-zA-Z -]{2,25}$/.test(cardData.name)) {
+            errors.name = "English letters only"
+        }
 
         if (isEmpty(cardData.number)) {
             errors.number = "required";
+        }
+        else if (!/^[0-9-]{19}$/.test(cardData.number)) {
+            errors.number = "Type a valid card number";
         }
 
         if (isEmpty(cardData.expiry)) {
             errors.expiry = "required";
         }
+        else if (!/^(0[1-9]|1[0-2])\/[0-9]{2}$/.test(cardData.expiry)) {
+            errors.expiry = "Invalid date MM/YY"
+        }
 
         if (isEmpty(cardData.cvv)) {
             errors.cvv = "required";
+        }
+        else if (!/^[0-9]{3}$/.test(cardData.cvv)) {
+            errors.cvv = "Invalid CVV - 3 digits only"
         }
 
         if (Object.keys(errors).length > 0) {
