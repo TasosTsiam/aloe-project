@@ -477,8 +477,8 @@ body {
 .homepage .products-container .line-effect-wrapper .priceplans-button button {
   border: 0;
   width: 100%;
-  padding: 0.5rem 0;
-  border-radius: 17px;
+  padding: 15px 30px;
+  border-radius: 27px;
   background: transparent;
   color: rgb(255, 255, 255);
   letter-spacing: 1px;
@@ -2039,4 +2039,111 @@ body {
 }
 .order-online .delivery-and-check .confirmation-info .confirmation-check svg {
   filter: drop-shadow(0px 0px 6px white);
+}
+
+.login-container {
+  margin-bottom: 10rem;
+  width: 100%;
+}
+.login-container .login-info-wrapper {
+  flex: 1;
+  border-radius: 22px;
+}
+.login-container .login-info-wrapper .logo-brand .website-brand {
+  font-size: 35px;
+}
+.login-container .login-info-wrapper .logo-brand .website-brand span {
+  font-style: italic;
+  background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
+}
+.login-container .login-info-wrapper .login-form {
+  height: 100%;
+  width: 80%;
+}
+.login-container .login-info-wrapper .login-form .login-info .input-wrapper {
+  position: relative;
+  width: 100%;
+}
+.login-container .login-info-wrapper .login-form .login-info .input-wrapper .input-error {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding-right: 30px;
+  font-size: 12px;
+  color: rgb(255, 80, 80);
+}
+.login-container .login-info-wrapper .login-form .login-info .input-wrapper input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.603);
+  border-radius: 27px;
+  padding: 15px 30px;
+  background: transparent;
+  color: white;
+}
+.login-container .login-info-wrapper .login-form .login-info .input-wrapper input:focus {
+  outline: none;
+}
+.login-container .login-info-wrapper .login-form .remember-forgot .remember-me .remember-button {
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.61);
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  background: transparent;
+  transition: 0.2s ease-in-out;
+}
+.login-container .login-info-wrapper .login-form .remember-forgot .remember-me .remember-button .remember-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  height: 9px;
+  width: 9px;
+  transition: 0.2s ease-in-out;
+  opacity: 1;
+  background: white;
+}
+.login-container .login-info-wrapper .login-form .remember-forgot .remember-me .remember-button:hover {
+  border: 2px solid white;
+}
+.login-container .login-info-wrapper .login-form .remember-forgot .remember-me .remember-button:hover:hover + p {
+  opacity: 1;
+}
+.login-container .login-info-wrapper .login-form .or-wrapper {
+  margin: 2rem 0;
+}
+.login-container .login-info-wrapper .login-form .or-wrapper .line {
+  top: 50%;
+  transform: translate(0, -50%);
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+.login-container .login-info-wrapper .login-form .login-button, .login-container .login-info-wrapper .login-form .google-button, .login-container .login-info-wrapper .login-form .apple-button {
+  border: 0;
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 27px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 1px 1px rgb(255, 255, 255);
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.login-container .login-info-wrapper .login-form .login-button:hover, .login-container .login-info-wrapper .login-form .google-button:hover, .login-container .login-info-wrapper .login-form .apple-button:hover {
+  box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
+}
+.login-container .login-image-wrapper {
+  flex: 1;
+  background: url(../images/login-bottle.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 22px;
 }/*# sourceMappingURL=style.css.map */

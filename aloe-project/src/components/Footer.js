@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AloeLogo from '../logo.svg';
+import AloeLogo from '../images/logo.svg';
 import { BsFacebook, BsInstagram, BsPinterest } from "react-icons/bs";
 
 

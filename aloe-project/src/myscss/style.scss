@@ -482,20 +482,7 @@ body {
                 &-button {
 
                     button {
-                        border: 0;
-                        width: 100%;
-                        padding: 0.5rem 0;
-                        border-radius: 17px;
-                        background: transparent;
-                        color: rgb(255, 255, 255);
-                        letter-spacing: 1px;
-                        box-shadow: 2px 2px 1px 1px rgba(255, 255, 255);
-                        z-index: 1;
-                        transition: 0.3s ease-in-out;
-
-                        &:hover {
-                            box-shadow: -3px -3px 2px 1px rgba(255, 255, 255);
-                        }
+                        @include button2;
                     }
                 }
 
@@ -2025,5 +2012,134 @@ body {
                 }
             }
         }
+    }
+}
+
+.login-container {
+    margin-bottom: 10rem;
+    width: 100%;
+
+    .login-info-wrapper {
+        flex: 1;
+        border-radius: 22px;
+
+        .logo-brand {
+
+            .website-logo {
+
+            }
+
+            .website-brand {
+                font-size: 35px;
+
+                span {
+                    font-style: italic;
+                    background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
+                    background-clip: text;
+                    color: transparent;
+                    text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
+                }
+            }
+        }
+
+        .login-form {
+            height: 100%;
+            width: 80%;
+
+            .login-info {
+
+                .input-wrapper {
+                    position: relative;
+                    width: 100%;
+
+                    .input-error {
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        padding-right: 30px;
+                        font-size: 12px;
+                        color: rgb(255, 80, 80);
+                    }
+
+                    input {
+                        width: 100%;
+                        border: 1px solid rgba(255, 255, 255, 0.603);
+                        border-radius: 27px;
+                        padding: 15px 30px;
+                        background: transparent;
+                        color: white;
+
+                        &:focus {
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            .remember-forgot {
+
+                .remember-me {
+
+                    .remember-button {
+                        position: relative;
+                        border: 2px solid rgba(255, 255, 255, 0.61);
+                        border-radius: 50%;
+                        height: 22px;
+                        width: 22px;
+                        background: transparent;
+                        transition: 0.2s ease-in-out;
+
+                        .remember-background {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            border: 0;
+                            border-radius: 50%;
+                            height: 9px;
+                            width: 9px;
+                            transition: 0.2s ease-in-out;
+                            opacity: 1;
+                            background: white;
+                        }
+
+                        &:hover {
+
+                            border: 2px solid white;
+
+                            &:hover + p {
+                                opacity: 1;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            .or-wrapper {
+                margin: 2rem 0;
+
+                .line {
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    border-bottom: 1px solid white;
+                    width: 100%;
+                }
+            }
+
+            .login-button, .google-button, .apple-button {
+                @include button2;
+            }
+        }
+    }
+
+    .login-image-wrapper {
+        flex: 1;
+        background: url(../images/login-bottle.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 22px;
     }
 }
