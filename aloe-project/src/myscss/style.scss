@@ -2016,17 +2016,21 @@ body {
 }
 
 .login-container {
+    position: relative;
     margin-bottom: 10rem;
+    width: 80%;
+    justify-self: center;
 
     .login-info-wrapper {
         position: relative;
         z-index: 9999;
         margin-right: -30px;
-        flex: 1;
+        width: 50%;
         border: 1px solid white;
         border-radius: 22px;
         background: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
         box-shadow: 0px 0px 130px 5px black;
+        user-select: none;
 
         .drag-arrow-right {
             position: absolute;
@@ -2170,12 +2174,28 @@ body {
     }
 
     .login-image-wrapper {
-        flex: 1;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 53%;
         background: url(../images/aloe-4.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         border-radius: 0 27px 27px 0;
+        box-shadow: 0px 0px 130px 5px black;
+    }
+
+    .signup-image-wrapper {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 53%;
+        background: url(../images/aloe-6.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 27px 0 0 27px;
         box-shadow: 0px 0px 130px 5px black;
     }
 }

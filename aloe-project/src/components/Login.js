@@ -98,6 +98,7 @@ function Login() {
     useEffect(() => {
         containerWidthRef.current = containerRef.current.offsetWidth;
         cardWidthRef.current = loginRef.current.offsetWidth;
+        console.log('container:', containerWidthRef.current, 'card:', cardWidthRef.current);
     }, [])
 
     // -------------------------------------------------------------   DRAGGING CODE    -------------------------------------------------------------
@@ -132,7 +133,7 @@ function Login() {
     // -------------------------------------------------------------   CHECK VALID INPUT CODE    -------------------------------------------------------------
 
     return (
-        <div className="login-container d-flex container" ref={containerRef}>
+        <div className="login-container d-flex" ref={containerRef}>
             <div className="login-info-wrapper"
                 style={{
                     transform: `translateX(${dragOffset}px)`,
@@ -240,9 +241,21 @@ function Login() {
                         </button>
                     </div>
                 </div>
-                
             </div>
-            <div className="login-image-wrapper">
+            <div className="login-image-wrapper"
+                style={{
+                    opacity: 1 - progress,
+                    pointerEvents: progress > 0.5 ? 'none' : 'auto',
+                    transition: isDragging ? 'none' : 'opacity 0.4s ease'
+                }}>
+
+            </div>
+            <div className="signup-image-wrapper"
+                style={{
+                    opacity: progress,
+                    pointerEvents: progress > 0.5 ? 'none' : 'auto',
+                    transition: isDragging ? 'none' : 'opacity 0.4s ease'
+                }}>
 
             </div>
         </div>
