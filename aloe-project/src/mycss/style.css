@@ -2047,7 +2047,7 @@ body {
   width: 80%;
   justify-self: center;
 }
-.login-container .login-info-wrapper {
+.login-container .login-signup-wrapper {
   position: relative;
   z-index: 9999;
   margin-right: -30px;
@@ -2058,7 +2058,17 @@ body {
   box-shadow: 0px 0px 130px 5px black;
   user-select: none;
 }
-.login-container .login-info-wrapper .drag-arrow-right {
+.login-container .login-signup-wrapper .logo-brand .website-brand {
+  font-size: 35px;
+}
+.login-container .login-signup-wrapper .logo-brand .website-brand span {
+  font-style: italic;
+  background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
+}
+.login-container .login-signup-wrapper .drag-arrow-right {
   position: absolute;
   top: 50%;
   right: 1%;
@@ -2075,15 +2085,16 @@ body {
   border: 0px solid;
   transition: 0.2s ease-in-out;
 }
-.login-container .login-info-wrapper .drag-arrow-right:hover {
+.login-container .login-signup-wrapper .drag-arrow-right:hover {
   box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
 }
-.login-container .login-info-wrapper .drag-arrow-right {
+.login-container .login-signup-wrapper .drag-arrow-right {
   margin: 0;
   border-radius: 50%;
   padding: 15px;
+  z-index: 1;
 }
-.login-container .login-info-wrapper .drag-arrow-left {
+.login-container .login-signup-wrapper .drag-arrow-left {
   position: absolute;
   top: 50%;
   left: 1%;
@@ -2100,33 +2111,24 @@ body {
   border: 0px solid;
   transition: 0.2s ease-in-out;
 }
-.login-container .login-info-wrapper .drag-arrow-left:hover {
+.login-container .login-signup-wrapper .drag-arrow-left:hover {
   box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
 }
-.login-container .login-info-wrapper .drag-arrow-left {
+.login-container .login-signup-wrapper .drag-arrow-left {
   margin: 0;
   border-radius: 50%;
   padding: 15px;
+  z-index: 1;
 }
-.login-container .login-info-wrapper .login-content .logo-brand .website-brand {
-  font-size: 35px;
-}
-.login-container .login-info-wrapper .login-content .logo-brand .website-brand span {
-  font-style: italic;
-  background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
-  background-clip: text;
-  color: transparent;
-  text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
-}
-.login-container .login-info-wrapper .login-content .login-form {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form {
   height: 100%;
   width: 80%;
 }
-.login-container .login-info-wrapper .login-content .login-form .login-info .input-wrapper {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper {
   position: relative;
   width: 100%;
 }
-.login-container .login-info-wrapper .login-content .login-form .login-info .input-wrapper .input-error {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper .input-error {
   position: absolute;
   right: 0;
   top: 50%;
@@ -2135,7 +2137,7 @@ body {
   font-size: 12px;
   color: rgb(255, 80, 80);
 }
-.login-container .login-info-wrapper .login-content .login-form .login-info .input-wrapper input {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper input {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.603);
   border-radius: 27px;
@@ -2143,10 +2145,10 @@ body {
   background: transparent;
   color: white;
 }
-.login-container .login-info-wrapper .login-content .login-form .login-info .input-wrapper input:focus {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper input:focus {
   outline: none;
 }
-.login-container .login-info-wrapper .login-content .login-form .remember-forgot .remember-me .remember-button {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button {
   position: relative;
   border: 2px solid rgba(255, 255, 255, 0.61);
   border-radius: 50%;
@@ -2155,7 +2157,7 @@ body {
   background: transparent;
   transition: 0.2s ease-in-out;
 }
-.login-container .login-info-wrapper .login-content .login-form .remember-forgot .remember-me .remember-button .remember-background {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button .remember-background {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2168,26 +2170,26 @@ body {
   opacity: 1;
   background: white;
 }
-.login-container .login-info-wrapper .login-content .login-form .remember-forgot .remember-me .remember-button:hover {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button:hover {
   border: 2px solid white;
 }
-.login-container .login-info-wrapper .login-content .login-form .remember-forgot .remember-me .remember-button:hover:hover + p {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button:hover:hover + p {
   opacity: 1;
 }
-.login-container .login-info-wrapper .login-content .login-form .remember-forgot .forgot-pass {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .forgot-pass {
   color: rgb(76, 160, 255);
   font-weight: 500;
 }
-.login-container .login-info-wrapper .login-content .login-form .or-wrapper {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .or-wrapper {
   margin: 2rem 0;
 }
-.login-container .login-info-wrapper .login-content .login-form .or-wrapper .line {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .or-wrapper .line {
   top: 50%;
   transform: translate(0, -50%);
   border-bottom: 1px solid white;
   width: 100%;
 }
-.login-container .login-info-wrapper .login-content .login-form .login-button, .login-container .login-info-wrapper .login-content .login-form .google-button, .login-container .login-info-wrapper .login-content .login-form .apple-button {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-button, .login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .google-button, .login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .apple-button {
   border: 0;
   width: 100%;
   padding: 15px 30px;
@@ -2199,7 +2201,64 @@ body {
   z-index: 1;
   transition: 0.3s ease-in-out;
 }
-.login-container .login-info-wrapper .login-content .login-form .login-button:hover, .login-container .login-info-wrapper .login-content .login-form .google-button:hover, .login-container .login-info-wrapper .login-content .login-form .apple-button:hover {
+.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-button:hover, .login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .google-button:hover, .login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .apple-button:hover {
+  box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form {
+  width: 80%;
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper {
+  position: relative;
+  width: 100%;
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper .input-error {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding-right: 30px;
+  font-size: 12px;
+  color: rgb(255, 80, 80);
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.603);
+  border-radius: 27px;
+  padding: 15px 30px;
+  background: transparent;
+  color: white;
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper input:focus {
+  outline: none;
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .or-wrapper {
+  margin: 1rem 0;
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .or-wrapper .line {
+  top: 50%;
+  transform: translate(0, -50%);
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-button, .login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .google-button, .login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .apple-button {
+  border: 0;
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 27px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 1px 1px rgb(255, 255, 255);
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-button:hover, .login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .google-button:hover, .login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .apple-button:hover {
   box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
 }
 .login-container .login-image-wrapper {

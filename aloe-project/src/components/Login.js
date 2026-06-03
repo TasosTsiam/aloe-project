@@ -98,7 +98,6 @@ function Login() {
     useEffect(() => {
         containerWidthRef.current = containerRef.current.offsetWidth;
         cardWidthRef.current = loginRef.current.offsetWidth;
-        console.log('container:', containerWidthRef.current, 'card:', cardWidthRef.current);
     }, [])
 
     // -------------------------------------------------------------   DRAGGING CODE    -------------------------------------------------------------
@@ -134,12 +133,21 @@ function Login() {
 
     return (
         <div className="login-container d-flex" ref={containerRef}>
-            <div className="login-info-wrapper"
+            <div className="login-signup-wrapper d-flex flex-column"
                 style={{
                     transform: `translateX(${dragOffset}px)`,
                     transition: isDragging ? 'none' : 'transform 0.4s ease'
                 }}
-                ref={loginRef}>
+                ref={loginRef}
+            >
+                <div className="logo-brand d-flex align-items-center justify-content-center gap-3 p-3">
+                    <div className="website-logo">
+                        <img src={AloeLogo} alt="Aloe Logo"/>
+                    </div>
+                    <div className="website-brand">
+                        Thess<span>aloe</span>niki
+                    </div>
+                </div>
                 <div className="drag-arrow-right"
                     style={{opacity: 1 - progress}}
                     onMouseDown={(e) => {
@@ -160,85 +168,159 @@ function Login() {
                 >
                     <RxDoubleArrowLeft size={30}></RxDoubleArrowLeft>
                 </div>
-                <div className="login-content d-flex flex-column align-items-center gap-5 p-3"
-                    style={{
-                        opacity: 1 - progress,
-                        pointerEvents: progress > 0.5 ? 'none' : 'auto',
-                        transition: isDragging ? 'none' : 'opacity 0.4s ease'
-                    }}>
-                    <div className="logo-brand d-flex align-items-center gap-3">
-                        <div className="website-logo">
-                            <img src={AloeLogo} alt="Aloe Logo"/>
+                <div className="login-signup-contents">
+                    <div className="signup-content d-flex flex-column align-items-center p-3"
+                        style={{
+                            opacity: Math.max(0, (progress - 0.5) * 2),
+                            pointerEvents: progress < 0.5 ? 'none' : 'auto',
+                            transition: isDragging ? 'none' : 'opacity 0.4s ease'
+                        }}
+                    >
+                        <div className="d-flex flex-column text-center">
+                            <div>Don't have an account? Sign Up!</div>
+                            <div>...or drag the arrows to Log in</div>
                         </div>
-                        <div className="website-brand">
-                            Thess<span>aloe</span>niki
+                        <div className="signup-form d-flex flex-column justify-content-center mt-4 gap-4">
+                            <form id="signup-form" className="signup-info d-flex flex-column align-items-center gap-1">
+                                <div className="input-wrapper">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Email"
+                                        value={loginData.username}
+                                        onChange={handleLoginInputChange}
+                                        className=""
+                                    />
+                                    {formErrors.username && <div className="input-error">{formErrors.username}</div>}
+                                </div>
+                                <div className="input-wrapper">
+                                    <input
+                                        type="text"
+                                        name="username"
+                                        placeholder="Username"
+                                        value={loginData.username}
+                                        onChange={handleLoginInputChange}
+                                        className=""
+                                    />
+                                    {formErrors.username && <div className="input-error">{formErrors.username}</div>}
+                                </div>
+                                <div className="input-wrapper">
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        placeholder="Password"
+                                        value={loginData.password}
+                                        onChange={handleLoginInputChange}
+                                        className=""
+                                    />
+                                    {formErrors.password && <div className="input-error">{formErrors.password}</div>}
+                                </div>
+                                <div className="input-wrapper">
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        placeholder="Confirm Password"
+                                        value={loginData.password}
+                                        onChange={handleLoginInputChange}
+                                        className=""
+                                    />
+                                    {formErrors.password && <div className="input-error">{formErrors.password}</div>}
+                                </div>
+                            </form>
+                            <button type="button" form="delivery-form" className="signup-button d-flex align-self-center justify-content-center mt-3" onClick={() => {
+                                verifyUserInput();
+                            }}>
+                                <div>Sign Up</div>
+                            </button>
+                            <div className="or-wrapper d-flex justify-content-center gap-2 opacity-75">
+                                <div className="line"></div>
+                                <div>OR</div>
+                                <div className="line"></div>
+                            </div>
+                            <button className="google-button d-flex justify-content-center align-items-center gap-2">
+                                <FcGoogle></FcGoogle>
+                                <div>Sign Up with Google</div>
+                            </button>
+                            <button className="apple-button d-flex justify-content-center align-items-center gap-2">
+                                <FaApple></FaApple>
+                                <div>Sign Up with Apple</div>
+                            </button>
                         </div>
                     </div>
-                    <div className="">
-                        Already have an account? Log in!
-                    </div>
-                    <div className="login-form d-flex flex-column justify-content-center gap-4">
-                        <form id="login-form" className="login-info d-flex flex-column align-items-center gap-4">
-                            <div className="input-wrapper">
-                                <input
-                                    type="text"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={loginData.username}
-                                    onChange={handleLoginInputChange}
-                                    className=""
-                                />
-                                {formErrors.username && <div className="input-error">{formErrors.username}</div>}
-                            </div>
-                            <div className="input-wrapper">
-                                <input
-                                    type="password"
-                                    name="password"
-                                    placeholder="Password"
-                                    value={loginData.password}
-                                    onChange={handleLoginInputChange}
-                                    className=""
-                                />
-                                {formErrors.password && <div className="input-error">{formErrors.password}</div>}
-                            </div>
-                        </form>
-                        <div className="remember-forgot d-flex justify-content-between">
-                            <div className="remember-me d-flex gap-2">
-                                <button
-                                    className="remember-button d-flex justify-content-center align-items-center align-self-center"
-                                    onClick={() => {
-                                        setRememberMe(!rememberMe);
+                    <div className="login-content d-flex flex-column align-items-center gap-5 p-3"
+                        style={{
+                            opacity: 1 - (progress * 2),
+                            pointerEvents: progress > 0.5 ? 'none' : 'auto',
+                            transition: isDragging ? 'none' : 'opacity 0.4s ease'
+                        }}
+                    >
+                        <div className="d-flex flex-column text-center">
+                            <div>Already have an account? Log in!</div>
+                            <div>...or drag the arrows to Sign Up</div>
+                        </div>
+                        <div className="login-form d-flex flex-column justify-content-center gap-4">
+                            <form id="login-form" className="login-info d-flex flex-column align-items-center gap-4">
+                                <div className="input-wrapper">
+                                    <input
+                                        type="text"
+                                        name="username"
+                                        placeholder="Username"
+                                        value={loginData.username}
+                                        onChange={handleLoginInputChange}
+                                        className=""
+                                    />
+                                    {formErrors.username && <div className="input-error">{formErrors.username}</div>}
+                                </div>
+                                <div className="input-wrapper">
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        placeholder="Password"
+                                        value={loginData.password}
+                                        onChange={handleLoginInputChange}
+                                        className=""
+                                    />
+                                    {formErrors.password && <div className="input-error">{formErrors.password}</div>}
+                                </div>
+                            </form>
+                            <div className="remember-forgot d-flex justify-content-between">
+                                <div className="remember-me d-flex gap-2">
+                                    <button
+                                        className="remember-button d-flex justify-content-center align-items-center align-self-center"
+                                        onClick={() => {
+                                            setRememberMe(!rememberMe);
+                                            }
                                         }
-                                    }
-                                >
-                                    {rememberMe && (<div className={`remember-background`}></div>)}
-                                </button>
-                                <p className="text-start mb-0">
-                                    Remember me
-                                </p>
+                                    >
+                                        {rememberMe && (<div className={`remember-background`}></div>)}
+                                    </button>
+                                    <p className="text-start mb-0">
+                                        Remember me
+                                    </p>
+                                </div>
+                                <div className="forgot-pass">
+                                    Forgot Password?
+                                </div>
                             </div>
-                            <div className="forgot-pass">
-                                Forgot Password?
+                            <button type="button" form="delivery-form" className="login-button d-flex align-self-center justify-content-center mt-4" onClick={() => {
+                                verifyUserInput();
+                            }}>
+                                <div>Login</div>
+                            </button>
+                            <div className="or-wrapper d-flex justify-content-center gap-2 opacity-75">
+                                <div className="line"></div>
+                                <div>OR</div>
+                                <div className="line"></div>
                             </div>
+                            <button className="google-button d-flex justify-content-center align-items-center gap-2">
+                                <FcGoogle></FcGoogle>
+                                <div>Login with Google</div>
+                            </button>
+                            <button className="apple-button d-flex justify-content-center align-items-center gap-2">
+                                <FaApple></FaApple>
+                                <div>Login with Apple</div>
+                            </button>
                         </div>
-                        <button type="button" form="delivery-form" className="login-button d-flex align-self-center justify-content-center mt-4" onClick={() => {
-                            verifyUserInput();
-                        }}>
-                            <div>Login</div>
-                        </button>
-                        <div className="or-wrapper d-flex justify-content-center gap-2 opacity-75">
-                            <div className="line"></div>
-                            <div>OR</div>
-                            <div className="line"></div>
-                        </div>
-                        <button className="google-button d-flex justify-content-center align-items-center gap-2">
-                            <FcGoogle></FcGoogle>
-                            <div>Login with Google</div>
-                        </button>
-                        <button className="apple-button d-flex justify-content-center align-items-center gap-2">
-                            <FaApple></FaApple>
-                            <div>Login with Apple</div>
-                        </button>
                     </div>
                 </div>
             </div>
