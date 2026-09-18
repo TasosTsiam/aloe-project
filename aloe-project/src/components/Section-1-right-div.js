@@ -14,26 +14,25 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                     boxShadow: boxShadow}
                 }
             >
-                <div className="gradient-image-1 d-flex justify-content-center"
+                <div className={`gradient-image-1 d-flex justify-content-center ${backgroundImage === aloe2 ? 'aloe2-bottle-left-positioning' : ''}`}
                     style={
                         backgroundImage === aloe1 ? {
                             left: '-30%',
                             top: '-10%',
-                            height: '230px',
-                            width: '230px',
+                            height: '41.07%',
+                            width: '41.07%',
                             transform: 'rotate(-25deg)'} :
                         backgroundImage === aloe2 ? {
-                            left: '87%',
                             top: '-13%',
-                            height: '150px',
-                            width: '150px',
+                            height: '26.79%',
+                            width: '26.79%',
                             transform: 'rotate(10deg)'
                         } :
                         backgroundImage === aloe3 ? {
                             left: '-7%',
                             top: '100%',
-                            height: '100px',
-                            width: '100px',
+                            height: '17.86%',
+                            width: '17.86%',
                             transform: 'rotate(-45deg)'
                         } : {}
                     }
@@ -42,9 +41,9 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512"
                         style={
-                            backgroundImage === aloe1 ? {height: '4.5rem'} :
-                            backgroundImage === aloe2 ? {height: '3rem'} :
-                            backgroundImage === aloe3 ? {height: '2rem'} : {}
+                            backgroundImage === aloe1 ? {height: '31.30%'} :
+                            backgroundImage === aloe2 ? {height: '32.00%'} :
+                            backgroundImage === aloe3 ? {height: '32.00%'} : {}
                         }
                     >
                         <defs>
@@ -61,21 +60,21 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                         backgroundImage === aloe1 ? {
                             left: '-51%',
                             top: '-17%',
-                            height: '100px',
-                            width: '100px',
+                            height: '17.86%',
+                            width: '17.86%',
                             transform: 'rotate(5deg)'} :
                         backgroundImage === aloe2 ? {
                             left: '45%',
                             top: '70%',
-                            height: '230px',
-                            width: '230px',
+                            height: '41.07%',
+                            width: '41.07%',
                             transform: 'rotate(45deg)'
                         } :
                         backgroundImage === aloe3 ? {
                             left: '-57%',
                             top: '55%',
-                            height: '320px',
-                            width: '320px',
+                            height: '57.14%',
+                            width: '57.14%',
                             transform: 'rotate(-15deg)'
                         } : {}
                     }
@@ -84,9 +83,9 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512"
                         style={
-                            backgroundImage === aloe1 ? {height: '2rem'} :
-                            backgroundImage === aloe2 ? {height: '4.5rem'} :
-                            backgroundImage === aloe3 ? {height: '5.5rem'} : {}
+                            backgroundImage === aloe1 ? {height: '32.00%'} :
+                            backgroundImage === aloe2 ? {height: '31.30%'} :
+                            backgroundImage === aloe3 ? {height: '27.50%'} : {}
                         }
                     >
                         <defs>
@@ -103,21 +102,21 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                         backgroundImage === aloe1 ? {
                             left: '-60%',
                             top: '-12%',
-                            height: '150px',
-                            width: '150px',
+                            height: '26.79%',
+                            width: '26.79%',
                             transform: 'rotate(45deg)'} :
                         backgroundImage === aloe2 ? {
                             left: '2%',
                             top: '-8%',
-                            height: '100px',
-                            width: '100px',
+                            height: '17.86%',
+                            width: '17.86%',
                             transform: 'rotate(-25deg)'
                         } :
                         backgroundImage === aloe3 ? {
                             left: '-70%',
                             top: '94%',
-                            height: '150px',
-                            width: '150px',
+                            height: '26.79%',
+                            width: '26.79%',
                             transform: 'rotate(30deg)'
                         } : {}
                     }
@@ -126,9 +125,9 @@ function S1RightDiv({ backgroundImage, boxShadow }) {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512"
                         style={
-                            backgroundImage === aloe1 ? {height: '3rem'} :
-                            backgroundImage === aloe2 ? {height: '2rem'} :
-                            backgroundImage === aloe3 ? {height: '3rem'} : {}
+                            backgroundImage === aloe1 ? {height: '32.00%'} :
+                            backgroundImage === aloe2 ? {height: '32.00%'} :
+                            backgroundImage === aloe3 ? {height: '32.00%'} : {}
                         }
                     >
                         <defs>

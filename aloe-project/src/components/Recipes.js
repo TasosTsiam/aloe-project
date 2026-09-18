@@ -24,11 +24,11 @@ function Recipes() {
         };
     }, []);
 
-    const text1 = "We’re all familiar with the wonderful benefits of consuming aloe vera."
-    const text2 = "Whether it’s strengthening your hair, clearing up skin, reducing heartburn,"
-    const text3 = "or maintaining eye health, this nutritious herb is a worthwhile addition to your diet."
-    const text4 = "Sure, there are people who really enjoy eating aloe vera,"
-    const text5 = "but for those who don’t, we came up with some delicious Aloe Vera Recipes for you!"
+    const text1 = "We're all familiar with aloe vera's wonderful benefits."
+    const text2 = "Whether it's stronger hair, clearer skin, or less heartburn,"
+    const text3 = "or maintaining eye health — a worthwhile diet addition."
+    const text4 = "Sure, some genuinely enjoy eating aloe vera,"
+    const text5 = "but if you don't, try these delicious Aloe Vera recipes!"
 
     const nectarText1 = `Indulge in the exquisite blend of Mavrodaphne Nectar, a tantalizing
                         beverage that beckons the senses with its delightful taste and inherent health benefits.
@@ -66,7 +66,7 @@ function Recipes() {
                             and let each sip bring a moment of culinary joy.`
 
     return (
-        <div className={`recipes container d-flex flex-column align-items-center ${isRecipesVisible ? "recipes-visible" : ""}`}>
+        <div className={`recipes container-fluid d-flex flex-column align-items-center ${isRecipesVisible ? "recipes-visible" : ""}`}>
             <div className="recipes-introduction d-flex flex-column align-items-center text-center">
                 <div className="recipes-introduction-headers d-flex justify-content-center">
                     <h1 className={`recipes-introduction-headers-header1 ${isRecipesVisible ? "centered" : ""}`}>R</h1>
@@ -87,7 +87,7 @@ function Recipes() {
             </div>
             <div className="recipes-top-left-1 col-8">
                 <div className="bottom-right-1">
-                    <div className="row d-flex justify-content-between">
+                    <div className="cards-wrapper row d-flex justify-content-between">
                         <h2 className="recipes-title mb-0">Mavrodaphne Nectar</h2>
                         <div className="recipes-instructions d-flex flex-column col-6">
                             <h4>Instructions</h4>
@@ -119,7 +119,7 @@ function Recipes() {
             </div>
             <div className="recipes-top-left-2 col-8">
                 <div className="bottom-right-2">
-                    <div className="row d-flex justify-content-between">
+                    <div className="cards-wrapper row d-flex justify-content-between">
                         <h2 className="recipes-title mb-0">AmourRose Sauce</h2>
                         <div className="recipes-instructions d-flex flex-column col-6">
                             <h4>Instructions</h4>
@@ -151,7 +151,7 @@ function Recipes() {
             </div>
             <div className="recipes-top-left-3 col-8">
                 <div className="bottom-right-3">
-                    <div className="row d-flex justify-content-between">
+                    <div className="cards-wrapper row d-flex justify-content-between">
                         <h2 className="recipes-title mb-0">Blissful Symphony</h2>
                         <div className="recipes-instructions d-flex flex-column col-6">
                             <h4>Instructions</h4>

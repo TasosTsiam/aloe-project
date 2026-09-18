@@ -7,6 +7,7 @@ import S1LeftDiv from './Section-1-left-div.js';
 import S1RightDiv from './Section-1-right-div.js';
 import Products from './Products.js';
 import Recipes from './Recipes.js';
+import About from './About.js';
 import { BsArrowUp } from "react-icons/bs";
 import Reviews from './Reviews.js';
 
@@ -19,6 +20,12 @@ function Homepage() {
     const [boxShadow, setBoxShadow] = useState('');
 
     const [showScrollButton, setShowScrollButton] = useState(false);
+
+    const [scrollButtonClicked, setScrollButtonClicked] = useState(false);
+
+    const resetState = () => {
+        setTimeout(() => setScrollButtonClicked(false), 2000);
+    }
 
     useEffect(() => {
         const handleScroll = () => {
@@ -62,39 +69,30 @@ function Homepage() {
             <section id="section-1" className="homepage">
                 <div className="container-fluid">
                     <div className="row d-flex justify-content-between">
-                        <div className="d-flex flex-column justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div className="d-flex flex-column justify-content-center col-lg-6 col-12">
                             <S1LeftDiv hover1={hover1} hover2={hover2} hover3={hover3} />
                         </div>
-                        <div className="d-flex justify-content-center col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div className="d-flex justify-content-center col-lg-6 col-12">
                             <S1RightDiv backgroundImage={backgroundImage} boxShadow={boxShadow} />
                         </div>
                     </div>
                 </div>
             </section>
             <section id="section-2" className="homepage" style={{ margin: "15rem 0 5rem 0", padding: "2rem 0" }}>
-                <div className="container-fluid d-flex align-items-center">
-                    <div className="row d-flex col-12">
-                        <Products />
-                    </div>
-                </div>
+                <Products />
             </section>
             <section id="section-3" className="homepage" style={{ marginBottom: "10rem", padding: "5rem 0" }}>
-                <div className="container-fluid d-flex align-items-center">
-                    <div className="row d-flex col-12">
-                        <Recipes />
-                    </div>
-                </div>
+                <Recipes />
             </section>
             <section id="section-4" className="homepage" style={{ marginBottom: "10rem", padding: "5rem 0" }}>
-                <div className="container-fluid d-flex align-items-center">
-                    <div className="row d-flex col-12">
-                        <Reviews />
-                    </div>
-                </div>
+                <About scrollBypass={scrollButtonClicked} />
+            </section>
+            <section id="section-5" className="homepage" style={{ marginBottom: "10rem", padding: "5rem 0" }}>
+                <Reviews />
             </section>
             <button
                 className={`homepage-scroll-button ${showScrollButton ? 'visible' : ''}`}
-                onClick={scrollToTop}
+                onClick={() => {scrollToTop(); setScrollButtonClicked(true); resetState();}}
             >
                 <BsArrowUp/>
             </button>

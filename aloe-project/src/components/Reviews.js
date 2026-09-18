@@ -41,14 +41,14 @@ function Reviews() {
 
         useEffect(() => {
             const handleScroll = () => {
-            // Check if the user has scrolled to the "Reviews" section
-            const reviewsSection = document.getElementById("section-4");
-            if (reviewsSection) {
-                const reviewsSectionOffset = reviewsSection.getBoundingClientRect().top;
-                if (reviewsSectionOffset < window.innerHeight / 2) {
-                setReviewsVisible(true);
+                // Check if the user has scrolled to the "Reviews" section
+                const reviewsSection = document.getElementById("section-5");
+                if (reviewsSection) {
+                    const reviewsSectionOffset = reviewsSection.getBoundingClientRect().top;
+                    if (reviewsSectionOffset < window.innerHeight / 2) {
+                    setReviewsVisible(true);
+                    }
                 }
-            }
             };
 
             window.addEventListener("scroll", handleScroll);
@@ -58,16 +58,20 @@ function Reviews() {
             };
         }, []);
 
-        useEffect(
-            () => {
-                if (allReviewsClicked || addReviewClicked) {
-                    document.body.style.overflow = "hidden";
-                }
-                else {
-                    document.body.style.overflow = "auto";
-                }
-            }, [allReviewsClicked, addReviewClicked]
-        );
+        useEffect(() => {
+            if (allReviewsClicked || addReviewClicked) {
+                document.documentElement.style.overflow = "hidden";
+                document.body.style.overflow = "hidden";
+            } else {
+                document.documentElement.style.overflow = "auto";
+                document.body.style.overflow = "auto";
+            }
+
+            return () => {
+                document.documentElement.style.overflow = "auto";
+                document.body.style.overflow = "auto";
+            };
+        }, [allReviewsClicked, addReviewClicked]);
 
         const text1 = `I bought the aloe leaves for skincare and I’m really impressed.
                         The leaves are fresh, thick, and full of gel that works great for soothing my skin after sun exposure.
@@ -87,7 +91,7 @@ function Reviews() {
 
 
     return (
-        <div className={`reviews container d-flex flex-column align-items-center ${isReviewsVisible ? "reviews-visible" : ""}`}>
+        <div className={`reviews container-fluid d-flex flex-column align-items-center ${isReviewsVisible ? "reviews-visible" : ""}`}>
             {allReviewsClicked && (
                 <div className="modal-overlay">
                     <button
@@ -243,7 +247,7 @@ function Reviews() {
                             <div className="quotes-sign align-self-end">
                                 <FaQuoteLeft size={16} />
                             </div>
-                            <div className="text-start">
+                            <div className="review-text text-start">
                                 {text1}
                             </div>
                         </div>
@@ -258,7 +262,7 @@ function Reviews() {
                             <div className="quotes-sign align-self-end">
                                 <FaQuoteLeft size={16} />
                             </div>
-                            <div className="text-start mb-4">
+                            <div className="review-text text-start mb-4">
                                 {text2}
                             </div>
                             <div className="user-image-wrapper d-flex">
@@ -290,7 +294,7 @@ function Reviews() {
                             <div className="quotes-sign align-self-start">
                                 <FaQuoteLeft size={16} />
                             </div>
-                            <div className="text-start mb-4">
+                            <div className="review-text text-start mb-4">
                                 {text3}
                             </div>
                             <div className="user-image-wrapper d-flex">
@@ -322,7 +326,7 @@ function Reviews() {
                             <div className="quotes-sign align-self-start">
                                 <FaQuoteLeft size={16} />
                             </div>
-                            <div className="text-start mb-4">
+                            <div className="review-text text-start mb-4">
                                 {text4}
                             </div>
                             <div className="user-image-wrapper d-flex">

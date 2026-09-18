@@ -9,9 +9,9 @@ function Login() {
     // -------------------------------------------------------------   LOGIN FORM CODE    -------------------------------------------------------------
 
     const [loginData, setLoginData] = useState({
-            username: "",
-            password: "",
-        });
+        username: "",
+        password: "",
+    });
 
     const handleLoginInputChange = (e) => {
         const {name, value} = e.target;
@@ -25,6 +25,26 @@ function Login() {
     const [rememberMe, setRememberMe] = useState(false);
 
     // -------------------------------------------------------------   LOGIN FORM CODE    -------------------------------------------------------------
+
+    // -------------------------------------------------------------   SIGNUP FORM CODE    -------------------------------------------------------------
+
+    const [signupData, setSignupData] = useState({
+        email: "",
+        username: "",
+        password: "",
+        confirmPassword: ""
+    });
+
+    const handleSignupInputChange = (e) => {
+        const {name, value} = e.target;
+
+        setSignupData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    }
+
+    // -------------------------------------------------------------   SIGNUP FORM CODE    -------------------------------------------------------------
 
     // -------------------------------------------------------------   DRAGGING CODE    -------------------------------------------------------------
 
@@ -47,8 +67,10 @@ function Login() {
 
     const handleMouseMove = (e) => {
         const offset = startDragOffset.current + (e.clientX - startX.current);
-        setDragOffset(offset);
-        dragOffsetRef.current = offset;
+        const clampedOffset = Math.max(0, Math.min(containerWidthRef.current - cardWidthRef.current, offset));
+
+        setDragOffset(clampedOffset);
+        dragOffsetRef.current = clampedOffset;
         const rawProgress = offset / (containerWidthRef.current - cardWidthRef.current);
         const clampedProgress = Math.max(0, Math.min(1, rawProgress));
         setProgress(clampedProgress);
@@ -104,11 +126,49 @@ function Login() {
 
     // -------------------------------------------------------------   CHECK VALID INPUT CODE    -------------------------------------------------------------
 
-    const [formErrors, setFormErrors] = useState({});
+    const [loginErrors, setLoginErrors] = useState({});
+    const [signupErrors, setSignupErrors] = useState({});
 
     const isEmpty = (value) => !value.trim();
 
-    const verifyUserInput = (e) => {
+    const verifySignupInput = (e) => {
+
+        const errors = {};
+
+        if (isEmpty(signupData.email)) {
+            errors.email = "Invalid email";
+        }
+        else if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9]+\.[a-z_A-Z]{2,6}$/.test(signupData.email)) {
+            errors.email = "Invalid email";
+        }
+
+        if (isEmpty(signupData.username)) {
+            errors.username = "Required";
+        }
+        else if (!/^[a-zA-Z -]{2,25}$/.test(signupData.username)) {
+            errors.username = "English letters, between 2-25 length"
+        }
+
+        if (isEmpty(signupData.password)) {
+            errors.password = "Required";
+        }
+        else if (!/^.{8,20}$/.test(signupData.password)) {
+            errors.password = "Length must be between 8-20 charachers"
+        }
+        if (signupData.password !== signupData.confirmPassword) {
+            errors.confirmPassword = "Passwords do not match"
+        }
+
+        if (Object.keys(errors).length > 0) {
+            setSignupErrors(errors);
+            return false;
+        }
+
+        setSignupErrors({});
+        return true;
+    };
+
+    const verifyLoginInput = (e) => {
 
         const errors = {};
 
@@ -121,11 +181,11 @@ function Login() {
         }
 
         if (Object.keys(errors).length > 0) {
-            setFormErrors(errors);
+            setLoginErrors(errors);
             return false;
         }
 
-        setFormErrors({});
+        setLoginErrors({});
         return true;
     };
 
@@ -187,48 +247,48 @@ function Login() {
                                         type="email"
                                         name="email"
                                         placeholder="Email"
-                                        value={loginData.username}
-                                        onChange={handleLoginInputChange}
+                                        value={signupData.email}
+                                        onChange={handleSignupInputChange}
                                         className=""
                                     />
-                                    {formErrors.username && <div className="input-error">{formErrors.username}</div>}
+                                    {signupErrors.email && <div className="input-error">{signupErrors.email}</div>}
                                 </div>
                                 <div className="input-wrapper">
                                     <input
                                         type="text"
                                         name="username"
                                         placeholder="Username"
-                                        value={loginData.username}
-                                        onChange={handleLoginInputChange}
+                                        value={signupData.username}
+                                        onChange={handleSignupInputChange}
                                         className=""
                                     />
-                                    {formErrors.username && <div className="input-error">{formErrors.username}</div>}
+                                    {signupErrors.username && <div className="input-error">{signupErrors.username}</div>}
                                 </div>
                                 <div className="input-wrapper">
                                     <input
                                         type="password"
                                         name="password"
                                         placeholder="Password"
-                                        value={loginData.password}
-                                        onChange={handleLoginInputChange}
+                                        value={signupData.password}
+                                        onChange={handleSignupInputChange}
                                         className=""
                                     />
-                                    {formErrors.password && <div className="input-error">{formErrors.password}</div>}
+                                    {signupErrors.password && <div className="input-error">{signupErrors.password}</div>}
                                 </div>
                                 <div className="input-wrapper">
                                     <input
                                         type="password"
-                                        name="password"
+                                        name="confirmPassword"
                                         placeholder="Confirm Password"
-                                        value={loginData.password}
-                                        onChange={handleLoginInputChange}
+                                        value={signupData.confirmPassword}
+                                        onChange={handleSignupInputChange}
                                         className=""
                                     />
-                                    {formErrors.password && <div className="input-error">{formErrors.password}</div>}
+                                    {signupErrors.confirmPassword && <div className="input-error">{signupErrors.confirmPassword}</div>}
                                 </div>
                             </form>
                             <button type="button" form="delivery-form" className="signup-button d-flex align-self-center justify-content-center mt-3" onClick={() => {
-                                verifyUserInput();
+                                verifySignupInput();
                             }}>
                                 <div>Sign Up</div>
                             </button>
@@ -269,7 +329,7 @@ function Login() {
                                         onChange={handleLoginInputChange}
                                         className=""
                                     />
-                                    {formErrors.username && <div className="input-error">{formErrors.username}</div>}
+                                    {loginErrors.username && <div className="input-error">{loginErrors.username}</div>}
                                 </div>
                                 <div className="input-wrapper">
                                     <input
@@ -280,7 +340,7 @@ function Login() {
                                         onChange={handleLoginInputChange}
                                         className=""
                                     />
-                                    {formErrors.password && <div className="input-error">{formErrors.password}</div>}
+                                    {loginErrors.password && <div className="input-error">{loginErrors.password}</div>}
                                 </div>
                             </form>
                             <div className="remember-forgot d-flex justify-content-between">
@@ -303,7 +363,7 @@ function Login() {
                                 </div>
                             </div>
                             <button type="button" form="delivery-form" className="login-button d-flex align-self-center justify-content-center mt-4" onClick={() => {
-                                verifyUserInput();
+                                verifyLoginInput();
                             }}>
                                 <div>Login</div>
                             </button>
