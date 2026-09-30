@@ -287,6 +287,22 @@ function Order() {
     }
 // -------------------------------------------------------------   RESET AFTER PURCHASE CODE    -------------------------------------------------------------
 
+// -------------------------------------------------------------------   MOBILE CODE    ---------------------------------------------------------------------
+
+
+    const [isMobileLayout, setIsMobileLayout] = useState(
+            window.matchMedia('(max-width: 549.98px)').matches
+        );
+
+        useEffect(() => {
+            const query = window.matchMedia('(max-width: 549.98px)');
+            const handleChange = (e) => setIsMobileLayout(e.matches);
+            query.addEventListener('change', handleChange);
+            return () => query.removeEventListener('change', handleChange);
+        }, []);
+
+    // -------------------------------------------------------------------   MOBILE CODE    ---------------------------------------------------------------------
+
     return (
         <div className="order-online container-fluid d-flex justify-content-evenly gap-5">
             {emptyCartModal &&
@@ -303,176 +319,374 @@ function Order() {
                 </div>
                 <div className="cart-items-parent">
                     <div className="cart-items-outer d-flex flex-column justify-content-center align-items-center">
-                        <div className="cart-items-inner d-flex justify-content-between gap-2">
-                            <div className="cart-product d-flex gap-3">
-                                <div className="product-image leaves d-flex align-self-center align-items-center">
-                                    {/* Image of this product is resides in that div. */}
-                                </div>
-                                <div className="product-content d-flex flex-column justify-content-center">
-                                    <div className="d-flex flex-column gap-1">
+                        {isMobileLayout
+                        ?
+                            <>
+                                <div className="cart-items-inner-mobile d-flex justify-content-between">
+                                    <div className="cart-product d-flex flex-column justify-content-between">
                                         <div className="d-flex align-items-center">
                                             <h4 className="mb-0">Aloe Leaves</h4>
                                         </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0 opacity-75"> {'>'}500ml consumable Gel</p>
-                                        </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0 opacity-75"> 'How to use' guide steps </p>
-                                        </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0 opacity-75"> 1 Free leaf for every 5 purchased! </p>
-                                        </div>
-                                    </div>
-                                    <div className="d-flex justify-content-center mt-0">
+                                        <div className="image-wrapper d-flex">
+                                            <div className="product-image leaves d-flex align-self-center align-items-center">
+                                                {/* Image of this product resides in that div. */}
+                                            </div>
+                                            <div className="product-content d-flex flex-column justify-content-center">
+                                                <div className="d-flex flex-column gap-1">
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0"> {'>'}500ml consumable Gel</p>
+                                                    </div>
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0"> 'How to use' guide steps </p>
+                                                    </div>
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0"> 1 Free for every 5 purchased! </p>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex justify-content-center mt-0">
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="price-add-remove-wrapper d-flex flex-column align-items-center justify-content-between">
+                                        <div className="cart-price d-flex align-items-center">
+                                            <span>$</span> 2.99
+                                        </div>
+                                        <div className="cart-add-remove d-flex align-items-center gap-2">
+                                            <div className="quantity d-flex flex-column justify-content-between align-items-center">
+                                                <button onClick={() => setLeavesQuantity(prev => prev + 1)}>
+                                                    <BsPlus size={25}></BsPlus>
+                                                </button>
+                                                <div className="py-1">
+                                                    {leavesQuantity}
+                                                </div>
+                                                <button onClick={() => {if (leavesQuantity > 0) {setLeavesQuantity(prev => prev - 1)}}}>
+                                                    <BsDash size={25}></BsDash>
+                                                </button>
+                                            </div>
+                                            <button className="remove d-flex justify-content-center align-items-center"
+                                                    onClick={() => setLeavesQuantity(0)}>
+                                                <BsX></BsX>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="cart-price d-flex align-items-center px-5">
-                                <span>$</span> 2.99
-                            </div>
-                            <div className="cart-add-remove d-flex align-items-center gap-2">
-                                <div className="quantity d-flex flex-column justify-content-between align-items-center">
-                                    <button onClick={() => setLeavesQuantity(prev => prev + 1)}>
-                                        <BsPlus size={25}></BsPlus>
-                                    </button>
-                                    <div className="py-1">
-                                        {leavesQuantity}
+                                {leavesGift > 0 && (
+                                    <div className={`gift-unlocked ${animateLeavesGift ? "update" : ""}`}>
+                                        You have {leavesGift} extra Aloe Leaves!
                                     </div>
-                                    <button onClick={() => {if (leavesQuantity > 0) {setLeavesQuantity(prev => prev - 1)}}}>
-                                        <BsDash size={25}></BsDash>
-                                    </button>
+                                )}
+                            </>
+                        :
+                            <>
+                                <div className="cart-items-inner d-flex justify-content-between gap-2">
+                                    <div className="cart-product d-flex gap-3">
+                                        <div className="product-image leaves d-flex align-self-center align-items-center">
+                                            {/* Image of this product resides in that div. */}
+                                        </div>
+                                        <div className="product-content d-flex flex-column justify-content-center">
+                                            <div className="d-flex flex-column gap-1">
+                                                <div className="d-flex align-items-center">
+                                                    <h4 className="mb-0">Aloe Leaves</h4>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0 opacity-75"> {'>'}500ml consumable Gel</p>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0 opacity-75"> 'How to use' guide steps </p>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0 opacity-75"> 1 Free leaf for every 5 purchased! </p>
+                                                </div>
+                                            </div>
+                                            <div className="d-flex justify-content-center mt-0">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="cart-price d-flex align-items-center px-5">
+                                        <span>$</span> 2.99
+                                    </div>
+                                    <div className="cart-add-remove d-flex align-items-center gap-2">
+                                        <div className="quantity d-flex flex-column justify-content-between align-items-center">
+                                            <button onClick={() => setLeavesQuantity(prev => prev + 1)}>
+                                                <BsPlus size={25}></BsPlus>
+                                            </button>
+                                            <div className="py-1">
+                                                {leavesQuantity}
+                                            </div>
+                                            <button onClick={() => {if (leavesQuantity > 0) {setLeavesQuantity(prev => prev - 1)}}}>
+                                                <BsDash size={25}></BsDash>
+                                            </button>
+                                        </div>
+                                        <button className="remove d-flex justify-content-center align-items-center"
+                                                onClick={() => setLeavesQuantity(0)}>
+                                            <BsX></BsX>
+                                        </button>
+                                    </div>
                                 </div>
-                                <button className="remove d-flex justify-content-center align-items-center"
-                                        onClick={() => setLeavesQuantity(0)}>
-                                    <BsX></BsX>
-                                </button>
-                            </div>
-                        </div>
-                        {leavesGift > 0 && (
-                            <div className={`gift-unlocked ${animateLeavesGift ? "update" : ""}`}>
-                                You have {leavesGift} extra Aloe Leaves!
-                            </div>
-                        )}
+                                {leavesGift > 0 && (
+                                    <div className={`gift-unlocked ${animateLeavesGift ? "update" : ""}`}>
+                                        You have {leavesGift} extra Aloe Leaves!
+                                    </div>
+                                )}
+                            </>
+                        }
                     </div>
                     <div className="cart-items-outer d-flex justify-content-center align-items-center">
-                        <div className="cart-items-inner d-flex justify-content-between gap-2">
-                            <div className="cart-product d-flex gap-3">
-                                <div className="product-image bottles d-flex align-self-center align-items-center">
-                                    {/* Image of this product is resides in that div. */}
-                                </div>
-                                <div className="product-content d-flex flex-column justify-content-center">
-                                    <div className="d-flex flex-column gap-1">
+                        {isMobileLayout
+                        ?
+                            <>
+                                <div className="cart-items-inner-mobile d-flex justify-content-between">
+                                    <div className="cart-product d-flex flex-column justify-content-between">
                                         <div className="d-flex align-items-center">
                                             <h4>Bottles <span>{`(`}200ml{`)`}</span></h4>
                                         </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0  opacity-75">100% pure</p>
-                                        </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0  opacity-75">No chemical preservatives</p>
-                                        </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0  opacity-75">1 Free bottle for every 4 purchased!</p>
-                                        </div>
-                                    </div>
-                                    <div className="d-flex justify-content-center mt-0">
+                                        <div className="image-wrapper d-flex">
+                                            <div className="product-image bottles d-flex align-self-center align-items-center">
+                                                {/* Image of this product resides in that div. */}
+                                            </div>
+                                            <div className="product-content d-flex flex-column justify-content-center">
+                                                <div className="d-flex flex-column gap-1">
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0">100% pure</p>
+                                                    </div>
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0">No chemical preservatives</p>
+                                                    </div>
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0">1 Free for every 4 purchased!</p>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex justify-content-center mt-0">
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="price-add-remove-wrapper d-flex flex-column align-items-center justify-content-between">
+                                        <div className="cart-price d-flex align-items-center">
+                                            <span>$</span> 4.99
+                                        </div>
+                                        <div className="cart-add-remove d-flex align-items-center gap-2">
+                                            <div className="quantity d-flex flex-column justify-content-between align-items-center">
+                                                <button onClick={() => setBottlesQuantity(prev => prev + 1)}>
+                                                    <BsPlus size={25}></BsPlus>
+                                                </button>
+                                                <div className="py-1">
+                                                    {bottlesQuantity}
+                                                </div>
+                                                <button onClick={() => {if (bottlesQuantity > 0) {setBottlesQuantity(prev => prev - 1)}}}>
+                                                    <BsDash size={25}></BsDash>
+                                                </button>
+                                            </div>
+                                            <button className="remove d-flex justify-content-center align-items-center"
+                                                    onClick={() => setBottlesQuantity(0)}>
+                                                <BsX></BsX>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="cart-price d-flex align-items-center px-5">
-                                <span>$</span> 4.99
-                            </div>
-                            <div className="cart-add-remove d-flex align-items-center gap-2">
-                                <div className="quantity d-flex flex-column justify-content-between align-items-center">
-                                    <button onClick={() => setBottlesQuantity(prev => prev + 1)}>
-                                        <BsPlus size={25}></BsPlus>
-                                    </button>
-                                    <div className="py-1">
-                                        {bottlesQuantity}
+                                {bottlesGift > 0 && (
+                                    <div className={`gift-unlocked ${animateBottlesGift ? "update" : ""}`}>
+                                        You have {bottlesGift} extra Bottles!
                                     </div>
-                                    <button onClick={() => {if (bottlesQuantity > 0) {setBottlesQuantity(prev => prev - 1)}}}>
-                                        <BsDash size={25}></BsDash>
-                                    </button>
+                                )}
+                            </>
+                        :
+                            <>
+                                <div className="cart-items-inner d-flex justify-content-between gap-2">
+                                    <div className="cart-product d-flex gap-3">
+                                        <div className="product-image bottles d-flex align-self-center align-items-center">
+                                            {/* Image of this product is resides in that div. */}
+                                        </div>
+                                        <div className="product-content d-flex flex-column justify-content-center">
+                                            <div className="d-flex flex-column gap-1">
+                                                <div className="d-flex align-items-center">
+                                                    <h4>Bottles <span>{`(`}200ml{`)`}</span></h4>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0  opacity-75">100% pure</p>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0  opacity-75">No chemical preservatives</p>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0  opacity-75">1 Free bottle for every 4 purchased!</p>
+                                                </div>
+                                            </div>
+                                            <div className="d-flex justify-content-center mt-0">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="cart-price d-flex align-items-center px-5">
+                                        <span>$</span> 4.99
+                                    </div>
+                                    <div className="cart-add-remove d-flex align-items-center gap-2">
+                                        <div className="quantity d-flex flex-column justify-content-between align-items-center">
+                                            <button onClick={() => setBottlesQuantity(prev => prev + 1)}>
+                                                <BsPlus size={25}></BsPlus>
+                                            </button>
+                                            <div className="py-1">
+                                                {bottlesQuantity}
+                                            </div>
+                                            <button onClick={() => {if (bottlesQuantity > 0) {setBottlesQuantity(prev => prev - 1)}}}>
+                                                <BsDash size={25}></BsDash>
+                                            </button>
+                                        </div>
+                                        <button className="remove d-flex justify-content-center align-items-center"
+                                                onClick={() => setBottlesQuantity(0)}>
+                                            <BsX></BsX>
+                                        </button>
+                                    </div>
                                 </div>
-                                <button className="remove d-flex justify-content-center align-items-center"
-                                        onClick={() => setBottlesQuantity(0)}>
-                                    <BsX></BsX>
-                                </button>
-                            </div>
-                        </div>
-                        {bottlesGift > 0 && (
-                            <div className={`gift-unlocked ${animateBottlesGift ? "update" : ""}`}>
-                                You have {bottlesGift} extra Bottles!
-                            </div>
-                        )}
+                                {bottlesGift > 0 && (
+                                    <div className={`gift-unlocked ${animateBottlesGift ? "update" : ""}`}>
+                                        You have {bottlesGift} extra Bottles!
+                                    </div>
+                                )}
+                            </>
+                        }
                     </div>
                     <div className="cart-items-outer d-flex justify-content-center align-items-center">
-                        <div className="cart-items-inner d-flex justify-content-between gap-2">
-                            <div className="cart-product d-flex gap-3">
-                                <div className="product-image plants d-flex align-self-center align-items-center">
-                                    {/* Image of this product is resides in that div. */}
-                                </div>
-                                <div className="product-content d-flex flex-column justify-content-center">
-                                    <div className="d-flex flex-column gap-1">
+                        {isMobileLayout
+                        ?
+                            <>
+                                <div className="cart-items-inner-mobile d-flex justify-content-between">
+                                    <div className="cart-product d-flex flex-column justify-content-between">
                                         <div className="d-flex align-items-center">
-                                            <h4>Aloe Plants</h4>
+                                            <h4 className="mb-0">Aloe Plants</h4>
                                         </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0  opacity-75">1 year old </p>
-                                        </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0  opacity-75">Transplantation guide steps</p>
-                                        </div>
-                                        <div className="d-flex">
-                                            <BsCheck2 className="align-self-center mx-1"/>
-                                            <p className="mb-0  opacity-75">1 Free plant for every 3 purchases!</p>
-                                        </div>
-                                    </div>
-                                    <div className="d-flex justify-content-center mt-0">
+                                        <div className="image-wrapper d-flex">
+                                            <div className="product-image plants d-flex align-self-center align-items-center">
+                                                {/* Image of this product resides in that div. */}
+                                            </div>
+                                            <div className="product-content d-flex flex-column justify-content-center">
+                                                <div className="d-flex flex-column gap-1">
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0">1 year old </p>
+                                                    </div>
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0">Transplantation guide steps</p>
+                                                    </div>
+                                                    <div className="d-flex">
+                                                        <BsCheck2 className="align-self-center mx-1"/>
+                                                        <p className="mb-0">1 Free for every 3 purchases!</p>
+                                                    </div>
+                                                </div>
+                                                <div className="d-flex justify-content-center mt-0">
 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="price-add-remove-wrapper d-flex flex-column align-items-center justify-content-between">
+                                        <div className="cart-price d-flex align-items-center">
+                                            <span>$</span> 9.99
+                                        </div>
+                                        <div className="cart-add-remove d-flex align-items-center gap-2">
+                                            <div className="quantity d-flex flex-column justify-content-between align-items-center">
+                                                <button onClick={() => setPlantsQuantity(prev => prev + 1)}>
+                                                    <BsPlus size={25}></BsPlus>
+                                                </button>
+                                                <div className="py-1">
+                                                    {plantsQuantity}
+                                                </div>
+                                                <button onClick={() => {if (plantsQuantity > 0) {setPlantsQuantity(prev => prev - 1)}}}>
+                                                    <BsDash size={25}></BsDash>
+                                                </button>
+                                            </div>
+                                            <button className="remove d-flex justify-content-center align-items-center"
+                                                    onClick={() => setPlantsQuantity(0)}>
+                                                <BsX></BsX>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="cart-price d-flex align-items-center">
-                                <span>$</span> 9.99
-                            </div>
-                            <div className="cart-add-remove d-flex align-items-center gap-2">
-                                <div className="quantity d-flex flex-column justify-content-between align-items-center">
-                                    <button onClick={() => setPlantsQuantity (prev => prev + 1)}>
-                                        <BsPlus size={25}></BsPlus>
-                                    </button>
-                                    <div className="py-1">
-                                        {plantsQuantity}
+                                {plantsGift > 0 && (
+                                    <div className={`gift-unlocked ${animatePlantsGift ? "update" : ""}`}>
+                                        You have {plantsGift} extra Plants!
                                     </div>
-                                    <button onClick={() => {
-                                        if (plantsQuantity > 0) {
-                                            setPlantsQuantity(prev => prev - 1);
-                                        }
-                                    }}>
-                                        <BsDash size={25}></BsDash>
-                                    </button>
+                                )}
+                            </>
+                        :
+                            <>
+                                <div className="cart-items-inner d-flex justify-content-between gap-2">
+                                    <div className="cart-product d-flex gap-3">
+                                        <div className="product-image plants d-flex align-self-center align-items-center">
+                                            {/* Image of this product is resides in that div. */}
+                                        </div>
+                                        <div className="product-content d-flex flex-column justify-content-center">
+                                            <div className="d-flex flex-column gap-1">
+                                                <div className="d-flex align-items-center">
+                                                    <h4>Aloe Plants</h4>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0  opacity-75">1 year old </p>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0  opacity-75">Transplantation guide steps</p>
+                                                </div>
+                                                <div className="d-flex">
+                                                    <BsCheck2 className="align-self-center mx-1"/>
+                                                    <p className="mb-0  opacity-75">1 Free plant for every 3 purchases!</p>
+                                                </div>
+                                            </div>
+                                            <div className="d-flex justify-content-center mt-0">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="cart-price d-flex align-items-center">
+                                        <span>$</span> 9.99
+                                    </div>
+                                    <div className="cart-add-remove d-flex align-items-center gap-2">
+                                        <div className="quantity d-flex flex-column justify-content-between align-items-center">
+                                            <button onClick={() => setPlantsQuantity (prev => prev + 1)}>
+                                                <BsPlus size={25}></BsPlus>
+                                            </button>
+                                            <div className="py-1">
+                                                {plantsQuantity}
+                                            </div>
+                                            <button onClick={() => {
+                                                if (plantsQuantity > 0) {
+                                                    setPlantsQuantity(prev => prev - 1);
+                                                }
+                                            }}>
+                                                <BsDash size={25}></BsDash>
+                                            </button>
+                                        </div>
+                                        <button className="remove d-flex justify-content-center align-items-center"
+                                                onClick={() => setPlantsQuantity (0)}>
+                                            <BsX></BsX>
+                                        </button>
+                                    </div>
                                 </div>
-                                <button className="remove d-flex justify-content-center align-items-center"
-                                        onClick={() => setPlantsQuantity (0)}>
-                                    <BsX></BsX>
-                                </button>
-                            </div>
-                        </div>
-                        {plantsGift > 0 && (
-                            <div className={`gift-unlocked ${animatePlantsGift ? "update" : ""}`}>
-                                You have {plantsGift} extra Plants!
-                            </div>
-                        )}
+                                {plantsGift > 0 && (
+                                    <div className={`gift-unlocked ${animatePlantsGift ? "update" : ""}`}>
+                                        You have {plantsGift} extra Plants!
+                                    </div>
+                                )}
+                            </>
+                        }
                     </div>
                 </div>
                 <div className="sub-total d-flex justify-content-between mt-2">
@@ -611,9 +825,6 @@ function Order() {
                             }}>
                                 Continue to Pay
                             </button>
-                        </div>
-                        <div>
-
                         </div>
                     </div>
                 )}
