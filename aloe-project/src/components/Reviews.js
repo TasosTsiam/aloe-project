@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AiFillStar } from "react-icons/ai";
 import { FaQuoteLeft } from "react-icons/fa";
 import AllReviews from './AllReviews';
+import { BsCheck2 } from "react-icons/bs";
 
 function Reviews() {
 
@@ -33,45 +34,116 @@ function Reviews() {
         }));
     };
 
+    const [reviewErrors, setReviewErrors] = useState({});
+    const [reviewSubmitted, setReviewSubmitted] = useState(false);
+
+    const isEmpty = (value) => !value.trim();
+
+    const verifyReviewInput = () => {
+        const errors = {};
+        const reviewLength = formData.reviewText.trim().length;
+
+        if (isEmpty(formData.first_name)) {
+            errors.first_name = "First name is required";
+        }
+        else if (!/^[a-zA-Z -]{2,25}$/.test(formData.first_name)) {
+            errors.first_name = "English letters, between 2-25 length";
+        }
+
+        if (isEmpty(formData.last_name)) {
+            errors.last_name = "Last name is required";
+        }
+        else if (!/^[a-zA-Z -]{2,25}$/.test(formData.last_name)) {
+            errors.last_name = "English letters, between 2-25 length";
+        }
+
+        if (!formData.product) {
+            errors.product = "Please select a product";
+        }
+
+        if (isEmpty(formData.reviewText)) {
+            errors.reviewText = "Review is required";
+        }
+        else if (reviewLength < 20 || reviewLength > 500) {
+            errors.reviewText = "Between 20-500 characters";
+        }
+
+        if (formData.rating === 0) {
+            errors.rating = "Please rate your experience";
+        }
+
+        if (Object.keys(errors).length > 0) {
+            setReviewErrors(errors);
+            return false;
+        }
+
+        setReviewErrors({});
+        return true;
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        if (!verifyReviewInput()) {
+            return;
+        }
+
         console.log(formData); // simulate sending to server
+
+        setReviewSubmitted(true);
+
+        setTimeout(() => {
+            setAddReviewClicked(false);
+            setReviewSubmitted(false);
+            setFormData({ first_name: "", last_name: "", product: "", rating: 0, reviewText: "" });
+            setReviewErrors({});
+        }, 3000);
     };
 
-        useEffect(() => {
-            const handleScroll = () => {
-                // Check if the user has scrolled to the "Reviews" section
-                const reviewsSection = document.getElementById("section-5");
-                if (reviewsSection) {
-                    const reviewsSectionOffset = reviewsSection.getBoundingClientRect().top;
-                    if (reviewsSectionOffset < window.innerHeight / 2) {
-                    setReviewsVisible(true);
-                    }
+    useEffect(() => {
+        const handleScroll = () => {
+            // Check if the user has scrolled to the "Reviews" section
+            const reviewsSection = document.getElementById("section-5");
+            if (reviewsSection) {
+                const reviewsSectionOffset = reviewsSection.getBoundingClientRect().top;
+                if (reviewsSectionOffset < window.innerHeight / 2) {
+                setReviewsVisible(true);
                 }
-            };
-
-            window.addEventListener("scroll", handleScroll);
-
-            return () => {
-            window.removeEventListener("scroll", handleScroll);
-            };
-        }, []);
-
-        useEffect(() => {
-            if (allReviewsClicked || addReviewClicked) {
-                document.documentElement.style.overflow = "hidden";
-                document.body.style.overflow = "hidden";
-            } else {
-                document.documentElement.style.overflow = "auto";
-                document.body.style.overflow = "auto";
             }
+        };
 
-            return () => {
-                document.documentElement.style.overflow = "auto";
-                document.body.style.overflow = "auto";
-            };
-        }, [allReviewsClicked, addReviewClicked]);
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+        window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const [isMobileLayout, setIsMobileLayout] = useState(
+            window.matchMedia('(max-width: 979.98px)').matches
+        );
+
+    useEffect(() => {
+        const query = window.matchMedia('(max-width: 979.98px)');
+        const handleChange = (e) => setIsMobileLayout(e.matches);
+        query.addEventListener('change', handleChange);
+        return () => query.removeEventListener('change', handleChange);
+    }, []);
+
+    useEffect(() => {
+        if (allReviewsClicked || addReviewClicked || (isMobileLayout && activeReview !== null)) {
+            document.documentElement.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
+        } else {
+            document.documentElement.style.overflow = "auto";
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.documentElement.style.overflow = "auto";
+            document.body.style.overflow = "auto";
+        };
+    }, [allReviewsClicked, addReviewClicked, activeReview, isMobileLayout]);
 
         const text1 = `I bought the aloe leaves for skincare and I’m really impressed.
                         The leaves are fresh, thick, and full of gel that works great for soothing my skin after sun exposure.
@@ -89,9 +161,8 @@ function Reviews() {
         I like that I can use it for natural remedies whenever I need it.
         It’s easy to care for and grows well. For the price, it’s an amazing value.`
 
-
     return (
-        <div className={`reviews container-fluid d-flex flex-column align-items-center ${isReviewsVisible ? "reviews-visible" : ""}`}>
+        <>
             {allReviewsClicked && (
                 <div className="modal-overlay">
                     <button
@@ -110,247 +181,458 @@ function Reviews() {
             )}
             {addReviewClicked && (
                 <div className="modal-overlay">
-                    <button
-                        className="close-modal"
-                        onClick={() => setAddReviewClicked(false)}
-                    >
-                        X
-                    </button>
+                    {!reviewSubmitted && (
+                        <button
+                            className="close-modal"
+                            onClick={() => {
+                                setAddReviewClicked(false);
+                                setReviewErrors({});
+                            }}
+                        >
+                            X
+                        </button>
+                    )}
                     <div className="add-review-container">
-                        <form  className="review-form d-flex flex-column align-items-center gap-4" onSubmit={handleSubmit}>
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your first name"
-                                value={formData.first_name}
-                                onChange={handleChange}
-                            />
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your last name"
-                                value={formData.last_name}
-                                onChange={handleChange}
-                            />
-
-                            <select
-                                name="product"
-                                value={formData.product}
-                                onChange={handleChange}
-                            >
-                                <option value="" disabled>Select product</option>
-                                <option value="Aloe Leaves">Aloe Leaves</option>
-                                <option value="Bottle Gel">Bottle Gel</option>
-                                <option value="Aloe Plant">Aloe Plant</option>
-                            </select>
-                            <textarea
-                                name="reviewText"
-                                placeholder="Write your review..."
-                                value={formData.reviewText}
-                                onChange={handleChange}
-                            />
-                            <div className="rating d-flex flex-column text-center">
-                                <div>
-                                    Your vote
-                                </div>
-                                <div>
-                                    {[1,2,3,4,5].map((star) => (
-                                        <AiFillStar
-                                            key={star}
-                                            size={24}
-                                            color={formData.rating >= star ? "white" : "gray"}
-                                            onClick={() => handleRating(star)}
-                                            style={{ cursor: "pointer" }}
-                                        />
-                                    ))}
+                        {reviewSubmitted ? (
+                            <div className="review-thanks d-flex flex-column justify-content-center align-items-center text-center gap-5 h-100">
+                                <div>Thank you for sharing your experience!</div>
+                                <div className="thanks-check">
+                                    <BsCheck2 size={100} color="springgreen" />
                                 </div>
                             </div>
+                        ) : (
+                            <form className="review-form d-flex flex-column align-items-center gap-4" onSubmit={handleSubmit}>
+                                <div className="field-wrapper">
+                                    <input
+                                        type="text"
+                                        name="first_name"
+                                        placeholder="Your first name"
+                                        value={formData.first_name}
+                                        onChange={handleChange}
+                                    />
+                                    {reviewErrors.first_name && <div className="field-error">{reviewErrors.first_name}</div>}
+                                </div>
+                                <div className="field-wrapper">
+                                    <input
+                                        type="text"
+                                        name="last_name"
+                                        placeholder="Your last name"
+                                        value={formData.last_name}
+                                        onChange={handleChange}
+                                    />
+                                    {reviewErrors.last_name && <div className="field-error">{reviewErrors.last_name}</div>}
+                                </div>
+                                <div className="field-wrapper">
+                                    <select
+                                        name="product"
+                                        value={formData.product}
+                                        onChange={handleChange}
+                                    >
+                                        <option value="" disabled>Select product</option>
+                                        <option value="Aloe Leaves">Aloe Leaves</option>
+                                        <option value="Bottle Gel">Bottle Gel</option>
+                                        <option value="Aloe Plant">Aloe Plant</option>
+                                    </select>
+                                    {reviewErrors.product && <div className="field-error">{reviewErrors.product}</div>}
+                                </div>
+                                <div className="field-wrapper">
+                                    <textarea
+                                        name="reviewText"
+                                        placeholder="Write your review..."
+                                        value={formData.reviewText}
+                                        onChange={handleChange}
+                                    />
+                                    {reviewErrors.reviewText && <div className="field-error">{reviewErrors.reviewText}</div>}
+                                </div>
+                                <div className="rating d-flex flex-column text-center">
+                                    <div>
+                                        Your vote
+                                    </div>
+                                    <div>
+                                        {[1,2,3,4,5].map((star) => (
+                                            <AiFillStar
+                                                key={star}
+                                                size={24}
+                                                color={formData.rating >= star ? "white" : "gray"}
+                                                onClick={() => handleRating(star)}
+                                                style={{ cursor: "pointer" }}
+                                            />
+                                        ))}
+                                    </div>
+                                    {reviewErrors.rating && <div className="field-error">{reviewErrors.rating}</div>}
+                                </div>
 
-                            <button type="submit">Submit</button>
-
-                        </form>
+                                <button type="submit">Submit</button>
+                            </form>
+                        )}
                     </div>
                 </div>
             )}
-            <div className="bottle-wrapper d-flex">
-                <div className="bottle-left d-flex flex-column justify-content-start">
-                    <div className="bottle-text-left">
-                        User
-                    </div>
-                    <div className="left-description">
-                        We might be promising you the finest possible quality of Aloe Vera,
-                        but what better than hearing it from our customers?
-                        Click on the button below, and cruise through all of our customer reviews!
-                    </div>
-                    <div className="all-reviews-button">
-                        <button onClick={() => setAllReviewsClicked(true)}>
-                            See All
-                        </button>
-                    </div>
-                </div>
-                <div className="bottle">
-                    <svg className={`align-self-center ${isReviewsVisible ? "reviews-visible" : ""}`}
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512"
-                        style={{height: "28rem", width: "auto"}}
-                    >
-                        <defs>
-                            <linearGradient id="fillGradient4" x1="0" y1="1" x2="0" y2="0">
-                                <stop offset="0%" stop-color="#DBF1FD" />
-                                <stop offset="100%" stop-color="#DBF1FD" stopOpacity={0.1}/>
-                            </linearGradient>
-                        </defs>
-                        <path fill="url(#fillGradient4)" d="M96 0C82.7 0 72 10.7 72 24s10.7 24 24 24c4.4 0 8 3.6 8 8v64.9c0 12.2-7.2 23.1-17.2 30.1C53.7 174.1 32 212.5 32 256V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V256c0-43.5-21.7-81.9-54.8-105c-10-7-17.2-17.9-17.2-30.1V56c0-4.4 3.6-8 8-8c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0 0 0 0H104l0 0 0 0L96 0zm64 382c-26.5 0-48-20.1-48-45c0-16.8 22.1-48.1 36.3-66.4c6-7.8 17.5-7.8 23.5 0C185.9 288.9 208 320.2 208 337c0 24.9-21.5 45-48 45z"/>
-                    </svg>
-                </div>
-                <div className="bottle-right d-flex flex-column justify-content-start">
-                    <div className="bottle-text-right text-end">
-                        Reviews
-                    </div>
-                    <div className="right-description text-end">
-                        In an attempt to help provide what stands out the most, in terms of quality,
-                        we are showing the 4 highest liked Reviews by our customers.
-                        Don't forget to engage, and like any review you might find useful.
-                    </div>
-                    <div className="add-review-button align-self-end">
-                        <button onClick={() => setAddReviewClicked(true)}>
-                            Add Review
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className="text-parent">
-                <div className={`review-wrapper1 ${isReviewsVisible ? "reviews-visible" : ""}`}>
-                    <div className="drop" onMouseEnter={() => setActiveReview(1)} onMouseLeave={() => setActiveReview(null)}>
+            {isMobileLayout
+            ?
+                <div className={`reviews-mobile container-fluid d-flex flex-column ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                    {activeReview !== null && (
+                        <div className="review-backdrop" onClick={() => setActiveReview(null)}></div>
+                    )}
+                    <div className="title-info-wrapper d-flex flex-column gap-4">
+                        <div className="title d-flex justify-content-center">
+                            User Reviews
+                        </div>
+                        <div className="bottle d-flex flex-column justify-content-center">
+                            <svg className={`align-self-center ${isReviewsVisible ? "reviews-visible" : ""}`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512"
+                            >
+                                <defs>
+                                    <linearGradient id="fillGradient4" x1="0" y1="1" x2="0" y2="0">
+                                        <stop offset="0%" stop-color="#DBF1FD" />
+                                        <stop offset="100%" stop-color="#DBF1FD" stopOpacity={0.1}/>
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#fillGradient4)" d="M96 0C82.7 0 72 10.7 72 24s10.7 24 24 24c4.4 0 8 3.6 8 8v64.9c0 12.2-7.2 23.1-17.2 30.1C53.7 174.1 32 212.5 32 256V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V256c0-43.5-21.7-81.9-54.8-105c-10-7-17.2-17.9-17.2-30.1V56c0-4.4 3.6-8 8-8c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0 0 0 0H104l0 0 0 0L96 0zm64 382c-26.5 0-48-20.1-48-45c0-16.8 22.1-48.1 36.3-66.4c6-7.8 17.5-7.8 23.5 0C185.9 288.9 208 320.2 208 337c0 24.9-21.5 45-48 45z"/>
+                            </svg>
+                            <div className="text-parent-mobile">
+                                <div className={`review-wrapper1 ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                                    <div className="drop" onClick={() => setActiveReview(1)}>
 
-                    </div>
-                    <div className={`review-popup ${activeReview === 1 ? "active" : ""}`}>
-                        <div className="actual-border d-flex flex-column justify-content-center">
-                            <div className="user-image-wrapper d-flex">
-                                <div className="user-image">
+                                    </div>
+                                    <div className={`review-popup ${activeReview === 1 ? "active" : ""}`}>
+                                        <div className="actual-border d-flex flex-column justify-content-center">
+                                            <div className="user-image-wrapper d-flex">
+                                                <div className="user-image">
 
-                                </div>
-                                <div className="user-name align-content-center px-2">
-                                    <p>Frenkie De Jong</p>
-                                    <p>Thessaloniki, Greece</p>
-                                </div>
-                                <div className="purchased-product align-content-center flex-grow-1 text-end">
-                                    ~ <span>Aloe Leaves</span>
-                                    <div className="review-star align-self-end">
-                                        {Array.from({length: 5}, (_, i) =>
-                                            <AiFillStar size={16} color="white"/>
-                                        )}
+                                                </div>
+                                                <div className="user-name align-content-center px-2">
+                                                    <p>Frenkie De Jong</p>
+                                                    <p>Thessaloniki, Greece</p>
+                                                </div>
+                                                <div className="purchased-product align-content-center flex-grow-1 text-end">
+                                                    ~ <span>Aloe Leaves</span>
+                                                    <div className="review-star align-self-end">
+                                                        {Array.from({length: 5}, (_, i) =>
+                                                            <AiFillStar size={16} color="white"/>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="quotes-sign align-self-end">
+                                                <FaQuoteLeft size={16} />
+                                            </div>
+                                            <div className="review-text text-start">
+                                                {text1}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div className={`review-wrapper2 ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                                    <div className="drop" onClick={() => setActiveReview(2)}>
 
+                                    </div>
+                                    <div className={`review-popup ${activeReview === 2 ? "active" : ""}`}>
+                                        <div className="actual-border d-flex flex-column justify-content-center">
+                                            <div className="user-image-wrapper d-flex">
+                                                <div className="user-image">
+
+                                                </div>
+                                                <div className="user-name align-content-center px-2">
+                                                    <p>Pedri Gonzalez</p>
+                                                    <p>Thessaloniki, Greece</p>
+                                                </div>
+                                                <div className="purchased-product align-content-center flex-grow-1 text-end">
+                                                    ~ <span>Bottle gel</span>
+                                                    <div className="review-star align-self-end">
+                                                        {Array.from({length: 5}, (_, i) =>
+                                                            <AiFillStar size={16} color="white"/>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="quotes-sign align-self-end">
+                                                <FaQuoteLeft size={16} />
+                                            </div>
+                                            <div className="review-text text-start">
+                                                {text2}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={`review-wrapper3 ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                                    <div className="drop" onClick={() => setActiveReview(3)}>
+
+                                    </div>
+                                    <div className={`review-popup ${activeReview === 3 ? "active" : ""}`}>
+                                        <div className="actual-border d-flex flex-column justify-content-center">
+                                            <div className="user-image-wrapper d-flex">
+                                                <div className="user-image">
+
+                                                </div>
+                                                <div className="user-name align-content-center px-2">
+                                                    <p>Aitana Bonmati</p>
+                                                    <p>Thessaloniki, Greece</p>
+                                                </div>
+                                                <div className="purchased-product align-content-center flex-grow-1 text-end">
+                                                    ~ <span>Bottle gel</span>
+                                                    <div className="review-star align-self-end">
+                                                        {Array.from({length: 5}, (_, i) =>
+                                                            <AiFillStar size={16} color="white"/>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="quotes-sign align-self-end">
+                                                <FaQuoteLeft size={16} />
+                                            </div>
+                                            <div className="review-text text-start">
+                                                {text3}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={`review-wrapper4 ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                                    <div className="drop" onClick={() => setActiveReview(4)}>
+
+                                    </div>
+                                    <div className={`review-popup ${activeReview === 4 ? "active" : ""}`}>
+                                        <div className="actual-border d-flex flex-column justify-content-center">
+                                            <div className="user-image-wrapper d-flex">
+                                                <div className="user-image">
+
+                                                </div>
+                                                <div className="user-name align-content-center px-2">
+                                                    <p>Raphinha</p>
+                                                    <p>Thessaloniki, Greece</p>
+                                                </div>
+                                                <div className="purchased-product align-content-center flex-grow-1 text-end">
+                                                    ~ <span>Aloe Plants</span>
+                                                    <div className="review-star align-self-end">
+                                                        {Array.from({length: 5}, (_, i) =>
+                                                            <AiFillStar size={16} color="white"/>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="quotes-sign align-self-end">
+                                                <FaQuoteLeft size={16} />
+                                            </div>
+                                            <div className="review-text text-start">
+                                                {text4}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="quotes-sign align-self-end">
-                                <FaQuoteLeft size={16} />
+                        </div>
+                        <div className="info d-flex flex-column gap-5">
+                            <div className="all-reviews-wrapper d-flex flex-column gap-3">
+                                <div className="all-reviews-text text-center">
+                                    We might be promising you the finest possible quality of Aloe Vera,
+                                    but what better than hearing it from our customers?
+                                    Click on the button below, and cruise through all of our customer reviews!
+                                </div>
+                                <div className="all-reviews-button align-self-center p-3">
+                                    <button onClick={() => setAllReviewsClicked(true)}>
+                                        See All
+                                    </button>
+                                </div>
                             </div>
-                            <div className="review-text text-start">
-                                {text1}
+                            <div className="add-review-wrapper d-flex flex-column gap-3">
+                                <div className="add-review-text text-center">
+                                    In an attempt to help provide what stands out the most, in terms of quality,
+                                    we are showing the 4 highest liked Reviews by our customers.
+                                    Don't forget to engage, and like any review you might find useful.
+                                </div>
+                                <div className="add-review-button align-self-center p-3">
+                                    <button onClick={() => setAddReviewClicked(true)}>
+                                        Add Review
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className={`review-wrapper2 ${isReviewsVisible ? "reviews-visible" : ""}`}>
-                    <div className="drop" onMouseEnter={() => setActiveReview(2)} onMouseLeave={() => setActiveReview(null)}>
-
+            :
+                <div className={`reviews-desktop container-fluid d-flex flex-column align-items-center ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                    <div className="bottle-wrapper d-flex">
+                        <div className="bottle-left d-flex flex-column justify-content-start">
+                            <div className="bottle-text-left">
+                                User
+                            </div>
+                            <div className="left-description">
+                                We might be promising you the finest possible quality of Aloe Vera,
+                                but what better than hearing it from our customers?
+                                Click on the button below, and cruise through all of our customer reviews!
+                            </div>
+                            <div className="all-reviews-button">
+                                <button onClick={() => setAllReviewsClicked(true)}>
+                                    See All
+                                </button>
+                            </div>
+                        </div>
+                        <div className="bottle">
+                            <svg className={`align-self-center ${isReviewsVisible ? "reviews-visible" : ""}`}
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 320 512"
+                            >
+                                <defs>
+                                    <linearGradient id="fillGradient4" x1="0" y1="1" x2="0" y2="0">
+                                        <stop offset="0%" stop-color="#DBF1FD" />
+                                        <stop offset="100%" stop-color="#DBF1FD" stopOpacity={0.1}/>
+                                    </linearGradient>
+                                </defs>
+                                <path fill="url(#fillGradient4)" d="M96 0C82.7 0 72 10.7 72 24s10.7 24 24 24c4.4 0 8 3.6 8 8v64.9c0 12.2-7.2 23.1-17.2 30.1C53.7 174.1 32 212.5 32 256V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V256c0-43.5-21.7-81.9-54.8-105c-10-7-17.2-17.9-17.2-30.1V56c0-4.4 3.6-8 8-8c13.3 0 24-10.7 24-24s-10.7-24-24-24l-8 0 0 0 0 0H104l0 0 0 0L96 0zm64 382c-26.5 0-48-20.1-48-45c0-16.8 22.1-48.1 36.3-66.4c6-7.8 17.5-7.8 23.5 0C185.9 288.9 208 320.2 208 337c0 24.9-21.5 45-48 45z"/>
+                            </svg>
+                        </div>
+                        <div className="bottle-right d-flex flex-column justify-content-start">
+                            <div className="bottle-text-right text-end">
+                                Reviews
+                            </div>
+                            <div className="right-description text-end">
+                                In an attempt to help provide what stands out the most, in terms of quality,
+                                we are showing the 4 highest liked Reviews by our customers.
+                                Don't forget to engage, and like any review you might find useful.
+                            </div>
+                            <div className="add-review-button align-self-end">
+                                <button onClick={() => setAddReviewClicked(true)}>
+                                    Add Review
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <div className={`review-popup ${activeReview === 2 ? "active" : ""}`}>
-                        <div className="actual-border d-flex flex-column justify-content-center">
-                            <div className="quotes-sign align-self-end">
-                                <FaQuoteLeft size={16} />
-                            </div>
-                            <div className="review-text text-start mb-4">
-                                {text2}
-                            </div>
-                            <div className="user-image-wrapper d-flex">
-                                <div className="user-image">
+                    <div className="text-parent">
+                        <div className={`review-wrapper1 ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                            <div className="drop" onMouseEnter={() => setActiveReview(1)} onMouseLeave={() => setActiveReview(null)}>
 
-                                </div>
-                                <div className="user-name align-content-center px-2">
-                                    <p>Pedri Gonzalez</p>
-                                    <p>Thessaloniki, Greece</p>
-                                </div>
-                                <div className="purchased-product align-content-center flex-grow-1 text-end">
-                                    <div className="review-star align-self-center">
-                                        {Array.from({length: 5}, (_, i) =>
-                                            <AiFillStar size={16} color="white"/>
-                                        )}
+                            </div>
+                            <div className={`review-popup ${activeReview === 1 ? "active" : ""}`}>
+                                <div className="actual-border d-flex flex-column justify-content-center">
+                                    <div className="user-image-wrapper d-flex">
+                                        <div className="user-image">
+
+                                        </div>
+                                        <div className="user-name align-content-center px-2">
+                                            <p>Frenkie De Jong</p>
+                                            <p>Thessaloniki, Greece</p>
+                                        </div>
+                                        <div className="purchased-product align-content-center flex-grow-1 text-end">
+                                            ~ <span>Aloe Leaves</span>
+                                            <div className="review-star align-self-end">
+                                                {Array.from({length: 5}, (_, i) =>
+                                                    <AiFillStar size={16} color="white"/>
+                                                )}
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    ~ <span>Bottle gel</span>
+                                    <div className="quotes-sign align-self-end">
+                                        <FaQuoteLeft size={16} />
+                                    </div>
+                                    <div className="review-text text-start">
+                                        {text1}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`review-wrapper2 ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                            <div className="drop" onMouseEnter={() => setActiveReview(2)} onMouseLeave={() => setActiveReview(null)}>
+
+                            </div>
+                            <div className={`review-popup ${activeReview === 2 ? "active" : ""}`}>
+                                <div className="actual-border d-flex flex-column justify-content-center">
+                                    <div className="quotes-sign align-self-end">
+                                        <FaQuoteLeft size={16} />
+                                    </div>
+                                    <div className="review-text text-start mb-4">
+                                        {text2}
+                                    </div>
+                                    <div className="user-image-wrapper d-flex">
+                                        <div className="user-image">
+
+                                        </div>
+                                        <div className="user-name align-content-center px-2">
+                                            <p>Pedri Gonzalez</p>
+                                            <p>Thessaloniki, Greece</p>
+                                        </div>
+                                        <div className="purchased-product align-content-center flex-grow-1 text-end">
+                                            <div className="review-star align-self-center">
+                                                {Array.from({length: 5}, (_, i) =>
+                                                    <AiFillStar size={16} color="white"/>
+                                                )}
+                                            </div>
+                                            ~ <span>Bottle gel</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`review-wrapper3 ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                            <div className="drop" onMouseEnter={() => setActiveReview(3)} onMouseLeave={() => setActiveReview(null)}>
+
+                            </div>
+                            <div className={`review-popup ${activeReview === 3 ? "active" : ""}`}>
+                                <div className="actual-border d-flex flex-column justify-content-center">
+                                    <div className="quotes-sign align-self-start">
+                                        <FaQuoteLeft size={16} />
+                                    </div>
+                                    <div className="review-text text-start mb-4">
+                                        {text3}
+                                    </div>
+                                    <div className="user-image-wrapper d-flex">
+                                        <div className="purchased-product align-content-center flex-grow-1 text-start">
+                                            <div className="review-star align-self-center">
+                                                {Array.from({length: 5}, (_, i) =>
+                                                    <AiFillStar size={16} color="white"/>
+                                                )}
+                                            </div>
+                                            <span>Bottle gel </span>~
+                                        </div>
+                                        <div className="user-name align-content-center px-2">
+                                            <p>Aitana Bonmati</p>
+                                            <p>Thessaloniki, Greece</p>
+                                        </div>
+                                        <div className="user-image">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={`review-wrapper4 ${isReviewsVisible ? "reviews-visible" : ""}`}>
+                            <div className="drop" onMouseEnter={() => setActiveReview(4)} onMouseLeave={() => setActiveReview(null)}>
+
+                            </div>
+                            <div className={`review-popup ${activeReview === 4 ? "active" : ""}`}>
+                                <div className="actual-border d-flex flex-column justify-content-center">
+                                    <div className="quotes-sign align-self-start">
+                                        <FaQuoteLeft size={16} />
+                                    </div>
+                                    <div className="review-text text-start mb-4">
+                                        {text4}
+                                    </div>
+                                    <div className="user-image-wrapper d-flex">
+                                        <div className="purchased-product align-content-center flex-grow-1 text-start">
+                                            <div className="review-star align-self-center">
+                                                {Array.from({length: 5}, (_, i) =>
+                                                    <AiFillStar size={16} color="white"/>
+                                                )}
+                                            </div>
+                                            <span>Aloe Plants </span>~
+                                        </div>
+                                        <div className="user-name align-content-center px-2">
+                                            <p>Raphinha</p>
+                                            <p>Thessaloniki, Greece</p>
+                                        </div>
+                                        <div className="user-image">
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className={`review-wrapper3 ${isReviewsVisible ? "reviews-visible" : ""}`}>
-                    <div className="drop" onMouseEnter={() => setActiveReview(3)} onMouseLeave={() => setActiveReview(null)}>
+            }
+        </>
 
-                    </div>
-                    <div className={`review-popup ${activeReview === 3 ? "active" : ""}`}>
-                        <div className="actual-border d-flex flex-column justify-content-center">
-                            <div className="quotes-sign align-self-start">
-                                <FaQuoteLeft size={16} />
-                            </div>
-                            <div className="review-text text-start mb-4">
-                                {text3}
-                            </div>
-                            <div className="user-image-wrapper d-flex">
-                                <div className="purchased-product align-content-center flex-grow-1 text-start">
-                                    <div className="review-star align-self-center">
-                                        {Array.from({length: 5}, (_, i) =>
-                                            <AiFillStar size={16} color="white"/>
-                                        )}
-                                    </div>
-                                    <span>Bottle gel </span>~
-                                </div>
-                                <div className="user-name align-content-center px-2">
-                                    <p>Aitana Bonmati</p>
-                                    <p>Thessaloniki, Greece</p>
-                                </div>
-                                <div className="user-image">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div className={`review-wrapper4 ${isReviewsVisible ? "reviews-visible" : ""}`}>
-                    <div className="drop" onMouseEnter={() => setActiveReview(4)} onMouseLeave={() => setActiveReview(null)}>
-
-                    </div>
-                    <div className={`review-popup ${activeReview === 4 ? "active" : ""}`}>
-                        <div className="actual-border d-flex flex-column justify-content-center">
-                            <div className="quotes-sign align-self-start">
-                                <FaQuoteLeft size={16} />
-                            </div>
-                            <div className="review-text text-start mb-4">
-                                {text4}
-                            </div>
-                            <div className="user-image-wrapper d-flex">
-                                <div className="purchased-product align-content-center flex-grow-1 text-start">
-                                    <div className="review-star align-self-center">
-                                        {Array.from({length: 5}, (_, i) =>
-                                            <AiFillStar size={16} color="white"/>
-                                        )}
-                                    </div>
-                                    <span>Aloe Plants </span>~
-                                </div>
-                                <div className="user-name align-content-center px-2">
-                                    <p>Raphinha</p>
-                                    <p>Thessaloniki, Greece</p>
-                                </div>
-                                <div className="user-image">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     )
 }
 

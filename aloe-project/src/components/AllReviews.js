@@ -22,23 +22,24 @@ function AllReviews() {
 
     return (
         <div className="all-reviews-border d-flex flex-column justify-content-center">
-            <div className="ar-user-image-wrapper d-flex">
-                <div className="ar-user-image">
+            <div className="ar-user-image-wrapper d-flex flex-column">
+                <div className="d-flex">
+                    <div className="ar-user-image">
 
-                </div>
-                <div className="ar-user-name align-content-center px-2">
-                    <p>Frenkie De Jong</p>
-                    <p>Thessaloniki, Greece</p>
+                    </div>
+                    <div className="ar-user-name align-content-center px-2">
+                        <p>Frenkie De Jong</p>
+                        <p>Thessaloniki, Greece</p>
+                    </div>
                 </div>
                 <div className="ar-purchased-product align-content-center flex-grow-1 text-end">
                     Has Bought ~ <span>Aloe Leaves</span>
                 </div>
-
             </div>
             <div className="align-self-end">
                 <FaQuoteLeft size={16} />
             </div>
-            <div className="">
+            <div className="user-review">
                 {text1}
             </div>
             <div className="review-star align-self-center">

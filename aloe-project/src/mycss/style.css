@@ -1692,6 +1692,30 @@ body {
   padding-right: 100px;
   padding-top: 110px;
 }
+@media (max-width: 1749.98px) {
+  .homepage .about-container-desktop .left-wrapper {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+@media (max-width: 1649.98px) {
+  .homepage .about-container-desktop .left-wrapper {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+@media (max-width: 1419.98px) {
+  .homepage .about-container-desktop .left-wrapper {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 1329.98px) {
+  .homepage .about-container-desktop .left-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 .homepage .about-container-desktop .left-wrapper .word-span {
   margin-right: 0.3rem;
 }
@@ -1721,6 +1745,26 @@ body {
   background-clip: text;
   color: transparent;
   text-shadow: 2px 2px 15px rgba(209, 209, 209, 0.5);
+}
+@media (max-width: 1749.98px) {
+  .homepage .about-container-desktop .left-wrapper .paragraph-title {
+    left: 80px;
+  }
+}
+@media (max-width: 1649.98px) {
+  .homepage .about-container-desktop .left-wrapper .paragraph-title {
+    left: 60px;
+  }
+}
+@media (max-width: 1419.98px) {
+  .homepage .about-container-desktop .left-wrapper .paragraph-title {
+    left: 40px;
+  }
+}
+@media (max-width: 1329.98px) {
+  .homepage .about-container-desktop .left-wrapper .paragraph-title {
+    left: 20px;
+  }
 }
 .homepage .about-container-desktop .left-wrapper .text-drop-ring {
   position: absolute;
@@ -1889,7 +1933,7 @@ body {
     padding: 1rem !important;
   }
 }
-.homepage .reviews .modal-overlay {
+.homepage .modal-overlay {
   position: fixed;
   inset: 0;
   backdrop-filter: blur(4px);
@@ -1900,7 +1944,7 @@ body {
   z-index: 9999;
   animation: modalFadeIn 0.3s ease-in-out;
 }
-.homepage .reviews .modal-overlay .close-modal {
+.homepage .modal-overlay .close-modal {
   position: fixed;
   top: 12%;
   right: 18%;
@@ -1916,10 +1960,21 @@ body {
   white-space: nowrap;
   transition: 0.2s ease-in-out;
 }
-.homepage .reviews .modal-overlay .close-modal:hover {
+.homepage .modal-overlay .close-modal:hover {
   box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
 }
-.homepage .reviews .modal-overlay .all-reviews-container {
+@media (max-width: 799.98px) {
+  .homepage .modal-overlay .close-modal {
+    top: 8%;
+    right: 12%;
+  }
+}
+@media (max-width: 499.98px) {
+  .homepage .modal-overlay .close-modal {
+    right: 2.5%;
+  }
+}
+.homepage .modal-overlay .all-reviews-container {
   width: 60%;
   max-width: 900px;
   height: 70vh;
@@ -1932,12 +1987,23 @@ body {
   padding: 2rem;
   overflow-y: auto;
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border {
+@media (max-width: 799.98px) {
+  .homepage .modal-overlay .all-reviews-container {
+    width: 75%;
+  }
+}
+@media (max-width: 499.98px) {
+  .homepage .modal-overlay .all-reviews-container {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+.homepage .modal-overlay .all-reviews-container .all-reviews-border {
   padding-bottom: 3rem;
   margin-bottom: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.692);
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-image {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-image {
   background: url(../images/frenkie.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -1946,13 +2012,13 @@ body {
   width: 75px;
   height: 75px;
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name, .homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product {
-  font-size: calc(14px * var(--scale));
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name, .homepage .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product {
+  font-size: calc(16px * var(--scale));
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name p, .homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product p {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name p, .homepage .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product p {
   margin: 0;
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name span, .homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product span {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-user-name span, .homepage .modal-overlay .all-reviews-container .all-reviews-border .ar-user-image-wrapper .ar-purchased-product span {
   background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
   background-clip: text;
   color: transparent;
@@ -1960,39 +2026,42 @@ body {
   font-size: calc(18px * var(--scale));
   font-weight: 500;
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .review-star svg {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .user-review {
+  font-size: calc(14.5px * var(--scale));
+}
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .review-star svg {
   filter: drop-shadow(1px 1px 3px white);
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .vote-review {
   gap: 1rem;
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button {
   background: none;
   border: 0;
   margin: 2px;
   transition: 0.3s ease-in-out;
   padding-bottom: 4px;
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button:hover {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button:hover {
   transform: scale(1.2);
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .vote-review .yes-button {
   color: rgb(122, 255, 88);
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button {
   background: none;
   border: 0;
   margin: 2px;
   transition: 0.3s ease-in-out;
   padding-bottom: 4px;
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button:hover {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button:hover {
   transform: scale(1.2);
 }
-.homepage .reviews .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button {
+.homepage .modal-overlay .all-reviews-container .all-reviews-border .vote-review .no-button {
   color: rgb(255, 90, 69);
 }
-.homepage .reviews .modal-overlay .add-review-container {
+.homepage .modal-overlay .add-review-container {
   width: 60%;
   max-width: 900px;
   height: 70vh;
@@ -2004,107 +2073,114 @@ body {
   padding: 2rem;
   overflow-y: auto;
 }
-.homepage .reviews .modal-overlay .add-review-container .review-form {
+@media (max-width: 799.98px) {
+  .homepage .modal-overlay .add-review-container {
+    width: 75%;
+  }
+}
+@media (max-width: 499.98px) {
+  .homepage .modal-overlay .add-review-container {
+    width: 95%;
+  }
+}
+.homepage .modal-overlay .add-review-container .review-form {
   width: 50%;
   justify-self: center;
+  font-size: calc(15px * var(--scale));
 }
-.homepage .reviews .modal-overlay .add-review-container .review-form input, .homepage .reviews .modal-overlay .add-review-container .review-form select, .homepage .reviews .modal-overlay .add-review-container .review-form textarea, .homepage .reviews .modal-overlay .add-review-container .review-form button {
+@media (max-width: 1149.98px) {
+  .homepage .modal-overlay .add-review-container .review-form {
+    width: 80%;
+  }
+}
+@media (max-width: 649.98px) {
+  .homepage .modal-overlay .add-review-container .review-form {
+    width: 90%;
+  }
+}
+@media (max-width: 499.98px) {
+  .homepage .modal-overlay .add-review-container .review-form {
+    width: 95%;
+  }
+}
+.homepage .modal-overlay .add-review-container .review-form input, .homepage .modal-overlay .add-review-container .review-form select, .homepage .modal-overlay .add-review-container .review-form textarea, .homepage .modal-overlay .add-review-container .review-form button {
   width: 80%;
   padding: 10px;
   border: 0;
   border-radius: 10px;
   box-shadow: 1px 1px 12px rgba(255, 255, 255, 0.651);
 }
-.homepage .reviews .modal-overlay .add-review-container .review-form textarea {
+.homepage .modal-overlay .add-review-container .review-form .field-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.homepage .modal-overlay .add-review-container .review-form .field-error {
+  font-size: calc(12px * var(--scale));
+  color: rgb(255, 80, 80);
+  text-align: center;
+}
+.homepage .modal-overlay .add-review-container .review-form textarea {
   width: 100%;
   min-height: 200px;
 }
-.homepage .reviews .modal-overlay .add-review-container .review-form button {
+.homepage .modal-overlay .add-review-container .review-form button {
   width: fit-content;
   padding: 15px 30px;
 }
-.homepage .reviews .bottle-wrapper .bottle-left .bottle-text-left {
-  font-size: calc(8.5rem * var(--scale));
+.homepage .modal-overlay .add-review-container .review-thanks {
+  font-size: calc(25px * var(--scale));
+}
+.homepage .modal-overlay .add-review-container .review-thanks .thanks-check {
+  border: 2px solid whitesmoke;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px rgb(255, 255, 255);
+  padding: 20px;
+}
+.homepage .modal-overlay .add-review-container .review-thanks .thanks-check svg {
+  filter: drop-shadow(0px 0px 6px white);
+}
+.homepage .reviews-mobile .reviews-visible.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.2s;
+}
+.homepage .reviews-mobile .review-backdrop {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: modalFadeIn 0.3s ease-in-out;
+}
+.homepage .reviews-mobile .title-info-wrapper .title {
+  font-size: clamp(3.5rem, -0.25rem + 13.3333vw, 6rem);
   font-weight: 500;
   background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
   background-clip: text;
   color: transparent;
   text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
 }
-.homepage .reviews .bottle-wrapper .bottle-left .left-description {
-  font-size: calc(1rem * var(--scale));
+.homepage .reviews-mobile .title-info-wrapper .bottle {
+  padding-top: 3rem;
 }
-.homepage .reviews .bottle-wrapper .bottle-left .all-reviews-button {
-  padding-top: 2rem;
-}
-.homepage .reviews .bottle-wrapper .bottle-left .all-reviews-button button {
-  box-sizing: border-box;
-  color: white;
-  font-size: calc(1.2rem * var(--scale));
-  font-weight: 500;
-  background: transparent;
-  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
-  padding: 15px 30px;
-  border-radius: 10px;
-  border: 0px solid;
-  white-space: nowrap;
-  transition: 0.2s ease-in-out;
-}
-.homepage .reviews .bottle-wrapper .bottle-left .all-reviews-button button:hover {
-  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
-}
-.homepage .reviews .bottle-wrapper .bottle-right .bottle-text-right {
-  font-size: calc(8.5rem * var(--scale));
-  font-weight: 500;
-  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
-  background-clip: text;
-  color: transparent;
-  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
-}
-.homepage .reviews .bottle-wrapper .bottle-right .right-description {
-  font-size: calc(1rem * var(--scale));
-}
-.homepage .reviews .bottle-wrapper .bottle-right .add-review-button {
-  padding-top: 2rem;
-}
-.homepage .reviews .bottle-wrapper .bottle-right .add-review-button button {
-  box-sizing: border-box;
-  color: white;
-  font-size: calc(1.2rem * var(--scale));
-  font-weight: 500;
-  background: transparent;
-  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
-  padding: 15px 30px;
-  border-radius: 10px;
-  border: 0px solid;
-  white-space: nowrap;
-  transition: 0.2s ease-in-out;
-}
-.homepage .reviews .bottle-wrapper .bottle-right .add-review-button button:hover {
-  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
-}
-.homepage .reviews .bottle-wrapper .bottle-right .add-review-button button {
-  margin: 0;
-}
-.homepage .reviews .bottle-wrapper .bottle {
-  padding-right: 5rem;
-}
-.homepage .reviews .bottle-wrapper .bottle svg {
+.homepage .reviews-mobile .title-info-wrapper .bottle > svg {
+  height: clamp(12rem, 7.5rem + 16vw, 15rem);
+  width: auto;
   transition: 1.5s ease-in-out;
 }
-.homepage .reviews .bottle-wrapper .bottle svg.reviews-visible {
+.homepage .reviews-mobile .title-info-wrapper .bottle > svg.reviews-visible {
   transform: rotate(150deg);
 }
-.homepage .reviews .text-parent {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile {
   position: relative;
-  height: 60vh;
+  height: 500px;
   width: 100%;
 }
-.homepage .reviews .text-parent .review-wrapper1 {
-  --x: -200px;
-  --y: 300px;
-}
-.homepage .reviews .text-parent .review-wrapper1 .drop {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .drop {
   position: absolute;
   top: -5%;
   left: 57%;
@@ -2117,50 +2193,18 @@ body {
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
-.homepage .reviews .text-parent .review-wrapper1 .drop:hover {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .drop:hover {
   box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
 }
-.homepage .reviews .text-parent .review-wrapper1 .drop::before {
-  content: "";
-  position: absolute;
-  bottom: 125%;
-  right: 50%;
-  width: 1px;
-  height: 190px;
-  background-color: white;
-  transform: scaleY(0);
-  transform-origin: bottom center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 5px 1px white;
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .drop {
+  cursor: pointer;
 }
-.homepage .reviews .text-parent .review-wrapper1 .drop::after {
-  content: "";
-  position: absolute;
-  bottom: 50%;
-  right: 125%;
-  width: 500px;
-  height: 1px;
-  background-color: white;
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 5px 1px white;
-}
-.homepage .reviews .text-parent .review-wrapper1 .drop:hover {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .drop:hover {
   color: white;
   text-shadow: 0px 0px 15px white;
   box-sizing: border-box;
 }
-.homepage .reviews .text-parent .review-wrapper1 .drop:hover::before {
-  transform: scaleY(1);
-}
-.homepage .reviews .text-parent .review-wrapper1 .drop:hover::after {
-  transform: scaleX(1);
-}
-.homepage .reviews .text-parent .review-wrapper1.reviews-visible .drop {
-  animation: drop 2.8s ease forwards 1.2s;
-}
-.homepage .reviews .text-parent .review-wrapper1 .review-popup {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup {
   position: absolute;
   width: 500px;
   height: 200px;
@@ -2169,21 +2213,436 @@ body {
   transition: all 0.4s ease;
   padding: 1rem;
 }
-.homepage .reviews .text-parent .review-wrapper1 .review-popup .actual-border .review-star svg {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .actual-border .review-star svg {
   filter: drop-shadow(1px 1px 3px white);
 }
-.homepage .reviews .text-parent .review-wrapper1 .review-popup {
-  top: 20%;
-  left: 25%;
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(500px, 92%);
+  height: auto;
+  transform: translate(-50%, calc(-50% + 20px));
+  z-index: 10000;
+  pointer-events: none;
 }
-.homepage .reviews .text-parent .review-wrapper1 .review-popup.active {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 50%;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease-in-out;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  height: 1px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease-in-out;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup.active {
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
 }
-.homepage .reviews .text-parent .review-wrapper1 .review-popup .review-text {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup.active::before {
+  transform: scaleY(1);
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup.active::after {
+  transform: scaleX(1);
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .review-text {
   font-size: calc(0.9rem * var(--scale));
 }
-.homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-image {
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .user-image-wrapper .user-image {
+  margin-left: -8%;
+  margin-top: -15%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .user-image-wrapper .user-name, .homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .user-image-wrapper .purchased-product {
+  margin-top: -15%;
+  font-size: calc(14px * var(--scale));
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .user-image-wrapper .user-name p, .homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .user-image-wrapper .purchased-product p {
+  margin: 0;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .user-image-wrapper .user-name span, .homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-popup .user-image-wrapper .purchased-product span {
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+  font-size: calc(18px * var(--scale));
+  font-weight: 500;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper1 {
+  --x: -200px;
+  --y: 300px;
+}
+@media (max-width: 499.98px) {
+  .homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper1 {
+    --x: -130px;
+    --y: 288px;
+  }
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper1.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.2s;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper1 .user-image {
+  background-image: url(../images/frenkie.jpg);
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper2 {
+  --x: -80px;
+  --y: 400px;
+}
+@media (max-width: 499.98px) {
+  .homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper2 {
+    --x: -30px;
+    --y: 360px;
+  }
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper2.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.4s;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper2 .user-image {
+  background-image: url(../images/pedri.jpg);
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper3 {
+  --x: 60px;
+  --y: 330px;
+}
+@media (max-width: 499.98px) {
+  .homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper3 {
+    --y: 270px;
+  }
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper3.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.6s;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper3 .user-image {
+  background-image: url(../images/aitana.jpg);
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper4 {
+  --x: 180px;
+  --y: 180px;
+}
+@media (max-width: 499.98px) {
+  .homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper4 {
+    --x: 130px;
+  }
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper4.reviews-visible .drop {
+  animation: drop 2.8s ease forwards 1.8s;
+}
+.homepage .reviews-mobile .title-info-wrapper .bottle .text-parent-mobile .review-wrapper4 .user-image {
+  background-image: url(../images/raphinha.jpg);
+}
+.homepage .reviews-mobile .title-info-wrapper .info .all-reviews-wrapper .all-reviews-text {
+  font-size: calc(1rem * var(--scale));
+}
+.homepage .reviews-mobile .title-info-wrapper .info .all-reviews-wrapper button {
+  box-sizing: border-box;
+  color: white;
+  font-size: calc(1.2rem * var(--scale));
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 0px solid;
+  white-space: nowrap;
+  transition: 0.2s ease-in-out;
+}
+.homepage .reviews-mobile .title-info-wrapper .info .all-reviews-wrapper button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.homepage .reviews-mobile .title-info-wrapper .info .add-review-wrapper .add-review-text {
+  font-size: calc(1rem * var(--scale));
+}
+.homepage .reviews-mobile .title-info-wrapper .info .add-review-wrapper button {
+  box-sizing: border-box;
+  color: white;
+  font-size: calc(1.2rem * var(--scale));
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 0px solid;
+  white-space: nowrap;
+  transition: 0.2s ease-in-out;
+}
+.homepage .reviews-mobile .title-info-wrapper .info .add-review-wrapper button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-left .bottle-text-left {
+  font-size: clamp(4rem, 1.0248rem + 5.9504vw, 8.5rem);
+  font-weight: 500;
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-left .left-description {
+  font-size: calc(1rem * var(--scale));
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-left .all-reviews-button {
+  padding-top: 2rem;
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-left .all-reviews-button button {
+  box-sizing: border-box;
+  color: white;
+  font-size: calc(1.2rem * var(--scale));
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 0px solid;
+  white-space: nowrap;
+  transition: 0.2s ease-in-out;
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-left .all-reviews-button button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-right .bottle-text-right {
+  font-size: clamp(4rem, 1.0248rem + 5.9504vw, 8.5rem);
+  font-weight: 500;
+  background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 1px -3px 15px rgba(255, 255, 255, 0.3);
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-right .right-description {
+  font-size: calc(1rem * var(--scale));
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-right .add-review-button {
+  padding-top: 2rem;
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-right .add-review-button button {
+  box-sizing: border-box;
+  color: white;
+  font-size: calc(1.2rem * var(--scale));
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 0px solid;
+  white-space: nowrap;
+  transition: 0.2s ease-in-out;
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-right .add-review-button button:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle-right .add-review-button button {
+  margin: 0;
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle {
+  padding-right: 5rem;
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle svg {
+  height: clamp(13rem, 3.0826rem + 19.8347vw, 28rem);
+  width: auto;
+  transition: transform 1.5s ease-in-out;
+}
+.homepage .reviews-desktop .bottle-wrapper .bottle svg.reviews-visible {
+  transform: rotate(150deg);
+}
+.homepage .reviews-desktop .text-parent {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  --pull: clamp(0px, 7cqw - (100vw - 1300px) * 0.1774, 7cqw);
+  --col: 40px;
+  --row: 142px;
+  --top: 150px;
+  --t: 0;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1, .homepage .reviews-desktop .text-parent .review-wrapper2, .homepage .reviews-desktop .text-parent .review-wrapper3, .homepage .reviews-desktop .text-parent .review-wrapper4 {
+  --x: calc(var(--x0) + (var(--x1) - var(--x0)) * var(--t));
+  --y: calc(var(--y0) + (var(--y1) - var(--y0)) * var(--t));
+}
+@media (max-width: 1799.98px) {
+  .homepage .reviews-desktop .text-parent {
+    margin-top: 4rem;
+  }
+}
+@media (max-width: 1499.98px) {
+  .homepage .reviews-desktop .text-parent {
+    margin-top: 10rem;
+  }
+}
+@media (max-width: 1299.98px) {
+  .homepage .reviews-desktop .text-parent {
+    margin-top: 14rem;
+  }
+}
+@media (max-width: 1399.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper1 {
+    --x: calc(-7cqw - 104px);
+    --y: 156px;
+  }
+  .homepage .reviews-desktop .text-parent .review-wrapper2 {
+    --x: calc(-7cqw - 42px);
+    --y: 208px;
+  }
+  .homepage .reviews-desktop .text-parent .review-wrapper3 {
+    --x: calc(-7cqw + 42px);
+    --y: 172px;
+  }
+  .homepage .reviews-desktop .text-parent .review-wrapper4 {
+    --x: calc(-7cqw + 94px);
+    --y: 94px;
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 {
+  --x0: calc(-10.4167vw - var(--pull));
+  --y0: 15.625vw;
+  --x1: calc(-7cqw - var(--col));
+  --y1: calc(var(--top) - 25px + 1.5vw);
+  position: absolute;
+  top: -1.5vw;
+  left: 57%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -5%);
+  opacity: 0;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1:hover {
+  z-index: 5;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1.reviews-visible {
+  animation: drop 2.8s ease forwards 1.2s;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .drop {
+  position: absolute;
+  top: -5%;
+  left: 57%;
+  transform: translate(-50%, -5%);
+  box-sizing: border-box;
+  border-radius: 50%;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .drop:hover {
+  box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .drop {
+  position: static;
+  transform: none;
+  opacity: 1;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup {
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  transition: all 0.4s ease;
+  padding: 1rem;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .actual-border .review-star svg {
+  filter: drop-shadow(1px 1px 3px white);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup {
+  top: 50%;
+  left: 50%;
+  width: clamp(320px, 50vw + 7cqw + var(--x) - 1rem, 500px);
+  height: auto;
+  opacity: 1;
+  transform: translate(-100%, -100%);
+  transition: none;
+  pointer-events: none;
+}
+@media (max-width: 1299.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup {
+    padding-left: 40px;
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .actual-border {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 37.5px;
+  width: 1px;
+  height: calc(118% - 37.5px);
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease-in-out;
+}
+@media (max-width: 1299.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup::before {
+    height: calc(117% - 37.5px);
+  }
+}
+@media (max-width: 1199.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup::before {
+    height: calc(110% - 37.5px);
+  }
+}
+@media (max-width: 1099.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup::before {
+    height: calc(108% - 37.5px);
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup::after {
+  content: "";
+  position: absolute;
+  right: 37.5px;
+  bottom: 0;
+  width: calc(97% - 37.5px);
+  height: 1px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease-in-out;
+}
+@media (max-width: 1299.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup::after {
+    width: calc(92% - 37.5px);
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup.active .actual-border {
+  opacity: 1;
+  transform: translateY(0);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup.active::before {
+  transform: scaleY(1);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup.active::after {
+  transform: scaleX(1);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .review-text {
+  font-size: calc(0.9rem * var(--scale));
+}
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-image {
   margin-left: -8%;
   margin-top: -15%;
   background: url(../images/frenkie.jpg);
@@ -2194,14 +2653,14 @@ body {
   width: 75px;
   height: 75px;
 }
-.homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name, .homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product {
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name, .homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product {
   margin-top: -15%;
   font-size: calc(14px * var(--scale));
 }
-.homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name p, .homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product p {
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name p, .homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product p {
   margin: 0;
 }
-.homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name span, .homepage .reviews .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product span {
+.homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .user-image-wrapper .user-name span, .homepage .reviews-desktop .text-parent .review-wrapper1 .review-popup .user-image-wrapper .purchased-product span {
   background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
   background-clip: text;
   color: transparent;
@@ -2209,11 +2668,26 @@ body {
   font-size: calc(18px * var(--scale));
   font-weight: 500;
 }
-.homepage .reviews .text-parent .review-wrapper2 {
-  --x: -80px;
-  --y: 400px;
+.homepage .reviews-desktop .text-parent .review-wrapper2 {
+  --x0: calc(-4.1667vw - var(--pull));
+  --y0: 20.8333vw;
+  --x1: calc(-7cqw - var(--col));
+  --y1: calc(var(--top) + 2 * var(--row) - 25px + 1.5vw);
+  position: absolute;
+  top: -1.5vw;
+  left: 57%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -5%);
+  opacity: 0;
 }
-.homepage .reviews .text-parent .review-wrapper2 .drop {
+.homepage .reviews-desktop .text-parent .review-wrapper2:hover {
+  z-index: 5;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2.reviews-visible {
+  animation: drop 2.8s ease forwards 1.4s;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2 .drop {
   position: absolute;
   top: -5%;
   left: 57%;
@@ -2226,50 +2700,15 @@ body {
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
-.homepage .reviews .text-parent .review-wrapper2 .drop:hover {
+.homepage .reviews-desktop .text-parent .review-wrapper2 .drop:hover {
   box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
 }
-.homepage .reviews .text-parent .review-wrapper2 .drop::before {
-  content: "";
-  position: absolute;
-  top: 125%;
-  right: 50%;
-  width: 1px;
-  height: 190px;
-  background-color: white;
-  transform: scaleY(0);
-  transform-origin: top center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 5px 1px white;
+.homepage .reviews-desktop .text-parent .review-wrapper2 .drop {
+  position: static;
+  transform: none;
+  opacity: 1;
 }
-.homepage .reviews .text-parent .review-wrapper2 .drop::after {
-  content: "";
-  position: absolute;
-  bottom: 50%;
-  right: 125%;
-  width: 500px;
-  height: 1px;
-  background-color: white;
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 5px 1px white;
-}
-.homepage .reviews .text-parent .review-wrapper2 .drop:hover {
-  color: white;
-  text-shadow: 0px 0px 15px white;
-  box-sizing: border-box;
-}
-.homepage .reviews .text-parent .review-wrapper2 .drop:hover::before {
-  transform: scaleY(1);
-}
-.homepage .reviews .text-parent .review-wrapper2 .drop:hover::after {
-  transform: scaleX(1);
-}
-.homepage .reviews .text-parent .review-wrapper2.reviews-visible .drop {
-  animation: drop 2.8s ease forwards 1.4s;
-}
-.homepage .reviews .text-parent .review-wrapper2 .review-popup {
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup {
   position: absolute;
   width: 500px;
   height: 200px;
@@ -2278,21 +2717,84 @@ body {
   transition: all 0.4s ease;
   padding: 1rem;
 }
-.homepage .reviews .text-parent .review-wrapper2 .review-popup .actual-border .review-star svg {
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .actual-border .review-star svg {
   filter: drop-shadow(1px 1px 3px white);
 }
-.homepage .reviews .text-parent .review-wrapper2 .review-popup {
-  top: 75%;
-  left: 32%;
-}
-.homepage .reviews .text-parent .review-wrapper2 .review-popup.active {
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup {
+  top: 50%;
+  left: 50%;
+  width: clamp(320px, 50vw + 7cqw + var(--x) - 1rem, 500px);
+  height: auto;
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: translate(-100%, 0);
+  transition: none;
+  pointer-events: none;
 }
-.homepage .reviews .text-parent .review-wrapper2 .review-popup .review-text {
+@media (max-width: 1199.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup {
+    padding-left: 40px;
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .actual-border {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 37.5px;
+  width: 1px;
+  height: calc(120% - 37.5px);
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.3s ease-in-out;
+}
+@media (max-width: 1049.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup::before {
+    height: calc(116% - 37.5px);
+  }
+}
+@media (max-width: 999.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup::before {
+    height: calc(112% - 37.5px);
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup::after {
+  content: "";
+  position: absolute;
+  right: 37.5px;
+  top: 0;
+  width: calc(97% - 37.5px);
+  height: 1px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.3s ease-in-out;
+}
+@media (max-width: 1199.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup::after {
+    width: calc(93% - 37.5px);
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup.active .actual-border {
+  opacity: 1;
+  transform: translateY(0);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup.active::before {
+  transform: scaleY(1);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup.active::after {
+  transform: scaleX(1);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .review-text {
   font-size: calc(0.9rem * var(--scale));
 }
-.homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-image {
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-image {
   margin-left: -8%;
   margin-bottom: -15%;
   background: url(../images/pedri.jpg);
@@ -2303,14 +2805,14 @@ body {
   width: 75px;
   height: 75px;
 }
-.homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name, .homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product {
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name, .homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product {
   margin-bottom: -15%;
   font-size: calc(14px * var(--scale));
 }
-.homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name p, .homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product p {
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name p, .homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product p {
   margin: 0;
 }
-.homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name span, .homepage .reviews .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product span {
+.homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .user-image-wrapper .user-name span, .homepage .reviews-desktop .text-parent .review-wrapper2 .review-popup .user-image-wrapper .purchased-product span {
   background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
   background-clip: text;
   color: transparent;
@@ -2318,11 +2820,26 @@ body {
   font-size: calc(18px * var(--scale));
   font-weight: 500;
 }
-.homepage .reviews .text-parent .review-wrapper3 {
-  --x: 80px;
-  --y: 330px;
+.homepage .reviews-desktop .text-parent .review-wrapper3 {
+  --x0: calc(4.1667vw - var(--pull));
+  --y0: 17.1875vw;
+  --x1: calc(-7cqw + var(--col));
+  --y1: calc(var(--top) + var(--row) - 25px + 1.5vw);
+  position: absolute;
+  top: -1.5vw;
+  left: 57%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -5%);
+  opacity: 0;
 }
-.homepage .reviews .text-parent .review-wrapper3 .drop {
+.homepage .reviews-desktop .text-parent .review-wrapper3:hover {
+  z-index: 5;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper3.reviews-visible {
+  animation: drop 2.8s ease forwards 1.6s;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper3 .drop {
   position: absolute;
   top: -5%;
   left: 57%;
@@ -2335,50 +2852,15 @@ body {
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
-.homepage .reviews .text-parent .review-wrapper3 .drop:hover {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .drop:hover {
   box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
 }
-.homepage .reviews .text-parent .review-wrapper3 .drop::before {
-  content: "";
-  position: absolute;
-  top: 125%;
-  right: 50%;
-  width: 1px;
-  height: 190px;
-  background-color: white;
-  transform: scaleY(0);
-  transform-origin: top center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 5px 1px white;
+.homepage .reviews-desktop .text-parent .review-wrapper3 .drop {
+  position: static;
+  transform: none;
+  opacity: 1;
 }
-.homepage .reviews .text-parent .review-wrapper3 .drop::after {
-  content: "";
-  position: absolute;
-  bottom: 50%;
-  left: 125%;
-  width: 500px;
-  height: 1px;
-  background-color: white;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 5px 1px white;
-}
-.homepage .reviews .text-parent .review-wrapper3 .drop:hover {
-  color: white;
-  text-shadow: 0px 0px 15px white;
-  box-sizing: border-box;
-}
-.homepage .reviews .text-parent .review-wrapper3 .drop:hover::before {
-  transform: scaleY(1);
-}
-.homepage .reviews .text-parent .review-wrapper3 .drop:hover::after {
-  transform: scaleX(1);
-}
-.homepage .reviews .text-parent .review-wrapper3.reviews-visible .drop {
-  animation: drop 2.8s ease forwards 1.6s;
-}
-.homepage .reviews .text-parent .review-wrapper3 .review-popup {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup {
   position: absolute;
   width: 500px;
   height: 200px;
@@ -2387,21 +2869,69 @@ body {
   transition: all 0.4s ease;
   padding: 1rem;
 }
-.homepage .reviews .text-parent .review-wrapper3 .review-popup .actual-border .review-star svg {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .actual-border .review-star svg {
   filter: drop-shadow(1px 1px 3px white);
 }
-.homepage .reviews .text-parent .review-wrapper3 .review-popup {
-  top: 62%;
-  left: 81.5%;
-}
-.homepage .reviews .text-parent .review-wrapper3 .review-popup.active {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup {
+  top: 50%;
+  left: 50%;
+  width: clamp(320px, 50vw - 7cqw - var(--x) - 1rem, 500px);
+  height: auto;
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: none;
+  transition: none;
+  pointer-events: none;
 }
-.homepage .reviews .text-parent .review-wrapper3 .review-popup .review-text {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .actual-border {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 37.5px;
+  width: 1px;
+  height: calc(70% - 37.5px);
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.3s ease-in-out;
+}
+@media (max-width: 1019.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup::before {
+    height: calc(74% - 37.5px);
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup::after {
+  content: "";
+  position: absolute;
+  left: 37.5px;
+  top: 0;
+  width: calc(95% - 37.5px);
+  height: 1px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup.active .actual-border {
+  opacity: 1;
+  transform: translateY(0);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup.active::before {
+  transform: scaleY(1);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup.active::after {
+  transform: scaleX(1);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .review-text {
   font-size: calc(0.9rem * var(--scale));
 }
-.homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-image {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-image {
   margin-right: -8%;
   margin-bottom: 15%;
   background: url(../images/aitana.jpg);
@@ -2412,14 +2942,14 @@ body {
   width: 75px;
   height: 75px;
 }
-.homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name, .homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name, .homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product {
   margin-bottom: 15%;
   font-size: calc(14px * var(--scale));
 }
-.homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name p, .homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product p {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name p, .homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product p {
   margin: 0;
 }
-.homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name span, .homepage .reviews .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product span {
+.homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .user-image-wrapper .user-name span, .homepage .reviews-desktop .text-parent .review-wrapper3 .review-popup .user-image-wrapper .purchased-product span {
   background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
   background-clip: text;
   color: transparent;
@@ -2427,11 +2957,26 @@ body {
   font-size: calc(18px * var(--scale));
   font-weight: 500;
 }
-.homepage .reviews .text-parent .review-wrapper4 {
-  --x: 180px;
-  --y: 180px;
+.homepage .reviews-desktop .text-parent .review-wrapper4 {
+  --x0: calc(9.375vw - var(--pull));
+  --y0: 9.375vw;
+  --x1: calc(-7cqw + var(--col));
+  --y1: calc(var(--top) + 3 * var(--row) - 25px + 1.5vw);
+  position: absolute;
+  top: -1.5vw;
+  left: 57%;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -5%);
+  opacity: 0;
 }
-.homepage .reviews .text-parent .review-wrapper4 .drop {
+.homepage .reviews-desktop .text-parent .review-wrapper4:hover {
+  z-index: 5;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper4.reviews-visible {
+  animation: drop 2.8s ease forwards 1.8s;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper4 .drop {
   position: absolute;
   top: -5%;
   left: 57%;
@@ -2444,50 +2989,15 @@ body {
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
-.homepage .reviews .text-parent .review-wrapper4 .drop:hover {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .drop:hover {
   box-shadow: inset 3px 3px 15px 1px rgb(255, 255, 255), -3px -3px 15px 1px rgb(255, 255, 255);
 }
-.homepage .reviews .text-parent .review-wrapper4 .drop::before {
-  content: "";
-  position: absolute;
-  top: 125%;
-  right: 50%;
-  width: 1px;
-  height: 170px;
-  background-color: white;
-  transform: scaleY(0);
-  transform-origin: top center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 5px 1px white;
+.homepage .reviews-desktop .text-parent .review-wrapper4 .drop {
+  position: static;
+  transform: none;
+  opacity: 1;
 }
-.homepage .reviews .text-parent .review-wrapper4 .drop::after {
-  content: "";
-  position: absolute;
-  bottom: 50%;
-  left: 125%;
-  width: 500px;
-  height: 1px;
-  background-color: white;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0px 0px 5px 1px white;
-}
-.homepage .reviews .text-parent .review-wrapper4 .drop:hover {
-  color: white;
-  text-shadow: 0px 0px 15px white;
-  box-sizing: border-box;
-}
-.homepage .reviews .text-parent .review-wrapper4 .drop:hover::before {
-  transform: scaleY(1);
-}
-.homepage .reviews .text-parent .review-wrapper4 .drop:hover::after {
-  transform: scaleX(1);
-}
-.homepage .reviews .text-parent .review-wrapper4.reviews-visible .drop {
-  animation: drop 2.8s ease forwards 1.8s;
-}
-.homepage .reviews .text-parent .review-wrapper4 .review-popup {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup {
   position: absolute;
   width: 500px;
   height: 200px;
@@ -2496,21 +3006,74 @@ body {
   transition: all 0.4s ease;
   padding: 1rem;
 }
-.homepage .reviews .text-parent .review-wrapper4 .review-popup .actual-border .review-star svg {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .actual-border .review-star svg {
   filter: drop-shadow(1px 1px 3px white);
 }
-.homepage .reviews .text-parent .review-wrapper4 .review-popup {
-  top: 35%;
-  left: 88%;
-}
-.homepage .reviews .text-parent .review-wrapper4 .review-popup.active {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup {
+  top: 50%;
+  left: 50%;
+  width: clamp(320px, 50vw - 7cqw - var(--x) - 1rem, 500px);
+  height: auto;
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: none;
+  transition: none;
+  pointer-events: none;
 }
-.homepage .reviews .text-parent .review-wrapper4 .review-popup .review-text {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .actual-border {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 37.5px;
+  width: 1px;
+  height: calc(123% - 37.5px);
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.3s ease-in-out;
+}
+@media (max-width: 1149.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup::before {
+    height: calc(115% - 37.5px);
+  }
+}
+@media (max-width: 1049.98px) {
+  .homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup::before {
+    height: calc(110% - 37.5px);
+  }
+}
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup::after {
+  content: "";
+  position: absolute;
+  left: 37.5px;
+  top: 0;
+  width: calc(96% - 37.5px);
+  height: 1px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 1px white;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out;
+}
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup.active .actual-border {
+  opacity: 1;
+  transform: translateY(0);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup.active::before {
+  transform: scaleY(1);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup.active::after {
+  transform: scaleX(1);
+}
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .review-text {
   font-size: calc(0.9rem * var(--scale));
 }
-.homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-image {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-image {
   margin-right: -8%;
   margin-bottom: -15%;
   background: url(../images/raphinha.jpg);
@@ -2521,14 +3084,14 @@ body {
   width: 75px;
   height: 75px;
 }
-.homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name, .homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name, .homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product {
   margin-bottom: -15%;
   font-size: calc(14px * var(--scale));
 }
-.homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name p, .homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product p {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name p, .homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product p {
   margin: 0;
 }
-.homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name span, .homepage .reviews .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product span {
+.homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .user-image-wrapper .user-name span, .homepage .reviews-desktop .text-parent .review-wrapper4 .review-popup .user-image-wrapper .purchased-product span {
   background-image: linear-gradient(25deg, springgreen, rgb(200, 255, 227) 45%);
   background-clip: text;
   color: transparent;
@@ -3334,7 +3897,241 @@ body {
   width: 80%;
   justify-self: center;
 }
-.login-container .login-signup-wrapper {
+@media (max-width: 1700px) {
+  .login-container {
+    width: 85%;
+  }
+}
+@media (max-width: 499.98px) {
+  .login-container {
+    width: 90%;
+  }
+}
+.login-container .mobile-version {
+  width: 100%;
+  height: 800px;
+}
+@media (max-width: 449.98px) {
+  .login-container .mobile-version {
+    height: 840px;
+  }
+}
+.login-container .mobile-version .login-signup-wrapper {
+  width: 100%;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 22px;
+  background: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
+  box-shadow: 0px 0px 130px 5px black;
+  user-select: none;
+}
+.login-container .mobile-version .login-signup-wrapper .logo-brand .website-brand {
+  font-size: calc(35px * var(--scale));
+}
+.login-container .mobile-version .login-signup-wrapper .logo-brand .website-brand span {
+  font-style: italic;
+  background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
+}
+.login-container .mobile-version .login-signup-wrapper .switch-arrows {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translate(0, -50%);
+  box-sizing: border-box;
+  color: white;
+  font-size: calc(1.2rem * var(--scale));
+  font-weight: 500;
+  background: transparent;
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.349), -3px -3px 15px 1px rgba(255, 255, 255, 0.349);
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 0px solid;
+  white-space: nowrap;
+  transition: 0.2s ease-in-out;
+}
+.login-container .mobile-version .login-signup-wrapper .switch-arrows:hover {
+  box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+.login-container .mobile-version .login-signup-wrapper .switch-arrows {
+  margin: 0;
+  border: 1px solid white;
+  border-radius: 50%;
+  background: linear-gradient(20deg, #494949, #252525 30%, #1a1a1a 60%);
+  box-shadow: 0px 0px 130px 5px black;
+  padding: 15px;
+  z-index: 9999;
+}
+.login-container .mobile-version .login-signup-wrapper .switch-arrows:hover {
+  cursor: grab;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content {
+  transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form {
+  height: 100%;
+  width: 90%;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper {
+  position: relative;
+  width: 100%;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper .input-error {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding-right: 30px;
+  font-size: calc(12px * var(--scale));
+  color: rgb(255, 80, 80);
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.603);
+  border-radius: 27px;
+  padding: 15px 30px;
+  background: transparent;
+  color: white;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper input:focus {
+  outline: none;
+}
+@media (max-width: 449.98px) {
+  .login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button {
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.61);
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  background: transparent;
+  transition: 0.2s ease-in-out;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button .remember-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  height: 9px;
+  width: 9px;
+  transition: 0.2s ease-in-out;
+  opacity: 1;
+  background: white;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button:hover {
+  border: 2px solid white;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button:hover:hover + p {
+  opacity: 1;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .forgot-pass {
+  color: rgb(76, 160, 255);
+  font-weight: 500;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .or-wrapper {
+  margin: 2rem 0;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .or-wrapper .line {
+  top: 50%;
+  transform: translate(0, -50%);
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-button, .login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .google-button, .login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .apple-button {
+  border: 0;
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 27px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 1px 1px rgb(255, 255, 255);
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-button:hover, .login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .google-button:hover, .login-container .mobile-version .login-signup-wrapper .login-signup-contents .login-content .login-form .apple-button:hover {
+  box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form {
+  width: 90%;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper {
+  position: relative;
+  width: 100%;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper .input-error {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding-right: 30px;
+  font-size: calc(12px * var(--scale));
+  color: rgb(255, 80, 80);
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.603);
+  border-radius: 27px;
+  padding: 15px 30px;
+  background: transparent;
+  color: white;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper input:focus {
+  outline: none;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .or-wrapper {
+  margin: 1rem 0;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .or-wrapper .line {
+  top: 50%;
+  transform: translate(0, -50%);
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-button, .login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .google-button, .login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .apple-button {
+  border: 0;
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 27px;
+  background: transparent;
+  color: rgb(255, 255, 255);
+  letter-spacing: 1px;
+  box-shadow: 2px 2px 1px 1px rgb(255, 255, 255);
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-button:hover, .login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .google-button:hover, .login-container .mobile-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .apple-button:hover {
+  box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
+}
+.login-container .desktop-version {
+  width: 100%;
+}
+.login-container .desktop-version .login-signup-wrapper {
   position: relative;
   z-index: 9000;
   margin-right: -30px;
@@ -3345,17 +4142,17 @@ body {
   box-shadow: 0px 0px 130px 5px black;
   user-select: none;
 }
-.login-container .login-signup-wrapper .logo-brand .website-brand {
+.login-container .desktop-version .login-signup-wrapper .logo-brand .website-brand {
   font-size: calc(35px * var(--scale));
 }
-.login-container .login-signup-wrapper .logo-brand .website-brand span {
+.login-container .desktop-version .login-signup-wrapper .logo-brand .website-brand span {
   font-style: italic;
   background-image: linear-gradient(35deg, gold, rgb(0, 255, 136) 45%);
   background-clip: text;
   color: transparent;
   text-shadow: 0px 1px 5px rgba(255, 255, 255, 0.637);
 }
-.login-container .login-signup-wrapper .drag-arrow-right {
+.login-container .desktop-version .login-signup-wrapper .drag-arrow-right {
   position: absolute;
   top: 50%;
   right: 1%;
@@ -3372,19 +4169,19 @@ body {
   white-space: nowrap;
   transition: 0.2s ease-in-out;
 }
-.login-container .login-signup-wrapper .drag-arrow-right:hover {
+.login-container .desktop-version .login-signup-wrapper .drag-arrow-right:hover {
   box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
 }
-.login-container .login-signup-wrapper .drag-arrow-right {
+.login-container .desktop-version .login-signup-wrapper .drag-arrow-right {
   margin: 0;
   border-radius: 50%;
   padding: 15px;
   z-index: 1;
 }
-.login-container .login-signup-wrapper .drag-arrow-right:hover {
+.login-container .desktop-version .login-signup-wrapper .drag-arrow-right:hover {
   cursor: grab;
 }
-.login-container .login-signup-wrapper .drag-arrow-left {
+.login-container .desktop-version .login-signup-wrapper .drag-arrow-left {
   position: absolute;
   top: 50%;
   left: 1%;
@@ -3401,27 +4198,27 @@ body {
   white-space: nowrap;
   transition: 0.2s ease-in-out;
 }
-.login-container .login-signup-wrapper .drag-arrow-left:hover {
+.login-container .desktop-version .login-signup-wrapper .drag-arrow-left:hover {
   box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
 }
-.login-container .login-signup-wrapper .drag-arrow-left {
+.login-container .desktop-version .login-signup-wrapper .drag-arrow-left {
   margin: 0;
   border-radius: 50%;
   padding: 15px;
   z-index: 1;
 }
-.login-container .login-signup-wrapper .drag-arrow-left:hover {
+.login-container .desktop-version .login-signup-wrapper .drag-arrow-left:hover {
   cursor: grab;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form {
   height: 100%;
   width: 80%;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper {
   position: relative;
   width: 100%;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper .input-error {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper .input-error {
   position: absolute;
   right: 0;
   top: 50%;
@@ -3430,7 +4227,7 @@ body {
   font-size: calc(12px * var(--scale));
   color: rgb(255, 80, 80);
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper input {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper input {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.603);
   border-radius: 27px;
@@ -3438,10 +4235,16 @@ body {
   background: transparent;
   color: white;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper input:focus {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-info .input-wrapper input:focus {
   outline: none;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button {
+@media (min-width: 800px) and (max-width: 1099.98px) {
+  .login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+}
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button {
   position: relative;
   border: 2px solid rgba(255, 255, 255, 0.61);
   border-radius: 50%;
@@ -3450,7 +4253,7 @@ body {
   background: transparent;
   transition: 0.2s ease-in-out;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button .remember-background {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button .remember-background {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -3463,26 +4266,26 @@ body {
   opacity: 1;
   background: white;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button:hover {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button:hover {
   border: 2px solid white;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button:hover:hover + p {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .remember-me .remember-button:hover:hover + p {
   opacity: 1;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .forgot-pass {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .remember-forgot .forgot-pass {
   color: rgb(76, 160, 255);
   font-weight: 500;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .or-wrapper {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .or-wrapper {
   margin: 2rem 0;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .or-wrapper .line {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .or-wrapper .line {
   top: 50%;
   transform: translate(0, -50%);
   border-bottom: 1px solid white;
   width: 100%;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-button, .login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .google-button, .login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .apple-button {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-button, .login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .google-button, .login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .apple-button {
   border: 0;
   width: 100%;
   padding: 15px 30px;
@@ -3494,23 +4297,23 @@ body {
   z-index: 1;
   transition: 0.3s ease-in-out;
 }
-.login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .login-button:hover, .login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .google-button:hover, .login-container .login-signup-wrapper .login-signup-contents .login-content .login-form .apple-button:hover {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .login-button:hover, .login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .google-button:hover, .login-container .desktop-version .login-signup-wrapper .login-signup-contents .login-content .login-form .apple-button:hover {
   box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 0;
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form {
   width: 80%;
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper {
   position: relative;
   width: 100%;
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper .input-error {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper .input-error {
   position: absolute;
   right: 0;
   top: 50%;
@@ -3519,7 +4322,7 @@ body {
   font-size: calc(12px * var(--scale));
   color: rgb(255, 80, 80);
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper input {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper input {
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.603);
   border-radius: 27px;
@@ -3527,19 +4330,19 @@ body {
   background: transparent;
   color: white;
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper input:focus {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-info .input-wrapper input:focus {
   outline: none;
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .or-wrapper {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .or-wrapper {
   margin: 1rem 0;
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .or-wrapper .line {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .or-wrapper .line {
   top: 50%;
   transform: translate(0, -50%);
   border-bottom: 1px solid white;
   width: 100%;
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-button, .login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .google-button, .login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .apple-button {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-button, .login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .google-button, .login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .apple-button {
   border: 0;
   width: 100%;
   padding: 15px 30px;
@@ -3551,10 +4354,10 @@ body {
   z-index: 1;
   transition: 0.3s ease-in-out;
 }
-.login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-button:hover, .login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .google-button:hover, .login-container .login-signup-wrapper .login-signup-contents .signup-content .signup-form .apple-button:hover {
+.login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .signup-button:hover, .login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .google-button:hover, .login-container .desktop-version .login-signup-wrapper .login-signup-contents .signup-content .signup-form .apple-button:hover {
   box-shadow: -3px -3px 2px 1px rgb(255, 255, 255);
 }
-.login-container .login-image-wrapper {
+.login-container .desktop-version .login-image-wrapper {
   position: absolute;
   right: 0;
   height: 100%;
@@ -3566,7 +4369,7 @@ body {
   border-radius: 0 27px 27px 0;
   box-shadow: 0px 0px 130px 5px black;
 }
-.login-container .signup-image-wrapper {
+.login-container .desktop-version .signup-image-wrapper {
   position: absolute;
   left: 0;
   height: 100%;

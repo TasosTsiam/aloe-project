@@ -291,15 +291,15 @@ function Order() {
 
 
     const [isMobileLayout, setIsMobileLayout] = useState(
-            window.matchMedia('(max-width: 549.98px)').matches
-        );
+        window.matchMedia('(max-width: 549.98px)').matches
+    );
 
-        useEffect(() => {
-            const query = window.matchMedia('(max-width: 549.98px)');
-            const handleChange = (e) => setIsMobileLayout(e.matches);
-            query.addEventListener('change', handleChange);
-            return () => query.removeEventListener('change', handleChange);
-        }, []);
+    useEffect(() => {
+        const query = window.matchMedia('(max-width: 549.98px)');
+        const handleChange = (e) => setIsMobileLayout(e.matches);
+        query.addEventListener('change', handleChange);
+        return () => query.removeEventListener('change', handleChange);
+    }, []);
 
     // -------------------------------------------------------------------   MOBILE CODE    ---------------------------------------------------------------------
 
