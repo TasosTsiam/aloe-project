@@ -64,6 +64,17 @@ function Homepage() {
         setBoxShadow('0px 0px 50px 4px white');
     }
 
+    const [removeMargin, setRemoveMargin] = useState(
+                window.matchMedia('(max-width: 1249.98px)').matches
+            );
+
+        useEffect(() => {
+            const query = window.matchMedia('(max-width: 1249.98px)');
+            const handleChange = (e) => setRemoveMargin(e.matches);
+            query.addEventListener('change', handleChange);
+            return () => query.removeEventListener('change', handleChange);
+        }, []);
+
     return (
         <>
             <section id="section-1" className="homepage">
@@ -81,9 +92,16 @@ function Homepage() {
             <section id="section-2" className="homepage" style={{ margin: "15rem 0 5rem 0", padding: "2rem 0" }}>
                 <Products />
             </section>
-            <section id="section-3" className="homepage" style={{ marginBottom: "10rem", padding: "5rem 0" }}>
-                <Recipes />
-            </section>
+            {removeMargin
+                ?
+                    <section id="section-3" className="homepage" style={{padding: "5rem 0" }}>
+                        <Recipes />
+                    </section>
+                :
+                    <section id="section-3" className="homepage" style={{ marginBottom: "10rem", padding: "5rem 0" }}>
+                        <Recipes />
+                    </section>
+            }
             <section id="section-4" className="homepage" style={{ marginBottom: "10rem", padding: "5rem 0" }}>
                 <About scrollBypass={scrollButtonClicked} />
             </section>

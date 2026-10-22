@@ -19,9 +19,9 @@ function Footer() {
                         <h4>Authentic, pure, ours.</h4>
                     </div>
                 </div>
-                <div className="d-flex flex-column justify-content-between col-6">
+                <div className="footer-menu-wrapper d-flex flex-column justify-content-between col-6">
                     <div className="d-flex row justify-content-end">
-                        <ul className="footer-menu d-flex justify-content-between mb-0 col-8 col-lg-11">
+                        <ul className="footer-menu d-flex justify-content-between mb-0 col-lg-11">
                             <li className="mb-0">Home</li>
                             <li className="mb-0">About</li>
                             <li className="mb-0">Contact Us</li>
@@ -29,7 +29,7 @@ function Footer() {
                         </ul>
                     </div>
                     <div className="d-flex row justify-content-end">
-                        <div className="d-flex justify-content-between align-items-center col-8 col-lg-11">
+                        <div className="footer-socials-wrapper d-flex justify-content-between align-items-center col-lg-11">
                             <p className="mb-0">Find us on Social Media</p>
                             <div className="footer-socials d-flex justify-content-between col-5">
                                 <BsFacebook className="footer-socials-bslogo" />
