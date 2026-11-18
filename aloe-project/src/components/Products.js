@@ -23,6 +23,12 @@ function Products () {
     const [fdButton2, setFdButton2] = useState(true)
     const [fdButton3, setFdButton3] = useState(true)
 
+    //--------------------- Code that connects with Backend server files -------------------------
+
+    const [products, setProducts] = useState([]);
+
+    //--------------------- Code that connects with Backend server files -------------------------
+
     function handleClick1() {
         setFeatureDescription1(!featureDescription1)
         setFdButton1(!fdButton1)
@@ -53,6 +59,12 @@ function Products () {
         return () => {
             query.removeEventListener('change', handleChange);
         };
+    }, []);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/products")
+            .then((response) => response.json())
+            .then((data) => setProducts(data));
     }, []);
 
     return (
@@ -96,21 +108,21 @@ function Products () {
                                                 featureDescription1 ? (
                                                     <div id="features" className="flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center">
-                                                            <h4 className="mb-0">Aloe Leaves</h4>
-                                                            <h4 className="title-h3-2 mb-0">$ 2.99</h4>
+                                                            <h4 className="mb-0">{products[0]?.name}</h4>
+                                                            <h4 className="title-h3-2 mb-0">$ {products[0]?.price}</h4>
                                                         </div>
                                                         <div className="check-icons-wrapper align-content-center">
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> {'>'}500ml consumable Gel</p>
+                                                                <p className="mb-0 "> {products[0]?.features[0]}</p>
                                                             </div>
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> 'How to use' guide steps </p>
+                                                                <p className="mb-0 "> {products[0]?.features[1]} </p>
                                                             </div>
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> 1 Free Leaf for every 5 purchased! </p>
+                                                                <p className="mb-0 "> {products[0]?.features[2]} </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -118,15 +130,12 @@ function Products () {
                                                 : (
                                                     <div id="description" className="d-flex flex-column flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center" style={{"padding-bottom" : "0"}}>
-                                                            <h4 className="mb-0">Aloe Leaves</h4>
-                                                            <h4 className="title-h3-2 mb-0">$ 2.99</h4>
+                                                            <h4 className="mb-0">{products[0]?.name}</h4>
+                                                            <h4 className="title-h3-2 mb-0">$ {products[0]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex flex-grow-1 text-center align-items-center">
                                                             <p className="description-text mb-0">
-                                                                Experience our premium Aloe Vera leaves,
-                                                                sourced from mature plants.
-                                                                We meticulously select leaves to preserve their full gel capacity.
-                                                                Order today, and we harvest them for you.
+                                                                {products[0]?.description}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -159,35 +168,32 @@ function Products () {
                                                 featureDescription1 ? (
                                                     <div id="features" className="flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center">
-                                                            <h4 className="mb-0">Aloe Leaves</h4>
-                                                            <h4 className="title-h3-2 mb-0">$ 2.99</h4>
+                                                            <h4 className="mb-0">{products[0]?.name}</h4>
+                                                            <h4 className="title-h3-2 mb-0">$ {products[0]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> {'>'}500ml consumable Gel</p>
+                                                            <p className="mb-0 "> {products[0]?.features[0]}</p>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> 'How to use' guide steps </p>
+                                                            <p className="mb-0 "> {products[0]?.features[1]} </p>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> 1 Free Leaf for every 5 purchased! </p>
+                                                            <p className="mb-0 "> {products[0]?.features[2]} </p>
                                                         </div>
                                                     </div>
                                                 )
                                                 : (
                                                     <div id="description" className="d-flex flex-column flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center" style={{"padding-bottom" : "0"}}>
-                                                            <h4 className="mb-0">Aloe Leaves</h4>
-                                                            <h4 className="title-h3-2 mb-0">$ 2.99</h4>
+                                                            <h4 className="mb-0">{products[0]?.name}</h4>
+                                                            <h4 className="title-h3-2 mb-0">$ {products[0]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex text-center align-items-center">
                                                             <p className="description-text mb-0">
-                                                                Experience our premium Aloe Vera leaves,
-                                                                sourced from mature plants.
-                                                                We meticulously select leaves to preserve their full gel capacity.
-                                                                Order today, and we harvest them for you.
+                                                                {products[0]?.description}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -222,21 +228,21 @@ function Products () {
                                                 featureDescription2 ? (
                                                     <div id="features" className="flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center">
-                                                            <h4 className="mb-0">Bottles <span>{`(`}200ml{`)`}</span></h4>
-                                                            <h4 className="title-h3-1 mb-0">$ 4.99</h4>
+                                                            <h4 className="mb-0">{products[1]?.name}</h4>
+                                                            <h4 className="title-h3-1 mb-0">$ {products[1]?.price}</h4>
                                                         </div>
                                                         <div className="check-icons-wrapper align-content-center">
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> 100% pure </p>
+                                                                <p className="mb-0 "> {products[1]?.features[0]} </p>
                                                             </div>
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> No chemical preservatives </p>
+                                                                <p className="mb-0 "> {products[1]?.features[1]} </p>
                                                             </div>
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> 1 Free Bottle for every 4 purchased! </p>
+                                                                <p className="mb-0 "> {products[1]?.features[2]} </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -244,15 +250,12 @@ function Products () {
                                                 : (
                                                     <div id="description" className="d-flex flex-column flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center" style={{"padding-bottom" : "0"}}>
-                                                            <h4 className="mb-0">Bottles <span>{`(`}200ml{`)`}</span></h4>
-                                                            <h4 className="title-h3-1 mb-0">$ 4.99</h4>
+                                                            <h4 className="mb-0">{products[1]?.name}</h4>
+                                                            <h4 className="title-h3-1 mb-0">$ {products[1]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex flex-grow-1 text-center align-items-center">
                                                             <p className="description-text mb-0">
-                                                                Purely crafted, our bottles
-                                                                contain 100% fresh gel from mature Aloe plants.
-                                                                No chemical preservatives, just a touch of natural lemon juice
-                                                                to extend shelf life to 2-3 weeks.
+                                                                {products[1]?.description}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -285,35 +288,32 @@ function Products () {
                                                 featureDescription2 ? (
                                                     <div id="features" className="flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center">
-                                                            <h4 className="mb-0">Bottles <span>{`(`}200ml{`)`}</span></h4>
-                                                            <h4 className="title-h3-1 mb-0">$ 4.99</h4>
+                                                            <h4 className="mb-0">{products[1]?.name}</h4>
+                                                            <h4 className="title-h3-1 mb-0">$ {products[1]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> 100% pure </p>
+                                                            <p className="mb-0 "> {products[1]?.features[0]} </p>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> No chemical preservatives </p>
+                                                            <p className="mb-0 "> {products[1]?.features[1]} </p>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> 1 Free Bottle for every 4 purchased! </p>
+                                                            <p className="mb-0 "> {products[1]?.features[2]} </p>
                                                         </div>
                                                     </div>
                                                 )
                                                 : (
                                                     <div id="description" className="d-flex flex-column flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center" style={{"padding-bottom" : "0"}}>
-                                                            <h4 className="mb-0">Bottles <span>{`(`}200ml{`)`}</span></h4>
-                                                            <h4 className="title-h3-1 mb-0">$ 4.99</h4>
+                                                            <h4 className="mb-0">{products[1]?.name}</h4>
+                                                            <h4 className="title-h3-1 mb-0">$ {products[1]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex text-center align-items-center">
                                                             <p className="description-text mb-0">
-                                                                Purely crafted, our bottles
-                                                                contain 100% fresh gel from mature Aloe plants.
-                                                                No chemical preservatives, just a touch of natural lemon juice
-                                                                to extend shelf life to 2-3 weeks.
+                                                                {products[1]?.description}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -348,25 +348,25 @@ function Products () {
                                                 featureDescription3 ? (
                                                     <div id="features" className="flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center">
-                                                            <h4 className="mb-0">Aloe Plants</h4>
-                                                            <h4 className="title-h3-3 mb-0">$ 9.99</h4>
+                                                            <h4 className="mb-0">{products[2]?.name}</h4>
+                                                            <h4 className="title-h3-3 mb-0">$ {products[2]?.price}</h4>
                                                         </div>
                                                         <div className="check-icons-wrapper align-content-center">
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> 1 year old </p>
+                                                                <p className="mb-0 "> {products[2]?.features[0]} </p>
                                                             </div>
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> Transplantation guide steps </p>
+                                                                <p className="mb-0 "> {products[2]?.features[1]} </p>
                                                             </div>
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> 'How to maintain' guide steps </p>
+                                                                <p className="mb-0 "> {products[2]?.features[2]} </p>
                                                             </div>
                                                             <div className="d-flex">
                                                                 <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                                <p className="mb-0 "> 1 Free plant for every 3 purchases! </p>
+                                                                <p className="mb-0 "> {products[2]?.features[3]} </p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -374,14 +374,12 @@ function Products () {
                                                 : (
                                                     <div id="description" className="d-flex flex-column flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center" style={{"padding-bottom" : "0"}}>
-                                                            <h4 className="mb-0">Aloe Plants</h4>
-                                                            <h4 className="title-h3-3 mb-0">$ 9.99</h4>
+                                                            <h4 className="mb-0">{products[2]?.name}</h4>
+                                                            <h4 className="title-h3-3 mb-0">$ {products[2]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex flex-grow-1 text-center align-items-center">
                                                             <p className="description-text mb-0">
-                                                                We provide instructions for you to help them mature properly!
-                                                                These indoor plants not only adorn your space
-                                                                but also cleanse the atmosphere and provide fresh oxygen.
+                                                                {products[2]?.description}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -414,38 +412,36 @@ function Products () {
                                                 featureDescription3 ? (
                                                     <div id="features" className="flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center">
-                                                            <h4 className="mb-0">Aloe Plants</h4>
-                                                            <h4 className="title-h3-3 mb-0">$ 9.99</h4>
+                                                            <h4 className="mb-0">{products[2]?.name}</h4>
+                                                            <h4 className="title-h3-3 mb-0">$ {products[2]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> 1 year old </p>
+                                                            <p className="mb-0 "> {products[2]?.features[0]} </p>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> Transplantation guide steps </p>
+                                                            <p className="mb-0 "> {products[2]?.features[1]} </p>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> 'How to maintain' guide steps </p>
+                                                            <p className="mb-0 "> {products[2]?.features[2]} </p>
                                                         </div>
                                                         <div className="d-flex">
                                                             <BsCheck2 className="priceplans-bs-icon align-self-center"/>
-                                                            <p className="mb-0 "> 1 Free plant for every 3 purchases! </p>
+                                                            <p className="mb-0 "> {products[2]?.features[3]} </p>
                                                         </div>
                                                     </div>
                                                 )
                                                 : (
                                                     <div id="description" className="d-flex flex-column flex-grow-1">
                                                         <div className="title d-flex justify-content-between align-items-center" style={{"padding-bottom" : "0"}}>
-                                                            <h4 className="mb-0">Aloe Plants</h4>
-                                                            <h4 className="title-h3-3 mb-0">$ 9.99</h4>
+                                                            <h4 className="mb-0">{products[2]?.name}</h4>
+                                                            <h4 className="title-h3-3 mb-0">$ {products[2]?.price}</h4>
                                                         </div>
                                                         <div className="d-flex text-center align-items-center">
                                                             <p className="description-text mb-0">
-                                                                We provide instructions for you to help them mature properly!
-                                                                These indoor plants not only adorn your space
-                                                                but also cleanse the atmosphere and provide fresh oxygen.
+                                                                {products[2]?.description}
                                                             </p>
                                                         </div>
                                                     </div>
