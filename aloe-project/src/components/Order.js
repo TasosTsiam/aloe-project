@@ -7,27 +7,39 @@ import { FaHandPointLeft } from 'react-icons/fa';
 
 function Order() {
 
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/products")
+            .then((response) => response.json())
+            .then((data) => setProducts(data));
+    }, []);
+
+    const leaves = products[0];
+    const bottles = products[1];
+    const plants = products[2];
+
 // -------------------------------------------------------------   CART QUANTITY CODE    -------------------------------------------------------------
 
     const [leavesQuantity, setLeavesQuantity] = useState(0);
-    const leavesGift = Math.floor(leavesQuantity / 5);
+    const leavesGift = leaves ? Math.floor(leavesQuantity / leaves.giftEvery) : 0;
     const prevLeavesGift = useRef(0);
     const [animateLeavesGift, setAnimateLeavesGift] = useState(false);
 
     const [bottlesQuantity, setBottlesQuantity] = useState(0);
-    const bottlesGift = Math.floor(bottlesQuantity / 4);
+    const bottlesGift = bottles ? Math.floor(bottlesQuantity / bottles.giftEvery) : 0;
     const prevBottlesGift = useRef(0);
     const [animateBottlesGift, setAnimateBottlesGift] = useState(false);
 
     const [plantsQuantity, setPlantsQuantity] = useState(0);
-    const plantsGift = Math.floor(plantsQuantity / 3);
+    const plantsGift = plants ? Math.floor(plantsQuantity / plants.giftEvery) : 0;
     const prevPlantsGift = useRef(0);
     const [animatePlantsGift, setAnimatePlantsGift] = useState(false);
 
     const subTotal =
-        leavesQuantity * 2.99 +
-        bottlesQuantity * 4.99 +
-        plantsQuantity * 9.99;
+        leavesQuantity * (leaves ? leaves.price : 0) +
+        bottlesQuantity * (bottles ? bottles.price : 0) +
+        plantsQuantity * (plants ? plants.price : 0);
 
     useEffect(() => {
         if ((leavesGift !== prevLeavesGift.current)) {
@@ -325,7 +337,7 @@ function Order() {
                                 <div className="cart-items-inner-mobile d-flex justify-content-between">
                                     <div className="cart-product d-flex flex-column justify-content-between">
                                         <div className="d-flex align-items-center">
-                                            <h4 className="mb-0">Aloe Leaves</h4>
+                                            <h4 className="mb-0">{products[0]?.name}</h4>
                                         </div>
                                         <div className="image-wrapper d-flex">
                                             <div className="product-image leaves d-flex align-self-center align-items-center">
@@ -335,15 +347,15 @@ function Order() {
                                                 <div className="d-flex flex-column gap-1">
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0"> {'>'}500ml consumable Gel</p>
+                                                        <p className="mb-0"> {products[0]?.features[0]}</p>
                                                     </div>
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0"> 'How to use' guide steps </p>
+                                                        <p className="mb-0"> {products[0]?.features[1]} </p>
                                                     </div>
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0"> 1 Free for every 5 purchased! </p>
+                                                        <p className="mb-0"> 1 Free for every {products[0]?.giftEvery} purchased! </p>
                                                     </div>
                                                 </div>
                                                 <div className="d-flex justify-content-center mt-0">
@@ -354,7 +366,7 @@ function Order() {
                                     </div>
                                     <div className="price-add-remove-wrapper d-flex flex-column align-items-center justify-content-between">
                                         <div className="cart-price d-flex align-items-center">
-                                            <span>$</span> 2.99
+                                            <span>$</span> {products[0]?.price}
                                         </div>
                                         <div className="cart-add-remove d-flex align-items-center gap-2">
                                             <div className="quantity d-flex flex-column justify-content-between align-items-center">
@@ -391,19 +403,19 @@ function Order() {
                                         <div className="product-content d-flex flex-column justify-content-center">
                                             <div className="d-flex flex-column gap-1">
                                                 <div className="d-flex align-items-center">
-                                                    <h4 className="mb-0">Aloe Leaves</h4>
+                                                    <h4 className="mb-0">{products[0]?.name}</h4>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0 opacity-75"> {'>'}500ml consumable Gel</p>
+                                                    <p className="mb-0 opacity-75"> {products[0]?.features[0]}</p>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0 opacity-75"> 'How to use' guide steps </p>
+                                                    <p className="mb-0 opacity-75"> {products[0]?.features[1]} </p>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0 opacity-75"> 1 Free leaf for every 5 purchased! </p>
+                                                    <p className="mb-0 opacity-75"> {products[0]?.features[2]} </p>
                                                 </div>
                                             </div>
                                             <div className="d-flex justify-content-center mt-0">
@@ -412,7 +424,7 @@ function Order() {
                                         </div>
                                     </div>
                                     <div className="cart-price d-flex align-items-center px-5">
-                                        <span>$</span> 2.99
+                                        <span>$</span> {products[0]?.price}
                                     </div>
                                     <div className="cart-add-remove d-flex align-items-center gap-2">
                                         <div className="quantity d-flex flex-column justify-content-between align-items-center">
@@ -447,7 +459,7 @@ function Order() {
                                 <div className="cart-items-inner-mobile d-flex justify-content-between">
                                     <div className="cart-product d-flex flex-column justify-content-between">
                                         <div className="d-flex align-items-center">
-                                            <h4>Bottles <span>{`(`}200ml{`)`}</span></h4>
+                                            <h4>{products[1]?.name}</h4>
                                         </div>
                                         <div className="image-wrapper d-flex">
                                             <div className="product-image bottles d-flex align-self-center align-items-center">
@@ -457,15 +469,15 @@ function Order() {
                                                 <div className="d-flex flex-column gap-1">
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0">100% pure</p>
+                                                        <p className="mb-0">{products[1]?.features[0]}</p>
                                                     </div>
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0">No chemical preservatives</p>
+                                                        <p className="mb-0">{products[1]?.features[1]}</p>
                                                     </div>
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0">1 Free for every 4 purchased!</p>
+                                                        <p className="mb-0">1 Free for every {products[1]?.giftEvery} purchased!</p>
                                                     </div>
                                                 </div>
                                                 <div className="d-flex justify-content-center mt-0">
@@ -476,7 +488,7 @@ function Order() {
                                     </div>
                                     <div className="price-add-remove-wrapper d-flex flex-column align-items-center justify-content-between">
                                         <div className="cart-price d-flex align-items-center">
-                                            <span>$</span> 4.99
+                                            <span>$</span> {products[1]?.price}
                                         </div>
                                         <div className="cart-add-remove d-flex align-items-center gap-2">
                                             <div className="quantity d-flex flex-column justify-content-between align-items-center">
@@ -513,19 +525,19 @@ function Order() {
                                         <div className="product-content d-flex flex-column justify-content-center">
                                             <div className="d-flex flex-column gap-1">
                                                 <div className="d-flex align-items-center">
-                                                    <h4>Bottles <span>{`(`}200ml{`)`}</span></h4>
+                                                    <h4>{products[1]?.name}</h4>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0  opacity-75">100% pure</p>
+                                                    <p className="mb-0  opacity-75">{products[1]?.features[0]}</p>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0  opacity-75">No chemical preservatives</p>
+                                                    <p className="mb-0  opacity-75">{products[1]?.features[1]}</p>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0  opacity-75">1 Free bottle for every 4 purchased!</p>
+                                                    <p className="mb-0  opacity-75">{products[1]?.features[2]}</p>
                                                 </div>
                                             </div>
                                             <div className="d-flex justify-content-center mt-0">
@@ -534,7 +546,7 @@ function Order() {
                                         </div>
                                     </div>
                                     <div className="cart-price d-flex align-items-center px-5">
-                                        <span>$</span> 4.99
+                                        <span>$</span> {products[1]?.price}
                                     </div>
                                     <div className="cart-add-remove d-flex align-items-center gap-2">
                                         <div className="quantity d-flex flex-column justify-content-between align-items-center">
@@ -569,7 +581,7 @@ function Order() {
                                 <div className="cart-items-inner-mobile d-flex justify-content-between">
                                     <div className="cart-product d-flex flex-column justify-content-between">
                                         <div className="d-flex align-items-center">
-                                            <h4 className="mb-0">Aloe Plants</h4>
+                                            <h4 className="mb-0">{products[2]?.name}</h4>
                                         </div>
                                         <div className="image-wrapper d-flex">
                                             <div className="product-image plants d-flex align-self-center align-items-center">
@@ -579,15 +591,15 @@ function Order() {
                                                 <div className="d-flex flex-column gap-1">
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0">1 year old </p>
+                                                        <p className="mb-0">{products[2]?.features[0]} </p>
                                                     </div>
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0">Transplantation guide steps</p>
+                                                        <p className="mb-0">{products[2]?.features[1]}</p>
                                                     </div>
                                                     <div className="d-flex">
                                                         <BsCheck2 className="align-self-center mx-1"/>
-                                                        <p className="mb-0">1 Free for every 3 purchases!</p>
+                                                        <p className="mb-0">1 Free for every {products[2]?.giftEvery} purchases!</p>
                                                     </div>
                                                 </div>
                                                 <div className="d-flex justify-content-center mt-0">
@@ -598,7 +610,7 @@ function Order() {
                                     </div>
                                     <div className="price-add-remove-wrapper d-flex flex-column align-items-center justify-content-between">
                                         <div className="cart-price d-flex align-items-center">
-                                            <span>$</span> 9.99
+                                            <span>$</span> {products[2]?.price}
                                         </div>
                                         <div className="cart-add-remove d-flex align-items-center gap-2">
                                             <div className="quantity d-flex flex-column justify-content-between align-items-center">
@@ -635,19 +647,19 @@ function Order() {
                                         <div className="product-content d-flex flex-column justify-content-center">
                                             <div className="d-flex flex-column gap-1">
                                                 <div className="d-flex align-items-center">
-                                                    <h4>Aloe Plants</h4>
+                                                    <h4>{products[2]?.name}</h4>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0  opacity-75">1 year old </p>
+                                                    <p className="mb-0  opacity-75">{products[2]?.features[0]} </p>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0  opacity-75">Transplantation guide steps</p>
+                                                    <p className="mb-0  opacity-75">{products[2]?.features[1]}</p>
                                                 </div>
                                                 <div className="d-flex">
                                                     <BsCheck2 className="align-self-center mx-1"/>
-                                                    <p className="mb-0  opacity-75">1 Free plant for every 3 purchases!</p>
+                                                    <p className="mb-0  opacity-75">{products[2]?.features[3]}</p>
                                                 </div>
                                             </div>
                                             <div className="d-flex justify-content-center mt-0">
@@ -656,7 +668,7 @@ function Order() {
                                         </div>
                                     </div>
                                     <div className="cart-price d-flex align-items-center">
-                                        <span>$</span> 9.99
+                                        <span>$</span> {products[2]?.price}
                                     </div>
                                     <div className="cart-add-remove d-flex align-items-center gap-2">
                                         <div className="quantity d-flex flex-column justify-content-between align-items-center">
