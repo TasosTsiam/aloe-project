@@ -145,21 +145,31 @@ function Reviews() {
         };
     }, [allReviewsClicked, addReviewClicked, activeReview, isMobileLayout]);
 
-        const text1 = `I bought the aloe leaves for skincare and I’m really impressed.
-                        The leaves are fresh, thick, and full of gel that works great for soothing my skin after sun exposure.
-                        The quality feels excellent and the price is very affordable for what you get.
-                        Definitely a great value and I’ll be ordering again.`
-        const text2 = `The bottled aloe gel quickly became part of my daily routine.
-                        I use it for skincare and sometimes in smoothies. It feels pure and refreshing,
-                        and I love that it has no harsh chemicals.
-                        The quality is great and the price is surprisingly affordable.`
-        const text3 = `I ordered the aloe bottles out of curiosity and ended up loving them.
-                        The gel feels light and helps keep my skin hydrated after long days outside.
-                        The quality feels premium but the price is very reasonable.
-                        I’ve already recommended it to friends.`
-        const text4 = `The aloe plant arrived healthy and looks great in my home.
-        I like that I can use it for natural remedies whenever I need it.
-        It’s easy to care for and grows well. For the price, it’s an amazing value.`
+    const [reviews, setReviews] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/reviews")
+            .then((response) => response.json())
+            .then((data) => setReviews(data));
+    }, []);
+
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/products")
+            .then((response) => response.json())
+            .then((data) => setProducts(data));
+    }, []);
+
+    const getProductName = (slug) => {
+        const product = products.find((p) => p.slug === slug);
+        return product ? product.name : "";
+    };
+
+    const getProductShortName = (slug) => {
+        const product = products.find((p) => p.slug === slug);
+        return product ? product.shortName : "";
+    };
 
     return (
         <>
@@ -172,10 +182,13 @@ function Reviews() {
                         X
                     </button>
                     <div className="all-reviews-container">
-                        <AllReviews></AllReviews>
-                        <AllReviews></AllReviews>
-                        <AllReviews></AllReviews>
-                        <AllReviews></AllReviews>
+                        {reviews.map((review) => (
+                            <AllReviews
+                                key={review.id}
+                                review={review}
+                                productName={getProductShortName(review.productSlug)}
+                            />
+                        ))}
                     </div>
                 </div>
             )}
@@ -303,11 +316,11 @@ function Reviews() {
 
                                                 </div>
                                                 <div className="user-name align-content-center px-2">
-                                                    <p>Frenkie De Jong</p>
+                                                    <p>{reviews[0]?.firstName} {reviews[0]?.lastName}</p>
                                                     <p>Thessaloniki, Greece</p>
                                                 </div>
                                                 <div className="purchased-product align-content-center flex-grow-1 text-end">
-                                                    ~ <span>Aloe Leaves</span>
+                                                    ~ <span>{getProductName(reviews[0]?.productSlug)}</span>
                                                     <div className="review-star align-self-end">
                                                         {Array.from({length: 5}, (_, i) =>
                                                             <AiFillStar size={16} color="white"/>
@@ -319,7 +332,7 @@ function Reviews() {
                                                 <FaQuoteLeft size={16} />
                                             </div>
                                             <div className="review-text text-start">
-                                                {text1}
+                                                {reviews[0]?.text}
                                             </div>
                                         </div>
                                     </div>
@@ -335,11 +348,11 @@ function Reviews() {
 
                                                 </div>
                                                 <div className="user-name align-content-center px-2">
-                                                    <p>Pedri Gonzalez</p>
+                                                    <p>{reviews[1]?.firstName} {reviews[1]?.lastName}</p>
                                                     <p>Thessaloniki, Greece</p>
                                                 </div>
                                                 <div className="purchased-product align-content-center flex-grow-1 text-end">
-                                                    ~ <span>Bottle gel</span>
+                                                    ~ <span>{getProductName(reviews[1]?.productSlug)}</span>
                                                     <div className="review-star align-self-end">
                                                         {Array.from({length: 5}, (_, i) =>
                                                             <AiFillStar size={16} color="white"/>
@@ -351,7 +364,7 @@ function Reviews() {
                                                 <FaQuoteLeft size={16} />
                                             </div>
                                             <div className="review-text text-start">
-                                                {text2}
+                                                {reviews[1]?.text}
                                             </div>
                                         </div>
                                     </div>
@@ -367,11 +380,11 @@ function Reviews() {
 
                                                 </div>
                                                 <div className="user-name align-content-center px-2">
-                                                    <p>Aitana Bonmati</p>
+                                                    <p>{reviews[2]?.firstName} {reviews[2]?.lastName}</p>
                                                     <p>Thessaloniki, Greece</p>
                                                 </div>
                                                 <div className="purchased-product align-content-center flex-grow-1 text-end">
-                                                    ~ <span>Bottle gel</span>
+                                                    ~ <span>{getProductName(reviews[2]?.productSlug)}</span>
                                                     <div className="review-star align-self-end">
                                                         {Array.from({length: 5}, (_, i) =>
                                                             <AiFillStar size={16} color="white"/>
@@ -383,7 +396,7 @@ function Reviews() {
                                                 <FaQuoteLeft size={16} />
                                             </div>
                                             <div className="review-text text-start">
-                                                {text3}
+                                                {reviews[2]?.text}
                                             </div>
                                         </div>
                                     </div>
@@ -399,11 +412,11 @@ function Reviews() {
 
                                                 </div>
                                                 <div className="user-name align-content-center px-2">
-                                                    <p>Raphinha</p>
+                                                    <p>{reviews[3]?.firstName} {reviews[3]?.lastName}</p>
                                                     <p>Thessaloniki, Greece</p>
                                                 </div>
                                                 <div className="purchased-product align-content-center flex-grow-1 text-end">
-                                                    ~ <span>Aloe Plants</span>
+                                                    ~ <span>{getProductName(reviews[3]?.productSlug)}</span>
                                                     <div className="review-star align-self-end">
                                                         {Array.from({length: 5}, (_, i) =>
                                                             <AiFillStar size={16} color="white"/>
@@ -415,7 +428,7 @@ function Reviews() {
                                                 <FaQuoteLeft size={16} />
                                             </div>
                                             <div className="review-text text-start">
-                                                {text4}
+                                                {reviews[3]?.text}
                                             </div>
                                         </div>
                                     </div>
@@ -510,11 +523,11 @@ function Reviews() {
 
                                         </div>
                                         <div className="user-name align-content-center px-2">
-                                            <p>Frenkie De Jong</p>
+                                            <p>{reviews[0]?.firstName} {reviews[0]?.lastName}</p>
                                             <p>Thessaloniki, Greece</p>
                                         </div>
                                         <div className="purchased-product align-content-center flex-grow-1 text-end">
-                                            ~ <span>Aloe Leaves</span>
+                                            ~ <span>{getProductName(reviews[0]?.productSlug)}</span>
                                             <div className="review-star align-self-end">
                                                 {Array.from({length: 5}, (_, i) =>
                                                     <AiFillStar size={16} color="white"/>
@@ -527,7 +540,7 @@ function Reviews() {
                                         <FaQuoteLeft size={16} />
                                     </div>
                                     <div className="review-text text-start">
-                                        {text1}
+                                        {reviews[0]?.text}
                                     </div>
                                 </div>
                             </div>
@@ -542,14 +555,14 @@ function Reviews() {
                                         <FaQuoteLeft size={16} />
                                     </div>
                                     <div className="review-text text-start mb-4">
-                                        {text2}
+                                        {reviews[1]?.text}
                                     </div>
                                     <div className="user-image-wrapper d-flex">
                                         <div className="user-image">
 
                                         </div>
                                         <div className="user-name align-content-center px-2">
-                                            <p>Pedri Gonzalez</p>
+                                            <p>{reviews[1]?.firstName} {reviews[1]?.lastName}</p>
                                             <p>Thessaloniki, Greece</p>
                                         </div>
                                         <div className="purchased-product align-content-center flex-grow-1 text-end">
@@ -558,7 +571,7 @@ function Reviews() {
                                                     <AiFillStar size={16} color="white"/>
                                                 )}
                                             </div>
-                                            ~ <span>Bottle gel</span>
+                                            ~ <span>{getProductName(reviews[1]?.productSlug)}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -574,7 +587,7 @@ function Reviews() {
                                         <FaQuoteLeft size={16} />
                                     </div>
                                     <div className="review-text text-start mb-4">
-                                        {text3}
+                                        {reviews[2]?.text}
                                     </div>
                                     <div className="user-image-wrapper d-flex">
                                         <div className="purchased-product align-content-center flex-grow-1 text-start">
@@ -583,10 +596,10 @@ function Reviews() {
                                                     <AiFillStar size={16} color="white"/>
                                                 )}
                                             </div>
-                                            <span>Bottle gel </span>~
+                                            <span>{getProductName(reviews[2]?.productSlug)}</span>~
                                         </div>
                                         <div className="user-name align-content-center px-2">
-                                            <p>Aitana Bonmati</p>
+                                            <p>{reviews[2]?.firstName} {reviews[2]?.lastName}</p>
                                             <p>Thessaloniki, Greece</p>
                                         </div>
                                         <div className="user-image">
@@ -606,7 +619,7 @@ function Reviews() {
                                         <FaQuoteLeft size={16} />
                                     </div>
                                     <div className="review-text text-start mb-4">
-                                        {text4}
+                                        {reviews[3]?.text}
                                     </div>
                                     <div className="user-image-wrapper d-flex">
                                         <div className="purchased-product align-content-center flex-grow-1 text-start">
@@ -615,10 +628,10 @@ function Reviews() {
                                                     <AiFillStar size={16} color="white"/>
                                                 )}
                                             </div>
-                                            <span>Aloe Plants </span>~
+                                            <span>{getProductName(reviews[3]?.productSlug)}</span>~
                                         </div>
                                         <div className="user-name align-content-center px-2">
-                                            <p>Raphinha</p>
+                                            <p>{reviews[3]?.firstName} {reviews[3]?.lastName}</p>
                                             <p>Thessaloniki, Greece</p>
                                         </div>
                                         <div className="user-image">

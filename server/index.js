@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const products = require("./products");
+const reviews = require("./reviews");
 
 const app = express();
 app.use(cors());
@@ -9,6 +10,10 @@ const PORT = 5000;
 const getProducts = (req, res) => {
     res.json(products);
 };
+
+const getReviews = (req, res) => {
+    res.json(reviews);
+}
 
 const handleHome = (req, res) => {
     res.send("Hello from the Aloe server!");
@@ -23,6 +28,7 @@ const handleListen = () => {
 };
 
 app.get("/products", getProducts);
+app.get("/reviews", getReviews);
 app.get("/", handleHome);
 app.get("/about", handleAbout);
 app.listen(PORT, handleListen);

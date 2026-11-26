@@ -2,23 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AiFillStar } from "react-icons/ai";
 import { FaQuoteLeft, FaThumbsUp, FaThumbsDown } from "react-icons/fa";
 
-function AllReviews() {
-
-    const text1 = `I bought the aloe leaves for skincare and I’m really impressed.
-                        The leaves are fresh, thick, and full of gel that works great for soothing my skin after sun exposure.
-                        The quality feels excellent and the price is very affordable for what you get.
-                        Definitely a great value and I’ll be ordering again.`
-    const text2 = `The bottled aloe gel quickly became part of my daily routine.
-                    I use it for skincare and sometimes in smoothies. It feels pure and refreshing,
-                    and I love that it has no harsh chemicals.
-                    The quality is great and the price is surprisingly affordable.`
-    const text3 = `I ordered the aloe bottles out of curiosity and ended up loving them.
-                    The gel feels light and helps keep my skin hydrated after long days outside.
-                    The quality feels premium but the price is very reasonable.
-                    I’ve already recommended it to friends.`
-    const text4 = `The aloe plant arrived healthy and looks great in my home.
-                    I like that I can use it for natural remedies whenever I need it.
-                    It’s easy to care for and grows well. For the price, it’s an amazing value.`
+function AllReviews({review, productName}) {
 
     return (
         <div className="all-reviews-border d-flex flex-column justify-content-center">
@@ -28,22 +12,22 @@ function AllReviews() {
 
                     </div>
                     <div className="ar-user-name align-content-center px-2">
-                        <p>Frenkie De Jong</p>
-                        <p>Thessaloniki, Greece</p>
+                        <p>{review.firstName} {review.lastName}</p>
+                        <p>{review.city}</p>
                     </div>
                 </div>
                 <div className="ar-purchased-product align-content-center flex-grow-1 text-end">
-                    Has Bought ~ <span>Aloe Leaves</span>
+                    Has Bought ~ <span>{productName}</span>
                 </div>
             </div>
             <div className="align-self-end">
                 <FaQuoteLeft size={16} />
             </div>
             <div className="user-review">
-                {text1}
+                {review.text}
             </div>
             <div className="review-star align-self-center">
-                {Array.from({length: 5}, (_, i) =>
+                {Array.from({length: review.rating}, (_, i) =>
                     <AiFillStar size={16} color="white" style={{ marginTop: "2rem"}}/>
                 )}
             </div>

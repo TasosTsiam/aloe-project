@@ -1482,10 +1482,18 @@ body {
 
         .close-modal {
             position: fixed;
-            top: 12%;
+            top: 8%;
             right: 18%;
 
             @include button;
+
+            @media (min-width: 800px) {
+                right: 20%;
+            }
+
+            @media (min-width: 1500px) {
+                right: calc(50% - 450px);
+            }
 
             @media (max-width: 799.98px) {
                 top: 5%;

@@ -1946,7 +1946,7 @@ body {
 }
 .homepage .modal-overlay .close-modal {
   position: fixed;
-  top: 12%;
+  top: 8%;
   right: 18%;
   box-sizing: border-box;
   color: white;
@@ -1962,6 +1962,16 @@ body {
 }
 .homepage .modal-overlay .close-modal:hover {
   box-shadow: inset 3px 3px 15px 1px rgba(255, 255, 255, 0.616), -3px -3px 15px 1px rgba(255, 255, 255, 0.61);
+}
+@media (min-width: 800px) {
+  .homepage .modal-overlay .close-modal {
+    right: 20%;
+  }
+}
+@media (min-width: 1500px) {
+  .homepage .modal-overlay .close-modal {
+    right: calc(50% - 450px);
+  }
 }
 @media (max-width: 799.98px) {
   .homepage .modal-overlay .close-modal {

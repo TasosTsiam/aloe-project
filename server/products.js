@@ -3,6 +3,7 @@ const products = [
         id: 1,
         slug: "leaves",
         name: "Aloe Leaves",
+        shortName: "Leaves",
         price: 2.99,
         features: [
             ">500ml consumable Gel",
@@ -17,6 +18,7 @@ const products = [
         id: 2,
         slug: "bottles",
         name: "Bottles (200ml)",
+        shortName: "Bottles",
         price: 4.99,
         features: [
             "100% pure",
@@ -32,6 +34,7 @@ const products = [
         id: 3,
         slug: "plants",
         name: "Aloe Plants",
+        shortName: "Plants",
         price: 9.99,
         features: [
             "1 year old",
